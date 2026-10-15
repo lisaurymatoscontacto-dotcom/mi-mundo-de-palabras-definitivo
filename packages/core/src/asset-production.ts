@@ -68,6 +68,10 @@ const AUTOMATIC_EMOJI_WORDS = new Set([
 
 export function contentSlug(value: string) {
   return value
+    // Keep Ñ distinct from N before accent stripping. Without this MONO and
+    // MOÑO would both become "mono" and collide in asset/audio identifiers.
+    .replace(/ñ/g, "ny")
+    .replace(/Ñ/g, "NY")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLocaleLowerCase("es")
