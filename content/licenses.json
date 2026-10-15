@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "licenses": [
+    {
+      "id": "CC-BY-4.0",
+      "name": "Creative Commons Attribution 4.0 International",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "commercial_use": true,
+      "redistribution": true,
+      "attribution_required": true,
+      "automatic_photo_import_allowed": false,
+      "notes": "Accepted for open emoji artwork such as Twemoji. Photos are intentionally restricted to CC0/Public Domain in the automatic pipeline."
+    },
+    {
+      "id": "CC0-1.0",
+      "name": "Creative Commons CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "commercial_use": true,
+      "redistribution": true,
+      "attribution_required": false,
+      "automatic_photo_import_allowed": true,
+      "notes": "Preferred photo license. Provenance is still retained even when attribution is not required."
+    },
+    {
+      "id": "PUBLIC-DOMAIN",
+      "name": "Public Domain",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commercial_use": true,
+      "redistribution": true,
+      "attribution_required": false,
+      "automatic_photo_import_allowed": true,
+      "notes": "Accepted only when the source page provides verifiable public-domain status."
+    },
+    {
+      "id": "OWNED",
+      "name": "Project-owned custom asset",
+      "url": null,
+      "commercial_use": true,
+      "redistribution": true,
+      "attribution_required": false,
+      "automatic_photo_import_allowed": false,
+      "notes": "Reserved for original assets whose rights are controlled by the project."
+    }
+  ]
+}

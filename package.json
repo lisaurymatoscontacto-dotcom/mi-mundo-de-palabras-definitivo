@@ -1,0 +1,49 @@
+{
+  "name": "mi-mundo-de-palabras",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @mmdp/web",
+    "build": "npm run build --workspace @mmdp/web",
+    "typecheck": "npm run typecheck --workspace @mmdp/web",
+    "test": "vitest run",
+    "sync-api:start": "npm run start --workspace @mmdp/sync-api",
+    "sync-api:check": "node --check apps/sync-api/src/server.js",
+    "sync-api:smoke": "node scripts/smoke-sync-api.mjs",
+    "content:assets:validate": "tsx scripts/validate-asset-catalog.ts",
+    "content:assets:files": "tsx scripts/validate-asset-files.ts",
+    "content:assets:publish": "tsx scripts/publish-asset-metadata.ts",
+    "content:assets:queue": "tsx scripts/queue-missing-assets.ts",
+    "content:assets:import": "tsx scripts/import-assets.ts",
+    "content:assets:review": "tsx scripts/review-assets.ts",
+    "content:enrich:aoa": "tsx scripts/enrich-aoa.ts",
+    "content:enrich:syllables": "tsx scripts/enrich-syllables.ts",
+    "content:manifest:assets": "tsx scripts/build-asset-manifest.ts",
+    "content:build:lexicon": "tsx scripts/build-candidate-lexicon.ts",
+    "content:publish": "tsx scripts/publish-approved-content.ts",
+    "cap:add:android": "npx cap add android",
+    "cap:add:ios": "npx cap add ios",
+    "cap:sync": "npm run build && npx cap sync",
+    "cap:android": "npm run build && npx cap open android",
+    "cap:ios": "npm run build && npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/ios": "^7.4.3",
+    "sharp": "^0.35.5",
+    "silabacion": "^0.5.2",
+    "tsx": "^4.20.6",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

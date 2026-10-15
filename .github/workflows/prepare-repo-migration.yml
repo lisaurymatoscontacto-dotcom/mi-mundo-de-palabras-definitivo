@@ -1,0 +1,51 @@
+name: Prepare repository migration export
+
+on:
+  push:
+    branches:
+      - feat/hybrid-asset-pipeline-v2
+    paths:
+      - .github/workflows/prepare-repo-migration.yml
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build deterministic archive chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf migration-export
+          mkdir -p migration-export
+          git archive --format=tar HEAD | gzip -9 > /tmp/mmdp-repo.tar.gz
+          base64 -w 0 /tmp/mmdp-repo.tar.gz > /tmp/mmdp-repo.tar.gz.b64
+          split -b 20000 -d -a 3 /tmp/mmdp-repo.tar.gz.b64 migration-export/chunk-
+          ARCHIVE_SHA=$(sha256sum /tmp/mmdp-repo.tar.gz | awk '{print $1}')
+          ARCHIVE_BYTES=$(wc -c < /tmp/mmdp-repo.tar.gz | tr -d ' ')
+          B64_BYTES=$(wc -c < /tmp/mmdp-repo.tar.gz.b64 | tr -d ' ')
+          CHUNKS=$(find migration-export -maxdepth 1 -name 'chunk-*' | wc -l | tr -d ' ')
+          {
+            echo "archive_sha256=$ARCHIVE_SHA"
+            echo "archive_bytes=$ARCHIVE_BYTES"
+            echo "base64_bytes=$B64_BYTES"
+            echo "chunks=$CHUNKS"
+            echo "source_commit=d7a16edcb26919d60f13832c6a7cbe18569de893"
+          } > migration-export/manifest.txt
+
+      - name: Commit migration export
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add migration-export
+          git commit -m "chore: prepare repository migration export"
+          git push

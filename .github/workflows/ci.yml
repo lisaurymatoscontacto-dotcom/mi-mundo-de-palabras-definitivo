@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run test
+      - run: npm run typecheck
+      - run: npm run sync-api:check
+      - run: npm run sync-api:smoke
+      - run: npm run content:assets:validate
+      - run: npm run content:assets:files
+      - run: npm run content:assets:publish
+      - name: Verify committed asset metadata is current
+        run: git diff --exit-code -- apps/web/public/content/assets.catalog.json
+      - run: npm run build
+      - run: npm run content:enrich:aoa
+      - run: npm run content:enrich:syllables
+      - run: npm run content:manifest:assets
+      - run: npm run content:build:lexicon
+      - run: npm run content:publish
+      - name: Verify committed production catalog is current
+        run: git diff --exit-code -- apps/web/public/content/lexicon.approved.json
+      - name: Upload lexicon enrichment artifact
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: lexicon-enrichment
+          path: |
+            packages/core/src/generated/aoa.alonso2015.json
+            packages/core/src/generated/syllables.candidate.json
+            packages/core/src/generated/assets.production.json
+            packages/core/src/generated/lexicon.candidate.json
+            apps/web/public/content/lexicon.approved.json
+            apps/web/public/content/assets.catalog.json
+          if-no-files-found: error
+      - run: docker build -t mi-mundo-de-palabras:ci .
+      - run: docker build -t mi-mundo-de-palabras-sync:ci -f apps/sync-api/Dockerfile .

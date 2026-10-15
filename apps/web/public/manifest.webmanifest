@@ -1,0 +1,26 @@
+{
+  "name": "Mi Mundo de Palabras",
+  "short_name": "Palabras",
+  "description": "Aprende a leer y escribir palabras jugando.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#eef2ff",
+  "theme_color": "#6c63ff",
+  "lang": "es-419",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

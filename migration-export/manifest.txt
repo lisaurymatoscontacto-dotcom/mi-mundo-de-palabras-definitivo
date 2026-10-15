@@ -1,0 +1,5 @@
+archive_sha256=24e6db7c384f5dd9f686de9517f16fe25bf37e811d3e9b13422152109b89ee9c
+archive_bytes=288530
+base64_bytes=384708
+chunks=20
+source_commit=d7a16edcb26919d60f13832c6a7cbe18569de893

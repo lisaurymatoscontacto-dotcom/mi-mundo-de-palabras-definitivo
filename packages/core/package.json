@@ -1,0 +1,25 @@
+{
+  "name": "@mmdp/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./assets": "./src/assets.ts",
+    "./asset-queue": "./src/asset-queue.ts",
+    "./media": "./src/media.ts",
+    "./pedagogy": "./src/pedagogy.ts",
+    "./pedagogy-sources": "./src/pedagogy.sources.ts",
+    "./pedagogy-scoring": "./src/pedagogy.scoring.ts",
+    "./candidate-words": "./src/candidate.words.ts",
+    "./regional-vocabulary": "./src/regional-vocabulary.ts",
+    "./orthography": "./src/orthography.ts",
+    "./worlds": "./src/worlds.ts",
+    "./lexicon": "./src/lexicon.ts",
+    "./publishable-runtime": "./src/publishable-runtime.ts",
+    "./runtime-catalog": "./src/runtime-catalog.ts",
+    "./session-performance": "./src/session-performance.ts",
+    "./asset-production": "./src/asset-production.ts",
+    "./aoa": "./src/generated/aoa.alonso2015.compact.ts"
+  }
+}

@@ -1,0 +1,15 @@
+.parent-data-controls { margin-top: 18px; }
+.parent-data-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.parent-data-actions .secondary { flex: 1 1 210px; }
+.data-message { margin: 12px 0 0; font-weight: 800; color: #4b5290; }
+.parent-status { width: min(760px, 100%); margin: 14px auto; padding: 12px 16px; border-radius: 14px; background: #eef0ff; }
+.family-sync-controls { margin-top: 18px; }
+.sync-field { display: grid; gap: 7px; margin-top: 14px; color: #4b547e; font-size: .92rem; font-weight: 850; }
+.sync-field input { width: 100%; min-height: 48px; padding: 0 14px; border: 2px solid #dfe3f4; border-radius: 14px; background: #fff; color: #28305e; font: inherit; }
+.sync-field input:focus { border-color: #7d75ff; outline: 3px solid rgba(108,99,255,.14); }
+.privacy-summary { margin-top: 18px; }
+.privacy-summary ul { margin: 14px 0 0; padding-left: 1.35rem; color: #5f688f; }
+.privacy-summary li { margin: 9px 0; line-height: 1.48; }
+.privacy-summary strong { color: #343d78; }
+.privacy-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(108, 99, 255, .14); font-size: .9rem; color: #7d85a5; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Mi Mundo de Palabras</title>
+  <rect width="512" height="512" rx="112" fill="#6c63ff"/>
+  <circle cx="396" cy="116" r="42" fill="#ffd166"/>
+  <path d="M104 158c60-24 111-12 152 28v216c-41-40-92-52-152-28V158Z" fill="#ffffff"/>
+  <path d="M408 158c-60-24-111-12-152 28v216c41-40 92-52 152-28V158Z" fill="#f4f2ff"/>
+  <path d="M256 186v216" stroke="#cbc7ff" stroke-width="16" stroke-linecap="round"/>
+  <path d="m164 238 15 30 33 5-24 23 6 33-30-16-30 16 6-33-24-23 33-5 15-30Z" fill="#ffbd2e"/>
+  <path d="M310 246h52M310 292h66M310 338h44" stroke="#6c63ff" stroke-width="18" stroke-linecap="round"/>
+</svg>

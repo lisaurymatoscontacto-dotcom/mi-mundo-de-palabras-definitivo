@@ -1,0 +1,23 @@
+{
+  "name": "@mmdp/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node ../../scripts/inject-sw-precache.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mmdp/core": "0.1.0",
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  }
+}
