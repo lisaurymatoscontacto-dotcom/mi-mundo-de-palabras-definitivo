@@ -21,8 +21,35 @@ const TYPOGRAPHIC_FIXES: Record<string, string> = {
   SEDA: "VARUNA",
 };
 
+const CHAPTER_ONE_PRIORITY: Record<string, readonly string[]> = {
+  Casa: [
+    "CASA", "MESA", "CAMA", "VASO", "PLATO", "PUERTA", "SILLA", "TAZA", "SOFÁ", "ESPEJO",
+    "CUCHARA", "TENEDOR", "CUCHILLO", "TELEVISOR", "RELOJ", "LLAVE", "DUCHA", "CESTA", "CAJA", "BOMBILLA",
+  ],
+  Comida: [
+    "PAN", "SOPA", "PERA", "UVA", "TOMATE", "QUESO", "ARROZ", "MIEL", "HUEVO", "LECHE",
+    "PAPA", "MAÍZ", "MANGO", "MELÓN", "LIMÓN", "FRESA", "PIÑA", "COCO", "BANANA", "MANZANA",
+  ],
+  Naturaleza: [
+    "LUNA", "NUBE", "SOL", "MAR", "FLOR", "RÍO", "HOJA", "ROCA", "PLAYA", "LLUVIA",
+    "NIEVE", "FUEGO", "ÁRBOL", "ISLA", "ESTRELLA", "VOLCÁN", "DESIERTO", "MONTAÑA", "ARCOÍRIS", "TORMENTA",
+  ],
+};
+
 function cleanCandidateWords(words: readonly string[]) {
   return words.map((word) => TYPOGRAPHIC_FIXES[word] ?? word);
+}
+
+function prioritizeChapterOne(category: string, words: readonly string[]) {
+  const cleaned = cleanCandidateWords(words);
+  const priority = CHAPTER_ONE_PRIORITY[category];
+  if (!priority) return cleaned;
+  const available = new Set(cleaned);
+  for (const word of priority) {
+    if (!available.has(word)) throw new Error(`${category}: prioritized chapter-one concept is missing from master bank: ${word}`);
+  }
+  const selected = new Set(priority);
+  return [...priority, ...cleaned.filter((word) => !selected.has(word))];
 }
 
 /**
@@ -34,9 +61,9 @@ function cleanCandidateWords(words: readonly string[]) {
  */
 export const MASTER_CANDIDATE_WORDS: Record<string, readonly string[]> = {
   Animales: cleanCandidateWords(ANIMALES_WORDS),
-  Casa: cleanCandidateWords(CASA_WORDS),
-  Comida: cleanCandidateWords(COMIDA_WORDS),
-  Naturaleza: cleanCandidateWords(NATURALEZA_WORDS),
+  Casa: prioritizeChapterOne("Casa", CASA_WORDS),
+  Comida: prioritizeChapterOne("Comida", COMIDA_WORDS),
+  Naturaleza: prioritizeChapterOne("Naturaleza", NATURALEZA_WORDS),
   Cuerpo: cleanCandidateWords(CUERPO_WORDS),
   Ropa: cleanCandidateWords(ROPA_WORDS),
   Transporte: cleanCandidateWords(TRANSPORTE_WORDS),
