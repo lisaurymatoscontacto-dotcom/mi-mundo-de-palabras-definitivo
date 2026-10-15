@@ -1,0 +1,64 @@
+name: Materialize first curriculum cycle
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/materialize-first-cycle.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Activate controlled first-cycle transition cards
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile, writeFile } from 'node:fs/promises';
+          const path = 'packages/core/src/index.ts';
+          let source = await readFile(path, 'utf8');
+          const importAnchor = 'import type { VisualKind, VisualLicense } from "./media";';
+          const importReplacement = `${importAnchor}\nimport { TRANSITION_CHAPTER_ONE_CARDS } from "./transition-chapter-one";`;
+          if (!source.includes(importAnchor)) throw new Error('index import anchor missing');
+          if (!source.includes('TRANSITION_CHAPTER_ONE_CARDS } from')) source = source.replace(importAnchor, importReplacement);
+
+          const endAnchor = '  pilot("queso", "QUESO", "Comida", "🧀", ["QUE", "SO"], 3, 4, 5, true),\n];';
+          const endReplacement = '  pilot("queso", "QUESO", "Comida", "🧀", ["QUE", "SO"], 3, 4, 5, true),\n  ...TRANSITION_CHAPTER_ONE_CARDS,\n];';
+          if (!source.includes(endAnchor) && !source.includes('...TRANSITION_CHAPTER_ONE_CARDS')) throw new Error('DEMO_WORDS insertion anchor missing');
+          if (!source.includes('...TRANSITION_CHAPTER_ONE_CARDS')) source = source.replace(endAnchor, endReplacement);
+          await writeFile(path, source, 'utf8');
+          NODE
+
+      - name: Materialize 42 controlled Twemoji resources
+        run: npx tsx scripts/materialize-first-cycle-emojis.ts
+
+      - name: Publish and validate first cycle
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+          npm test
+          npm run typecheck
+          npm run build
+
+      - name: Commit first four complete chapters
+        run: |
+          rm scripts/materialize-first-cycle-emojis.ts .github/workflows/materialize-first-cycle.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: complete first four 20-word curriculum chapters"
+          git pull --rebase origin main
+          git push origin main
