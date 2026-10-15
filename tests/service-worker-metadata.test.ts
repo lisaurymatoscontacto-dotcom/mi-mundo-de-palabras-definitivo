@@ -36,6 +36,17 @@ describe("service worker editorial metadata", () => {
     expect(await (await app.request("/content/assets.catalog.json")).text()).toBe("cached editorial metadata");
     expect(app.fetch).toHaveBeenCalledOnce();
   });
+  it("matches public precached files across Origin header variations in the current cache", async () => {
+    const app = harness(true);
+    await app.request("/icon.svg");
+    expect(app.match).toHaveBeenCalledWith(expect.anything(), { cacheName: "mmdp-shell-v2", ignoreVary: true });
+    expect(app.fetch).not.toHaveBeenCalled();
+  });
+  it("does not ignore variants of non-bundled resources", async () => {
+    const app = harness();
+    await app.request("/api/private");
+    expect(app.match).toHaveBeenCalledWith(expect.anything(), { cacheName: "mmdp-shell-v2", ignoreVary: false });
+  });
   it("keeps static photos cache-first", async () => {
     const app = harness();
     await app.request("/content/photos/casa/vaso.webp");

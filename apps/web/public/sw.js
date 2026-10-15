@@ -41,6 +41,13 @@ async function navigationResponse(request) {
   }
 }
 
+async function cachedAsset(request) {
+  const url = new URL(request.url);
+  // These public, bundled files have one representation. Vary: Origin from
+  // a host must not hide precached JS/CSS from crossorigin module requests.
+  return caches.match(request, { cacheName: CACHE, ignoreVary: url.origin === self.location.origin && PRECACHE.includes(url.pathname) });
+}
+
 async function assetResponse(request) {
   const url = new URL(request.url);
   // Refresh editorial decisions online, retaining the last local catalog offline.
@@ -55,7 +62,7 @@ async function assetResponse(request) {
         || new Response("", { status: 503, statusText: "Offline" });
     }
   }
-  const cached = await caches.match(request);
+  const cached = await cachedAsset(request);
   if (cached) return cached;
   try {
     const response = await fetch(request);

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
+import { Capacitor } from "@capacitor/core";
 import { applyRuntimeWordCatalog } from "@mmdp/core/runtime-catalog";
 import { App } from "./App";
 import { loadProductionCards } from "./contentCatalog";
@@ -8,13 +9,16 @@ import { enableTvNavigation } from "./tvNavigation";
 import "./styles.css";
 import "./extras.css";
 
-if ("serviceWorker" in navigator && import.meta.env.PROD) {
+if ("serviceWorker" in navigator && import.meta.env.PROD && !Capacitor.isNativePlatform() && !navigator.userAgent.includes("MMDP-Desktop")) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("/sw.js").catch(() => undefined);
   });
 }
 
 enableTvNavigation();
+if (navigator.userAgent.includes("MMDP-TV") || new URLSearchParams(location.search).has("tv")) {
+  document.documentElement.dataset.tv = "true";
+}
 
 function RuntimeApp() {
   const [catalogVersion, setCatalogVersion] = useState(0);

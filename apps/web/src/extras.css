@@ -1,3 +1,6 @@
+
+
+
 .region-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -152,3 +155,11 @@
   .level-banner > strong { font-size: 1rem; }
   .level-pill { min-height: 38px; padding: 0 12px; font-size: .85rem; }
 }
+
+
+
+
+
+html[data-tv="true"] .app-shell { padding: 5vh 5vw; }
+html[data-tv="true"] { font-size: 20px; }
+html[data-tv="true"] :focus-visible { outline: 5px solid #f59e0b; outline-offset: 5px; }

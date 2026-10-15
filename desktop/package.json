@@ -1,0 +1,9 @@
+{
+  "name": "mi-mundo-de-palabras-desktop",
+  "productName": "Mi Mundo de Palabras",
+  "version": "0.1.0",
+  "description": "Aprende a leer y escribir jugando, también sin conexión.",
+  "author": "Mi Mundo de Palabras",
+  "private": true,
+  "main": "main.cjs"
+}

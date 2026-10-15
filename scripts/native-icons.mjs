@@ -1,0 +1,14 @@
+import sharp from 'sharp';
+import { mkdir, writeFile } from 'node:fs/promises';
+await mkdir('build/icons',{recursive:true});
+const png = await sharp('apps/web/public/icon.svg').resize(256,256).png().toBuffer();
+const ico = Buffer.alloc(22);
+ico.writeUInt16LE(1,2);ico.writeUInt16LE(1,4);
+ico.writeUInt16LE(1,10);ico.writeUInt16LE(32,12);
+ico.writeUInt32LE(png.length,14);ico.writeUInt32LE(22,18);
+await writeFile('build/icons/app.ico',Buffer.concat([ico,png]));
+const large = await sharp('apps/web/public/icon.svg').resize(1024,1024).png().toBuffer();
+const icns = Buffer.alloc(16);
+icns.write('icns',0);icns.writeUInt32BE(large.length+16,4);
+icns.write('ic10',8);icns.writeUInt32BE(large.length+8,12);
+await writeFile('build/icons/app.icns',Buffer.concat([icns,large]));

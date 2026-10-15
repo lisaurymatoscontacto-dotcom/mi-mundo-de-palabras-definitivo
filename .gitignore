@@ -6,3 +6,8 @@ dist/
 !.env.example
 .DS_Store
 coverage/
+build/
+android/
+ios/
+playwright-report/
+test-results/

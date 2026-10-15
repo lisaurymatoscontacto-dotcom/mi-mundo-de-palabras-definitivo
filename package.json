@@ -10,7 +10,7 @@
     "dev": "npm run dev --workspace @mmdp/web",
     "build": "npm run build --workspace @mmdp/web",
     "typecheck": "npm run typecheck --workspace @mmdp/web",
-    "test": "vitest run",
+    "test": "vitest run --exclude \"e2e/**\"",
     "sync-api:start": "npm run start --workspace @mmdp/sync-api",
     "sync-api:check": "node --check apps/sync-api/src/server.js",
     "sync-api:smoke": "node scripts/smoke-sync-api.mjs",
@@ -29,7 +29,9 @@
     "cap:add:ios": "npx cap add ios",
     "cap:sync": "npm run build && npx cap sync",
     "cap:android": "npm run build && npx cap open android",
-    "cap:ios": "npm run build && npx cap open ios"
+    "cap:ios": "npm run build && npx cap open ios",
+    "desktop:package": "npm run build && node scripts/package-desktop.mjs",
+    "platform:icons": "node scripts/platform-icons.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3"
@@ -38,12 +40,15 @@
     "@capacitor/android": "^7.4.3",
     "@capacitor/cli": "^7.4.3",
     "@capacitor/ios": "^7.4.3",
+    "@electron/packager": "20.3.0",
+    "@playwright/test": "1.64.1",
+    "electron": "44.7.2",
     "sharp": "^0.35.5",
     "silabacion": "^0.5.2",
     "tsx": "^4.20.6",
     "vitest": "^3.2.4"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12"
   }
 }

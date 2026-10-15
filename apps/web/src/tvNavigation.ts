@@ -1,6 +1,6 @@
 import { pickSpatialTarget, type NavDirection } from "./tvNavigationGeometry";
 
-const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
 const ARROWS: NavDirection[] = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 
 function center(element: Element) {
@@ -23,7 +23,13 @@ function focusItem(item: HTMLElement) {
 
 export function enableTvNavigation() {
   function onKeyDown(event: KeyboardEvent) {
+    if (event.defaultPrevented) return;
+    if (event.key === "Escape" || event.key === "BrowserBack") { event.preventDefault(); window.history.back(); return; }
     if (!ARROWS.includes(event.key as NavDirection)) return;
+    const editing = document.activeElement;
+    if (editing instanceof HTMLSelectElement || editing instanceof HTMLTextAreaElement ||
+      (editing instanceof HTMLElement && editing.isContentEditable) ||
+      (editing instanceof HTMLInputElement && ["ArrowLeft", "ArrowRight"].includes(event.key))) return;
     const direction = event.key as NavDirection;
     const items = visibleFocusableItems();
     if (!items.length) return;
