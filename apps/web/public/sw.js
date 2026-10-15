@@ -42,6 +42,19 @@ async function navigationResponse(request) {
 }
 
 async function assetResponse(request) {
+  const url = new URL(request.url);
+  // Refresh editorial decisions online, retaining the last local catalog offline.
+  // Cache-first metadata would keep existing installations on obsolete visuals.
+  if (url.origin === self.location.origin && [
+    "/content/assets.catalog.json", "/content/lexicon.approved.json",
+  ].includes(url.pathname)) {
+    try {
+      return await cacheSuccessful(request, await fetch(request));
+    } catch {
+      return (await caches.match(request))
+        || new Response("", { status: 503, statusText: "Offline" });
+    }
+  }
   const cached = await caches.match(request);
   if (cached) return cached;
   try {

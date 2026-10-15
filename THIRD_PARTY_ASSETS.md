@@ -38,8 +38,22 @@ The first photo pilot is materialized as local WebP + thumbnail and has passed e
 
 The exact source URLs, download URLs, optimized local paths and download timestamps are stored in `content/assets.catalog.json`.
 
-`VASO` is deliberately marked `missing`: the prior 🥛 visual represents milk/a drink and is not an unequivocal representation of a generic glass.
+`VASO` now uses a reviewed photo of one empty drinking glass. The prior 🥛 visual remains unsuitable because it depicts milk/a drink.
 
 ## Updating an asset
 
 Do not edit application code to swap an image. Update or queue the relevant record in `content/assets.catalog.json`, materialize the file through the importer, keep the automatic result in `pending_review`, review it with `npm run content:assets:review`, and approve it only after the validation gates pass. This keeps pedagogy, provenance and licensing separate from UI implementation.
+
+## Completed pilot: MAR, PLATO and VASO (2026-10-15)
+
+All 24 pilot concepts now have approved local visuals: 18 Twemoji SVGs and 6 photos.
+
+| Word | Source page | Author | License | Visual review |
+| --- | --- | --- | --- | --- |
+| MAR | [Pixnio](https://pixnio.com/nature-landscapes/beaches/blue-horizon-water-nature-sky-summer-ocean-beach-sea-coast-landscape) | photo_collections | CC0 1.0 | Open sea, continuous horizon and visible surf; no river banks or dominant boats/people. |
+| PLATO | [Pixnio](https://pixnio.com/objects/yellow-ceramic-plate) | Marcelo | CC0 1.0 | One complete empty yellow plate, with visible rim and surface, without food or cutlery. |
+| VASO | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Drinkware.jpg) | rawpixel.com, via PxHere | CC0 1.0 | One complete empty transparent tumbler; no milk, handle or wine-glass stem. |
+
+The individual source pages explicitly identify the image license as CC0; this does not rely on the generic licensing footer of a media site. Photos were staged as `pending_review`, validated and visually inspected at full and thumbnail sizes, then explicitly approved with `content:assets:review`. They retain the full frame without cropping, resized to at most 960×960 (thumbnail 320×320) and encoded as WebP. `content/asset-reviews/pilot-photos.json` records license verification, visual decisions, transformations, and SHA-256 fingerprints of the downloaded source and both local derivatives.
+
+The runtime uses a bundled copy of the reviewed catalog when its network request fails. Editorial metadata is refreshed online and falls back to its local cache offline, preventing an old cached catalog from hiding newly reviewed photos. Static media remains cache-first. The milk, wave-only and plate-with-cutlery demo symbols cannot replace the reviewed pilot photos when metadata is unavailable.

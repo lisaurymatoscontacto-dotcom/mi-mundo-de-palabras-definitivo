@@ -1,9 +1,10 @@
 FROM node:20-alpine AS build
 WORKDIR /app
-COPY package.json ./
+COPY package.json package-lock.json ./
 COPY apps/web/package.json ./apps/web/package.json
 COPY packages/core/package.json ./packages/core/package.json
-RUN npm install
+COPY apps/sync-api/package.json ./apps/sync-api/package.json
+RUN npm ci
 COPY . .
 RUN npm run test && npm run typecheck && npm run build
 

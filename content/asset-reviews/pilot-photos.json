@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-15T06:48:17.623Z",
+  "assets": [
+    {
+      "id": "naturaleza.mar",
+      "source_url": "https://pixnio.com/nature-landscapes/beaches/blue-horizon-water-nature-sky-summer-ocean-beach-sea-coast-landscape",
+      "download_url": "https://pixnio.com/free-images/2017/08/12/2017-08-12-08-09-43-1000x667.jpg",
+      "author": "photo_collections",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_verified_at": "2026-10-15T06:48:17.623Z",
+      "source_sha256": "7f5d2f41a1c3122653687a36cfe31fc49a8f09204dc9fb0f286eb8b8a3cc1f88",
+      "asset_path": "photos/naturaleza/mar.webp",
+      "asset_sha256": "1e6e83e10c0f07294a9e8f78cbd64179d7a73cc0249432880ea5119230d815f2",
+      "thumbnail_path": "photos/naturaleza/mar.thumb.webp",
+      "thumbnail_sha256": "902a12b6e6cf76a3bf185bf09f08668323afec62654e6dcac14534c23a17231c",
+      "transformations": "Orientación EXIF; encuadre completo, sin recorte; máximo 960×960 y miniatura 320×320; WebP 84/80.",
+      "review_status": "approved",
+      "review_note": "Mar abierto con horizonte continuo y oleaje reconocible; sin riberas de río, personas ni barcos dominantes. Se conserva el encuadre completo.",
+      "reviewed_at": "2026-10-15T06:49:34.219Z"
+    },
+    {
+      "id": "casa.plato",
+      "source_url": "https://pixnio.com/objects/yellow-ceramic-plate",
+      "download_url": "https://pixnio.com/free-images/objects/yellow-ceramic-plate-725x544.jpg",
+      "author": "Marcelo",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_verified_at": "2026-10-15T06:48:17.623Z",
+      "source_sha256": "7ecbe09f8da02358044f8cf75afde5e6ba1d1b4726d3f6c844082efa407f8bab",
+      "asset_path": "photos/casa/plato.webp",
+      "asset_sha256": "1c5803be88fa456b27d5ce5672175d634ee3fa086af9d92dc07376d0e26cec25",
+      "thumbnail_path": "photos/casa/plato.thumb.webp",
+      "thumbnail_sha256": "6416c77ef8911395f12864e792fd704f353114f11d199ed198937ad107113ed9",
+      "transformations": "Orientación EXIF; encuadre completo, sin recorte; máximo 960×960 y miniatura 320×320; WebP 84/80.",
+      "review_status": "approved",
+      "review_note": "Un único plato amarillo vacío, completo y separado del fondo; borde y superficie visibles, sin comida, cubiertos ni otros recipientes.",
+      "reviewed_at": "2026-10-15T06:49:34.220Z"
+    },
+    {
+      "id": "casa.vaso",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Drinkware.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Drinkware.jpg",
+      "author": "rawpixel.com",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_verified_at": "2026-10-15T06:48:17.623Z",
+      "source_sha256": "f087ecc692c62cd3c4fce8555b8df542d4e7dc9c1f0b8a877174955db6980d2f",
+      "asset_path": "photos/casa/vaso.webp",
+      "asset_sha256": "5297c863804090147a941ae9a4aa589dfe233b3bf7e27325e80faf28410456c9",
+      "thumbnail_path": "photos/casa/vaso.thumb.webp",
+      "thumbnail_sha256": "6792dd84999f37130f0de52262aa98b8c12d650896f6b7f334bb54d393f1dc2a",
+      "transformations": "Orientación EXIF; encuadre completo, sin recorte; máximo 960×960 y miniatura 320×320; WebP 84/80.",
+      "review_status": "approved",
+      "review_note": "Un único vaso transparente vacío, completo y de pie sobre fondo blanco; borde y base visibles, sin leche, bebida, asa ni pie de copa.",
+      "reviewed_at": "2026-10-15T06:49:34.220Z"
+    }
+  ]
+}

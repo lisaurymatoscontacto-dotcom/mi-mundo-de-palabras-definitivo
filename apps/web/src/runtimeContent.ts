@@ -1,6 +1,7 @@
 import { DEMO_WORDS, type Region, type VisualLicense, type WordCard } from "@mmdp/core";
 import { canPublishAsset, type AssetCatalogDocument, type AssetLicenseId, type AssetRecord } from "@mmdp/core/assets";
 import { loadProductionCards } from "./contentCatalog";
+import bundledAssetCatalog from "../../../content/assets.catalog.json";
 
 function normalizeKey(value: string) {
   return value
@@ -106,7 +107,7 @@ export async function loadAssetCatalog(): Promise<AssetCatalogDocument | null> {
 export async function loadRuntimeCards(region: Region): Promise<WordCard[]> {
   const production = await loadProductionCards(region);
   const baseCards = production.length ? production : DEMO_WORDS;
-  const catalog = await loadAssetCatalog();
-  if (!catalog) return withoutRemoteVisualDependencies(baseCards);
+  // Keep reviewed local visuals available when the metadata request fails offline.
+  const catalog = await loadAssetCatalog() ?? bundledAssetCatalog as AssetCatalogDocument;
   return applyAssetCatalog(baseCards, catalog);
 }

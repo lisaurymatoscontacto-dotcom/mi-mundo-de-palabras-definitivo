@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-14T16:02:32.599Z",
+  "generated_at": "2026-10-15T06:48:17.623Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -240,22 +240,24 @@
       "category": "Casa",
       "world": "home",
       "difficulty": 1,
-      "asset_type": "missing",
-      "asset_path": null,
-      "source": null,
-      "source_url": null,
-      "download_url": null,
-      "author": null,
-      "license": "UNKNOWN",
+      "asset_type": "photo",
+      "asset_path": "photos/casa/vaso.webp",
+      "source": "Wikimedia Commons / PxHere",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Drinkware.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Drinkware.jpg",
+      "author": "rawpixel.com",
+      "license": "CC0-1.0",
       "attribution_required": false,
-      "attribution_text": null,
-      "verified": false,
-      "downloaded_at": null,
-      "review_status": "missing",
+      "attribution_text": "rawpixel.com · Wikimedia Commons / PxHere · CC0 1.0. Redimensionado y convertido a WebP.",
+      "verified": true,
+      "downloaded_at": "2026-10-15T06:48:17.623Z",
+      "review_status": "approved",
       "emoji_unicode": null,
-      "thumbnail_path": null,
+      "thumbnail_path": "photos/casa/vaso.thumb.webp",
       "notes": [
-        "No usar 🥛: representa leche/bebida, no el concepto inequívoco de un vaso vacío. Buscar foto clara."
+        "No usar 🥛: representa leche/bebida, no el concepto inequívoco de un vaso vacío. Buscar foto clara.",
+        "Licencia CC0 verificada en la ficha individual; archivo local y miniatura preparados. Pendiente de aprobación editorial explícita.",
+        "Revisión visual explícita 2026-10-15: concepto único y completo a tamaño de tarjeta y miniatura; licencia CC0 verificada; WebP local sin recorte."
       ]
     },
     {
@@ -592,6 +594,58 @@
         "Dificultad sincronizada desde la tarjeta piloto existente; el lexicón aprobado será la autoridad final.",
         "Materialized automatically; pedagogical approval still required.",
         "Controlled batch review: direct one-concept Twemoji representation; clear for child recognition."
+      ]
+    },
+    {
+      "id": "naturaleza.mar",
+      "word": "MAR",
+      "normalized_word": "mar",
+      "category": "Naturaleza",
+      "world": "nature",
+      "difficulty": 2,
+      "asset_type": "photo",
+      "asset_path": "photos/naturaleza/mar.webp",
+      "source": "Pixnio",
+      "source_url": "https://pixnio.com/nature-landscapes/beaches/blue-horizon-water-nature-sky-summer-ocean-beach-sea-coast-landscape",
+      "download_url": "https://pixnio.com/free-images/2017/08/12/2017-08-12-08-09-43-1000x667.jpg",
+      "author": "photo_collections",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "attribution_text": "photo_collections · Pixnio · CC0 1.0. Redimensionado y convertido a WebP.",
+      "verified": true,
+      "downloaded_at": "2026-10-15T06:48:17.623Z",
+      "review_status": "approved",
+      "emoji_unicode": null,
+      "thumbnail_path": "photos/naturaleza/mar.thumb.webp",
+      "notes": [
+        "Licencia CC0 verificada en la ficha individual; archivo local y miniatura preparados. Pendiente de aprobación editorial explícita.",
+        "Revisión visual explícita 2026-10-15: concepto único y completo a tamaño de tarjeta y miniatura; licencia CC0 verificada; WebP local sin recorte."
+      ]
+    },
+    {
+      "id": "casa.plato",
+      "word": "PLATO",
+      "normalized_word": "plato",
+      "category": "Casa",
+      "world": "home",
+      "difficulty": 3,
+      "asset_type": "photo",
+      "asset_path": "photos/casa/plato.webp",
+      "source": "Pixnio",
+      "source_url": "https://pixnio.com/objects/yellow-ceramic-plate",
+      "download_url": "https://pixnio.com/free-images/objects/yellow-ceramic-plate-725x544.jpg",
+      "author": "Marcelo",
+      "license": "CC0-1.0",
+      "attribution_required": false,
+      "attribution_text": "Marcelo · Pixnio · CC0 1.0. Redimensionado y convertido a WebP.",
+      "verified": true,
+      "downloaded_at": "2026-10-15T06:48:17.623Z",
+      "review_status": "approved",
+      "emoji_unicode": null,
+      "thumbnail_path": "photos/casa/plato.thumb.webp",
+      "notes": [
+        "Licencia CC0 verificada en la ficha individual; archivo local y miniatura preparados. Pendiente de aprobación editorial explícita.",
+        "Revisión visual explícita 2026-10-15: concepto único y completo a tamaño de tarjeta y miniatura; licencia CC0 verificada; WebP local sin recorte."
       ]
     }
   ]

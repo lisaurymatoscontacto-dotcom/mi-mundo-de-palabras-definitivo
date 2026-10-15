@@ -1,0 +1,11 @@
+# Repository migration and completed asset pilot
+
+The destination project was copied from `KEYGEN-RD/mi-mundo-de-palabras`, branch `feat/hybrid-asset-pipeline-v2` (PR #48), at commit `cc20baa756441de7e5b9b448ad35344ab52dd604`. This includes the validated application state `d7a16edcb26919d60f13832c6a7cbe18569de893` and the subsequent migration exporter. The source main commit `c85297fbbf7747ac6fecc178aa549955f7279909` is an ancestor.
+
+The original project snapshot is preserved on destination branch `migration/pr-48-snapshot`, commit `3e1a5ea5232f4d90813032291e4f187b54737a77`. Its entire Git tree is identical to the source: `2ba07b5168364149f537276600d930428ec4d298`. All 159 paths, modes and blob hashes were compared, including binary WebP assets and all CI configuration. The destination's original README commit remains its ancestor. Neither the source branch nor PR #48 was changed.
+
+Migration used the authorized destination GitHub connector because local Git authenticated as the source account and had no destination push permission. The destination therefore has a snapshot commit rather than rewritten source history. A verified Git bundle containing the complete original history and all 59 fetched refs was also saved as the task deliverable `mi-mundo-de-palabras-source-history.bundle`; the original repository remains intact.
+
+Follow-up changes resolve the Windows module-name collision between the credits component and helper, complete MAR/PLATO/VASO as reviewed local CC0 photos, retain the hybrid emoji/photo catalog and explicit review states, and preserve reviewed visuals when metadata is unavailable offline. Tests verify photo decoding, thumbnail sizes, binary fingerprints, catalog publication, runtime selection, unapproved-state exclusion and service-worker metadata refresh/offline behavior. See `THIRD_PARTY_ASSETS.md` and `content/asset-reviews/pilot-photos.json` for individual sources and visual decisions.
+
+A committed package lock makes installs reproducible; CI and the web Docker build use `npm ci` with all workspace manifests available. Content approval remains separate from the asset review: this work does not invent pronunciation audio or approve unsupported pedagogical evidence. The existing enrichment pipeline still reports its words awaiting editorial review.

@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { AssetCredits } from "./AssetCredits";
+import { AssetCredits } from "./AssetCreditsPanel";
 import { downloadBackup, importBackup } from "./backup";
 import { loadProductionCards } from "./contentCatalog";
 import { clearOfflineCardMedia, prefetchCardMedia } from "./offlineMedia";
