@@ -37,7 +37,7 @@
     "@capacitor/core": "^7.4.3"
   },
   "devDependencies": {
-    "@capacitor/android": "^7.4.3",
+    "@capacitor/android": "^8.5.3",
     "@capacitor/cli": "^7.4.3",
     "@capacitor/ios": "^7.4.3",
     "@electron/packager": "20.3.0",
