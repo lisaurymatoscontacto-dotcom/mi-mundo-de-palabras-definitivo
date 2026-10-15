@@ -1,5 +1,6 @@
 import type { VisualKind, VisualLicense } from "./media";
 import { TRANSITION_CHAPTER_ONE_CARDS } from "./transition-chapter-one";
+import { TRANSITION_BLOCK_TWO_CARDS } from "./transition-chapter-block-two";
 export type { VisualKind, VisualLicense } from "./media";
 
 export type LearningMode = "reading" | "writing" | "mixed";
@@ -197,6 +198,7 @@ export const DEMO_WORDS: WordCard[] = [
   pilot("tomate", "TOMATE", "Comida", "🍅", ["TO", "MA", "TE"], 2),
   pilot("queso", "QUESO", "Comida", "🧀", ["QUE", "SO"], 3, 4, 5, true),
   ...TRANSITION_CHAPTER_ONE_CARDS,
+  ...TRANSITION_BLOCK_TWO_CARDS,
 ];
 
 export const DEMO_CATEGORIES = [...new Set(DEMO_WORDS.map((word) => word.category))];
