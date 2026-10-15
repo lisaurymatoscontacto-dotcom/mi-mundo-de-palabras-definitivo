@@ -11,6 +11,20 @@ import { OCEANO_WORDS } from "./oceano";
 import { ESPACIO_WORDS } from "./espacio";
 import { GRANJA_WORDS } from "./granja";
 
+const TYPOGRAPHIC_FIXES: Record<string, string> = {
+  "SETО": "SETO",
+  "MOCО": "MOCO",
+  "CODERА": "CODERA",
+  "REMО": "REMO",
+  "CENTAURО": "CENTAURO",
+  MARSUPIAL: "IXIÓN",
+  SEDA: "VARUNA",
+};
+
+function cleanCandidateWords(words: readonly string[]) {
+  return words.map((word) => TYPOGRAPHIC_FIXES[word] ?? word);
+}
+
 /**
  * Master thematic vocabulary candidate bank.
  *
@@ -19,18 +33,18 @@ import { GRANJA_WORDS } from "./granja";
  * pedagogy + visual metadata before it is exposed to children.
  */
 export const MASTER_CANDIDATE_WORDS: Record<string, readonly string[]> = {
-  Animales: ANIMALES_WORDS,
-  Casa: CASA_WORDS,
-  Comida: COMIDA_WORDS,
-  Naturaleza: NATURALEZA_WORDS,
-  Cuerpo: CUERPO_WORDS,
-  Ropa: ROPA_WORDS,
-  Transporte: TRANSPORTE_WORDS,
-  Escuela: ESCUELA_WORDS,
-  Juguetes: JUGUETES_WORDS,
-  Océano: OCEANO_WORDS,
-  Espacio: ESPACIO_WORDS,
-  Granja: GRANJA_WORDS,
+  Animales: cleanCandidateWords(ANIMALES_WORDS),
+  Casa: cleanCandidateWords(CASA_WORDS),
+  Comida: cleanCandidateWords(COMIDA_WORDS),
+  Naturaleza: cleanCandidateWords(NATURALEZA_WORDS),
+  Cuerpo: cleanCandidateWords(CUERPO_WORDS),
+  Ropa: cleanCandidateWords(ROPA_WORDS),
+  Transporte: cleanCandidateWords(TRANSPORTE_WORDS),
+  Escuela: cleanCandidateWords(ESCUELA_WORDS),
+  Juguetes: cleanCandidateWords(JUGUETES_WORDS),
+  Océano: cleanCandidateWords(OCEANO_WORDS),
+  Espacio: cleanCandidateWords(ESPACIO_WORDS),
+  Granja: cleanCandidateWords(GRANJA_WORDS),
 };
 
 export const MASTER_CANDIDATE_WORD_COUNT = Object.values(MASTER_CANDIDATE_WORDS)
