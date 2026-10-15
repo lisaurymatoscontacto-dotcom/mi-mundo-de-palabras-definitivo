@@ -12,6 +12,7 @@
     "./pedagogy-sources": "./src/pedagogy.sources.ts",
     "./pedagogy-scoring": "./src/pedagogy.scoring.ts",
     "./candidate-words": "./src/candidate.words.ts",
+    "./curriculum": "./src/curriculum.ts",
     "./regional-vocabulary": "./src/regional-vocabulary.ts",
     "./orthography": "./src/orthography.ts",
     "./worlds": "./src/worlds.ts",
