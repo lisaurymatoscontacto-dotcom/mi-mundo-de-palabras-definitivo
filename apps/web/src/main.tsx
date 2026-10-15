@@ -8,6 +8,7 @@ import { ACTIVE_PROFILE_EVENT, loadActiveProfileId, loadProfiles } from "./profi
 import { enableTvNavigation } from "./tvNavigation";
 import "./styles.css";
 import "./extras.css";
+import "./responsive-learning.css";
 
 if ("serviceWorker" in navigator && import.meta.env.PROD && !Capacitor.isNativePlatform() && !navigator.userAgent.includes("MMDP-Desktop")) {
   window.addEventListener("load", () => {
