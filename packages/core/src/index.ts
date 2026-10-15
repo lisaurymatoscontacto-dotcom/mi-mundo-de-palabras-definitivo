@@ -180,15 +180,16 @@ export const DEMO_WORDS: WordCard[] = [
 
 export const DEMO_CATEGORIES = [...new Set(DEMO_WORDS.map((word) => word.category))];
 
+/** Final curriculum sessions use twenty distinct concepts whenever available. */
 export function suggestedSessionSize(_age: number): number {
-  return 10;
+  return 20;
 }
 
 export function recommendedDifficulty(age: number): number {
-  if (age <= 5) return 1;
-  if (age <= 7) return 2;
-  if (age <= 9) return 3;
-  return 4;
+  if (age <= 5) return 2;
+  if (age <= 7) return 3;
+  if (age <= 9) return 5;
+  return 6;
 }
 
 function difficultyFor(card: WordCard, mode: LearningMode) {
@@ -201,7 +202,7 @@ export function buildSession(words: WordCard[], options: SessionOptions): WordCa
   const size = options.size ?? suggestedSessionSize(options.age);
   const progress = options.progress ?? {};
   const levelCeiling = options.level ? getLevel(options.level).difficultyCeiling : Infinity;
-  const ceiling = Math.min(recommendedDifficulty(options.age) + 1, levelCeiling);
+  const ceiling = Math.min(recommendedDifficulty(options.age), levelCeiling);
 
   const eligible = words.filter((card) => {
     const regional = card.regions.includes("latam") || card.regions.includes(options.region);
@@ -221,12 +222,9 @@ export function buildSession(words: WordCard[], options: SessionOptions): WordCa
   const ranked = [...eligible]
     .sort((a, b) => score(b) - score(a) || difficultyFor(a, options.mode) - difficultyFor(b, options.mode) || a.word.localeCompare(b.word, "es"));
 
-  if (!ranked.length) return [];
-  const session = ranked.slice(0, size);
-  for (let repeatIndex = 0; session.length < size; repeatIndex += 1) {
-    session.push(ranked[repeatIndex % ranked.length]);
-  }
-  return session;
+  // Never manufacture repetitions just to hit the requested size. If a chapter
+  // has fewer approved concepts, it remains shorter until more content is ready.
+  return ranked.slice(0, size);
 }
 
 export function nextMastery(progress: WordProgress, wasCorrect: boolean): WordProgress {
