@@ -150,7 +150,12 @@ const pilot = (
   };
 };
 
-/** Banco PILOTO para validar UX. Será sustituido por el banco pedagógico validado. */
+/**
+ * Banco de transición mientras el lexicón grande recibe revisión editorial.
+ * Animales 1 ya contiene sus 20 conceptos oficiales; el resto de mundos se
+ * ampliará por capítulos sin publicar candidatos que todavía no tengan visual
+ * y metadatos pedagógicos aprobados.
+ */
 export const DEMO_WORDS: WordCard[] = [
   pilot("gato", "GATO", "Animales", "🐱", ["GA", "TO"], 1),
   pilot("pato", "PATO", "Animales", "🦆", ["PA", "TO"], 1),
@@ -158,6 +163,20 @@ export const DEMO_WORDS: WordCard[] = [
   pilot("lobo", "LOBO", "Animales", "🐺", ["LO", "BO"], 1, 2),
   pilot("rana", "RANA", "Animales", "🐸", ["RA", "NA"], 1),
   pilot("mono", "MONO", "Animales", "🐵", ["MO", "NO"], 1, 1, 4, true),
+  pilot("perro", "PERRO", "Animales", "🐶", ["PE", "RRO"], 1, 2),
+  pilot("pez", "PEZ", "Animales", "🐟", ["PEZ"], 1),
+  pilot("oso", "OSO", "Animales", "🐻", ["O", "SO"], 1),
+  pilot("leon", "LEÓN", "Animales", "🦁", ["LE", "ÓN"], 1, 2),
+  pilot("tigre", "TIGRE", "Animales", "🐯", ["TI", "GRE"], 1, 2),
+  pilot("conejo", "CONEJO", "Animales", "🐰", ["CO", "NE", "JO"], 1, 1),
+  pilot("caballo", "CABALLO", "Animales", "🐴", ["CA", "BA", "LLO"], 1, 2),
+  pilot("cerdo", "CERDO", "Animales", "🐷", ["CER", "DO"], 1, 2),
+  pilot("oveja", "OVEJA", "Animales", "🐑", ["O", "VE", "JA"], 1, 1),
+  pilot("cabra", "CABRA", "Animales", "🐐", ["CA", "BRA"], 1, 2),
+  pilot("raton", "RATÓN", "Animales", "🐭", ["RA", "TÓN"], 1, 2),
+  pilot("zorro", "ZORRO", "Animales", "🦊", ["ZO", "RRO"], 1, 2),
+  pilot("abeja", "ABEJA", "Animales", "🐝", ["A", "BE", "JA"], 1),
+  pilot("arana", "ARAÑA", "Animales", "🕷️", ["A", "RA", "ÑA"], 1, 2),
   pilot("luna", "LUNA", "Naturaleza", "🌙", ["LU", "NA"], 1, 1, 4, true),
   pilot("nube", "NUBE", "Naturaleza", "☁️", ["NU", "BE"], 1, 2),
   pilot("sol", "SOL", "Naturaleza", "☀️", ["SOL"], 2),
