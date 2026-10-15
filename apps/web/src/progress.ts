@@ -19,31 +19,19 @@ export interface ProfileProgress {
   currentLevel: number;
   /** Legacy global completions kept for backward compatibility. */
   completedLevels: number[];
-  /** New thematic progression. Reading, writing and mixed advance independently. */
-  curriculum: CurriculumProgress;
+  /** New thematic progression. Missing only on pre-migration/in-memory legacy state. */
+  curriculum?: CurriculumProgress;
 }
 
 function emptyTrack(): CurriculumTrackProgress {
   return { currentChapterOrder: 1, completedChapterIds: [] };
 }
 
-function emptyCurriculum(): CurriculumProgress {
+export function emptyCurriculum(): CurriculumProgress {
   return {
     reading: emptyTrack(),
     writing: emptyTrack(),
     mixed: emptyTrack(),
-  };
-}
-
-function empty(): ProfileProgress {
-  return {
-    stars: 0,
-    discovered: [],
-    golden: [],
-    words: {},
-    currentLevel: 1,
-    completedLevels: [],
-    curriculum: emptyCurriculum(),
   };
 }
 
@@ -70,9 +58,9 @@ function normalize(progress?: Partial<ProfileProgress>): ProfileProgress {
     words: progress?.words ?? {},
     currentLevel: Math.max(1, Math.min(48, progress?.currentLevel ?? 1)),
     completedLevels: progress?.completedLevels ?? [],
-    // Old profiles did not have curriculum data. They intentionally begin the
-    // new themed route at chapter 1 instead of inheriting the flawed prototype
-    // level, while keeping stars/mastery/story unlocks intact.
+    // Old profiles intentionally start the new themed route at chapter 1 rather
+    // than inheriting the flawed prototype level. Stars/mastery/story progress
+    // are preserved.
     curriculum: normalizeCurriculum(progress?.curriculum),
   };
 }
@@ -82,7 +70,7 @@ export function loadProgress(profileId: string): ProfileProgress {
     const all = JSON.parse(localStorage.getItem(KEY) || "{}") as Record<string, Partial<ProfileProgress>>;
     return normalize(all[profileId]);
   } catch {
-    return empty();
+    return normalize();
   }
 }
 
@@ -95,7 +83,7 @@ export function saveProgress(profileId: string, progress: ProfileProgress) {
 }
 
 export function curriculumTrack(progress: ProfileProgress, mode: LearningMode): CurriculumTrackProgress {
-  return progress.curriculum[mode];
+  return normalizeCurriculum(progress.curriculum)[mode];
 }
 
 export function completeCurriculumChapter(
@@ -104,7 +92,8 @@ export function completeCurriculumChapter(
   chapterId: string,
   chapterOrder: number,
 ): ProfileProgress {
-  const track = progress.curriculum[mode];
+  const curriculum = normalizeCurriculum(progress.curriculum);
+  const track = curriculum[mode];
   const completedChapterIds = track.completedChapterIds.includes(chapterId)
     ? track.completedChapterIds
     : [...track.completedChapterIds, chapterId];
@@ -115,7 +104,7 @@ export function completeCurriculumChapter(
   return {
     ...progress,
     curriculum: {
-      ...progress.curriculum,
+      ...curriculum,
       [mode]: nextTrack,
     },
   };
