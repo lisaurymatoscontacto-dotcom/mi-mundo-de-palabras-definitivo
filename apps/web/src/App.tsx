@@ -8,7 +8,8 @@ import {
   type WordCard,
   type WordProgress,
 } from "@mmdp/core";
-import { LEARNING_WORLDS, worldForCategory } from "@mmdp/core/worlds";
+import { worldForCategory } from "@mmdp/core/worlds";
+import { chapterById, type CurriculumChapter } from "@mmdp/core/curriculum";
 import { addMissedWord, evaluateSession, type SessionEvaluation } from "@mmdp/core/session-performance";
 import {
   AGE_OPTIONS,
@@ -24,7 +25,7 @@ import {
   saveProfiles,
   setActiveProfileId,
 } from "./profile";
-import { loadProgress, masteryLabel, saveProgress, type ProfileProgress } from "./progress";
+import { completeCurriculumChapter, curriculumTrack, loadProgress, masteryLabel, saveProgress, type ProfileProgress } from "./progress";
 import { pronounceWord } from "./pronunciation";
 import { StoryLibrary, StoryReader } from "./StoryMode";
 import { storyMinimumLevel, type Story } from "@mmdp/core/stories";
@@ -38,9 +39,12 @@ import {
   type SessionDraftV1,
 } from "./sessionDraft";
 import { prefetchCardMedia } from "./offlineMedia";
+import { CurriculumPath } from "./CurriculumPath";
+import { buildCurriculumSession } from "./curriculumSession";
 import { backTargetForScreen, newParentChallenge, shuffledLetterTokens, togglePickedLetter, type AppScreen } from "./appUi";
 import "./resume-session.css";
 import "./app-experience.css";
+import "./curriculum-path.css";
 
 type Screen = AppScreen;
 
@@ -64,9 +68,10 @@ export function App() {
   const [draftAge, setDraftAge] = useState(6);
   const [draftAvatar, setDraftAvatar] = useState<string>(AVATAR_OPTIONS[0]);
   const [draftRegion, setDraftRegion] = useState<Region>("latam");
-  const [sessionWords, setSessionWords] = useState<WordCard[]>(() => DEMO_WORDS.slice(0, 10));
+  const [sessionWords, setSessionWords] = useState<WordCard[]>(() => DEMO_WORDS.slice(0, 20));
   const [runtimeWords, setRuntimeWords] = useState<WordCard[]>(() => DEMO_WORDS);
   const [sessionCategory, setSessionCategory] = useState<string | undefined>();
+  const [sessionChapterId, setSessionChapterId] = useState<string | undefined>();
   const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [picked, setPicked] = useState<string[]>([]);
@@ -104,6 +109,8 @@ export function App() {
   const letters = useMemo(() => shuffledLetterTokens(card.word), [card.word]);
   const roundProgress = sessionWords.length ? (index + 1) / sessionWords.length : 0;
   const levelInfo = getLevel(progress.currentLevel);
+  const activeTrack = curriculumTrack(progress, mode);
+  const activeChapter = sessionChapterId ? chapterById(sessionChapterId) : undefined;
 
   useEffect(() => {
     if (!activeId || activeProfile) return;
@@ -175,6 +182,7 @@ export function App() {
       index: overrides.index ?? index,
       level: sessionLevel,
       category: sessionCategory,
+      chapterId: sessionChapterId,
       sessionStartStars,
       sessionCorrect: overrides.sessionCorrect ?? sessionCorrect,
       missedWordIds: overrides.missedWordIds ?? sessionMissedIds,
@@ -241,6 +249,7 @@ export function App() {
     setThemeMessage("");
     setSessionWords(words);
     setSessionCategory(category);
+    setSessionChapterId(undefined);
     setSessionStartStars(progress.stars);
     setSessionLevel(progress.currentLevel);
     resetRound();
@@ -253,6 +262,41 @@ export function App() {
       index: 0,
       level: progress.currentLevel,
       category,
+      chapterId: undefined,
+      sessionStartStars: progress.stars,
+      sessionCorrect: 0,
+      missedWordIds: [],
+    });
+    setResumeDraft(draft);
+    setScreen("play");
+  }
+
+  function startChapter(chapter: CurriculumChapter) {
+    if (!activeProfile) return;
+    const session = buildCurriculumSession(chapter, runtimeWords, progress.words);
+    if (!session.ready) {
+      setThemeMessage(`${chapter.label} todavía está en preparación (${session.cards.length}/20 cartas aprobadas). No repetiremos palabras para rellenarlo.`);
+      return;
+    }
+
+    const words = session.cards;
+    setThemeMessage("");
+    setSessionWords(words);
+    setSessionCategory(chapter.category);
+    setSessionChapterId(chapter.id);
+    setSessionStartStars(progress.stars);
+    setSessionLevel(progress.currentLevel);
+    resetRound();
+    void prefetchCardMedia(words);
+
+    const draft = saveSessionDraft({
+      profileId: activeProfile.id,
+      mode,
+      wordIds: words.map((word) => word.id),
+      index: 0,
+      level: progress.currentLevel,
+      category: chapter.category,
+      chapterId: chapter.id,
       sessionStartStars: progress.stars,
       sessionCorrect: 0,
       missedWordIds: [],
@@ -280,6 +324,7 @@ export function App() {
     setMode(draft.mode);
     setSessionWords(restored);
     setSessionCategory(draft.category);
+    setSessionChapterId(draft.chapterId);
     setIndex(draft.index);
     setSessionLevel(draft.level);
     setSessionStartStars(draft.sessionStartStars);
@@ -375,11 +420,26 @@ export function App() {
     setLastEvaluation(evaluation);
 
     if (evaluation.passed) {
-      const completedLevels = baseProgress.completedLevels.includes(sessionLevel)
-        ? baseProgress.completedLevels
-        : [...baseProgress.completedLevels, sessionLevel];
-      const currentLevel = sessionLevel >= 48 ? 48 : Math.max(baseProgress.currentLevel, sessionLevel + 1);
-      persist({ ...baseProgress, completedLevels, currentLevel });
+      const chapter = sessionChapterId ? chapterById(sessionChapterId) : undefined;
+      if (chapter) {
+        let nextProgress = completeCurriculumChapter(baseProgress, mode, chapter.id, chapter.order);
+        // Stories keep using the legacy reading level for now. Only successful
+        // reading chapters advance it; writing/mixed have independent tracks.
+        if (mode === "reading") {
+          const completedLevels = nextProgress.completedLevels.includes(sessionLevel)
+            ? nextProgress.completedLevels
+            : [...nextProgress.completedLevels, sessionLevel];
+          const currentLevel = sessionLevel >= 48 ? 48 : Math.max(nextProgress.currentLevel, sessionLevel + 1);
+          nextProgress = { ...nextProgress, completedLevels, currentLevel };
+        }
+        persist(nextProgress);
+      } else {
+        const completedLevels = baseProgress.completedLevels.includes(sessionLevel)
+          ? baseProgress.completedLevels
+          : [...baseProgress.completedLevels, sessionLevel];
+        const currentLevel = sessionLevel >= 48 ? 48 : Math.max(baseProgress.currentLevel, sessionLevel + 1);
+        persist({ ...baseProgress, completedLevels, currentLevel });
+      }
     }
 
     if (activeProfile) clearSessionDraft(activeProfile.id);
@@ -513,7 +573,7 @@ export function App() {
     : screen === "album"
       ? "Mi álbum"
       : screen === "themes"
-        ? "Elige un mundo"
+        ? mode === "reading" ? "Camino de lectura" : mode === "writing" ? "Camino de escritura" : "Camino mixto"
         : screen === "complete"
           ? "¡Sesión terminada!"
           : screen === "parent"
@@ -531,7 +591,7 @@ export function App() {
         <h1>{title}</h1>
       </div>
       <div className="top-actions">
-        <div className="level-pill">Nivel {progress.currentLevel}</div>
+        <div className="level-pill">📖 {curriculumTrack(progress, "reading").completedChapterIds.length} · ✏️ {curriculumTrack(progress, "writing").completedChapterIds.length}</div>
         <div className="star-counter"><span>⭐</span><strong>{progress.stars}</strong></div>
         <button className="mini-profile" onClick={switchProfile}>
           <span>{activeProfile.avatar}</span>
@@ -549,13 +609,17 @@ export function App() {
         {resumeDraft && (
           <button className="resume-session-card" onClick={() => void resumeSession()}>
             <span className="resume-icon">▶️</span>
-            <span><strong>Continuar sesión</strong><small>Nivel {resumeDraft.level} · carta {resumeDraft.index + 1} de {resumeDraft.wordIds.length}</small></span>
+            <span><strong>Continuar sesión</strong><small>{resumeDraft.chapterId ? `${chapterById(resumeDraft.chapterId)?.label ?? "Capítulo"} · ` : `Nivel ${resumeDraft.level} · `}carta {resumeDraft.index + 1} de {resumeDraft.wordIds.length}</small></span>
             <span className="resume-arrow">→</span>
           </button>
         )}
         <section className="level-banner">
-          <div><span>Etapa {levelInfo.stage} de 8</span><h2>{levelInfo.name}</h2><p>{levelInfo.skill}</p></div>
-          <strong>{progress.completedLevels.length}/48</strong>
+          <div>
+            <span>Ruta temática · 20 cartas por capítulo</span>
+            <h2>{curriculumTrack(progress, "reading").completedChapterIds.length} capítulos de lectura completados</h2>
+            <p>Los mundos regresan con vocabulario nuevo: Animales 1, después Animales 2 y siguientes, con repaso intencional.</p>
+          </div>
+          <strong>{curriculumTrack(progress, "reading").completedChapterIds.length + curriculumTrack(progress, "writing").completedChapterIds.length + curriculumTrack(progress, "mixed").completedChapterIds.length}</strong>
         </section>
         <section className="home-grid">
           <button className="mode-card stories-mode" onClick={() => setScreen("stories")}><span>📚</span><strong>Historias</strong><small>Lee, imagina y descubre valores</small></button>
@@ -574,33 +638,17 @@ export function App() {
   }
 
   if (screen === "themes") {
-    const mixedCount = sessionCandidates().length;
     return (
       <main className={`app-shell age-${ageBand(activeProfile.age)}`}>
         {header}
-        <button className="text-button" onClick={() => setScreen("home")}>← Inicio</button>
-        {themeMessage && <p className="theme-message" role="status">{themeMessage}</p>}
-        <section className="theme-grid">
-          <button className="theme-card mixed-theme" disabled={!mixedCount} onClick={() => startSession()}>
-            <span>🌈</span><strong>Todos mezclados</strong><small>{mixedCount ? `${mixedCount} cartas preparadas para tu nivel` : "Se desbloquea más adelante"}</small>
-          </button>
-          {LEARNING_WORLDS.map((world) => {
-            const total = DEMO_WORDS.filter((word) => word.category === world.category).length;
-            const eligible = total ? sessionCandidates(world.category).length : 0;
-            return (
-              <button
-                className={`theme-card world-${world.id}`}
-                key={world.id}
-                disabled={!eligible}
-                onClick={() => startSession(world.category)}
-              >
-                <span>{world.icon}</span>
-                <strong>{world.name}</strong>
-                <small>{eligible ? `${eligible} cartas para tu nivel` : total ? "Se desbloquea más adelante" : "Próximamente"}</small>
-              </button>
-            );
-          })}
-        </section>
+        <CurriculumPath
+          mode={mode}
+          progress={progress}
+          cards={runtimeWords}
+          message={themeMessage}
+          onBack={() => setScreen("home")}
+          onStart={startChapter}
+        />
       </main>
     );
   }
@@ -657,7 +705,7 @@ export function App() {
         {header}
         <button className="text-button" onClick={() => setScreen("home")}>← Inicio</button>
         <section className="stats-grid">
-          <article><span>🗺️</span><strong>{progress.currentLevel}</strong><small>nivel actual</small></article>
+          <article><span>🗺️</span><strong>{curriculumTrack(progress, "reading").completedChapterIds.length}</strong><small>capítulos de lectura</small></article>
           <article><span>📚</span><strong>{progress.discovered.length}</strong><small>cartas descubiertas</small></article>
           <article><span>🏆</span><strong>{mastered}</strong><small>palabras dominadas</small></article>
           <article><span>🔁</span><strong>{practicing}</strong><small>en práctica</small></article>
@@ -668,9 +716,9 @@ export function App() {
           <h2>Perfil</h2>
           <p><strong>Edad:</strong> {activeProfile.age} años</p>
           <p><strong>Región:</strong> {REGION_OPTIONS.find((region) => region.value === activeProfile.region)?.label ?? "Latinoamérica"}</p>
-          <p><strong>Etapa:</strong> {levelInfo.stage}/8 — {levelInfo.name}</p>
-          <p>Las palabras con más dificultad reciben prioridad automática en próximas sesiones.</p>
-          <p><strong>Avance:</strong> se requiere al menos 80% de aciertos para desbloquear el siguiente nivel.</p>
+          <p><strong>Lectura:</strong> {curriculumTrack(progress, "reading").completedChapterIds.length} capítulos · <strong>Escritura:</strong> {curriculumTrack(progress, "writing").completedChapterIds.length}</p>
+          <p>Las palabras con más dificultad reciben prioridad automática en los repasos de capítulos posteriores.</p>
+          <p><strong>Avance:</strong> se requiere al menos 80% de aciertos para completar cada capítulo de 20 cartas.</p>
         </section>
         <ParentDataControls />
       </main>
@@ -679,6 +727,7 @@ export function App() {
 
   if (screen === "complete") {
     const gained = progress.stars - sessionStartStars;
+    const completedChapter = sessionChapterId ? chapterById(sessionChapterId) : undefined;
     const completed = getLevel(sessionLevel);
     const next = getLevel(Math.min(48, sessionLevel + 1));
     const evaluation = lastEvaluation ?? evaluateSession({ totalWords: sessionWords.length, correctWords: sessionCorrect, missedWordIds: sessionMissedIds });
@@ -688,17 +737,18 @@ export function App() {
         {header}
         <section className={`completion-card ${evaluation.passed ? "passed" : "needs-practice"}`}>
           <div className="completion-burst">{evaluation.passed ? "🎉" : "🌱"}</div>
-          <h2>{evaluation.passed ? `¡Nivel ${sessionLevel} superado!` : "¡Buen esfuerzo! Vamos a practicar un poco más"}</h2>
-          <p>{completed.name}</p>
+          <h2>{evaluation.passed ? (completedChapter ? `¡${completedChapter.label} completado!` : `¡Nivel ${sessionLevel} superado!`) : "¡Buen esfuerzo! Vamos a practicar un poco más"}</h2>
+          <p>{completedChapter ? `${completedChapter.worldName} · 20 cartas` : completed.name}</p>
           <p>Acertaste <strong>{evaluation.correctWords} de {evaluation.totalWords}</strong> ({percent}%). Necesitas {evaluation.requiredCorrect} aciertos para avanzar.</p>
           <p>Ganaste <strong>{gained} ⭐</strong> en esta sesión.</p>
-          {evaluation.passed && sessionLevel < 48 && <div className="next-level"><small>Siguiente</small><strong>Nivel {sessionLevel + 1}: {next.name}</strong></div>}
+          {evaluation.passed && completedChapter && <div className="next-level"><small>Progreso guardado</small><strong>El siguiente capítulo de este mundo aparecerá en tu camino cuando sus 20 cartas estén listas.</strong></div>}
+          {evaluation.passed && !completedChapter && sessionLevel < 48 && <div className="next-level"><small>Siguiente</small><strong>Nivel {sessionLevel + 1}: {next.name}</strong></div>}
           {!evaluation.passed && <div className="next-level"><small>Repaso</small><strong>Las palabras difíciles tendrán prioridad en la próxima sesión.</strong></div>}
           <div className="completion-actions">
             <button className="secondary" onClick={() => setScreen("album")}>Ver álbum</button>
             {evaluation.passed
               ? <button className="primary" onClick={() => setScreen("home")}>Continuar</button>
-              : <button className="primary" onClick={() => startSession(sessionCategory)}>Practicar de nuevo</button>}
+              : <button className="primary" onClick={() => completedChapter ? startChapter(completedChapter) : startSession(sessionCategory)}>Practicar de nuevo</button>}
           </div>
         </section>
       </main>
@@ -714,7 +764,7 @@ export function App() {
       <button className="text-button" onClick={() => { persistSessionDraft(); setScreen("home"); }}>← Salir de la sesión</button>
       <section className="lesson" aria-live="polite">
         <div className="lesson-meta">
-          <span>{currentWorld?.icon ?? "✨"} {currentWorld?.name ?? card.category} · Nivel {sessionLevel}</span>
+          <span>{currentWorld?.icon ?? "✨"} {activeChapter ? activeChapter.label : `${currentWorld?.name ?? card.category} · Nivel ${sessionLevel}`}</span>
           <span>Carta {index + 1} de {sessionWords.length}</span>
         </div>
         <div className="progress-track"><div className="progress-value" style={{ width: `${roundProgress * 100}%` }} /></div>
