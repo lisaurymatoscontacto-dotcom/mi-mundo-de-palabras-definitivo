@@ -50,12 +50,15 @@ describe("reviewed pilot photos", () => {
     }
   });
 
-  it("keeps the reviewed hybrid pilot when both metadata requests fail offline", async () => {
+  it("keeps all reviewed transition cards when both metadata requests fail offline", async () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new TypeError("Offline")));
     const cards = await loadRuntimeCards("latam");
     expect(cards).toHaveLength(DEMO_WORDS.length);
-    expect(cards.filter((card) => card.visualKind === "emoji")).toHaveLength(18);
-    expect(cards.filter((card) => card.visualKind === "photo")).toHaveLength(6);
+    const photoCount = cards.filter((card) => card.visualKind === "photo").length;
+    const emojiCount = cards.filter((card) => card.visualKind === "emoji").length;
+    expect(photoCount).toBe(6);
+    expect(emojiCount).toBe(DEMO_WORDS.length - photoCount);
+    expect(cards.filter((card) => card.category === "Animales")).toHaveLength(20);
     for (const word of ["MAR", "PLATO", "VASO"]) {
       expect(cards.find((card) => card.word === word)?.visualKind).toBe("photo");
     }
