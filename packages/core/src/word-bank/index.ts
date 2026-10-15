@@ -34,6 +34,22 @@ const CHAPTER_ONE_PRIORITY: Record<string, readonly string[]> = {
     "LUNA", "NUBE", "SOL", "MAR", "FLOR", "RÍO", "HOJA", "ROCA", "PLAYA", "LLUVIA",
     "NIEVE", "FUEGO", "ÁRBOL", "ISLA", "ESTRELLA", "VOLCÁN", "DESIERTO", "MONTAÑA", "ARCOÍRIS", "TORMENTA",
   ],
+  Cuerpo: [
+    "PIE", "MANO", "OJO", "BOCA", "NARIZ", "CARA", "DEDO", "BRAZO", "DIENTE", "LENGUA",
+    "PIERNA", "OREJA", "CORAZÓN", "CEREBRO", "HUESO", "SANGRE", "PULMÓN", "SONRISA", "RISA", "SUEÑO",
+  ],
+  Ropa: [
+    "BOTA", "GORRO", "CAMISA", "PANTALÓN", "ZAPATO", "ABRIGO", "GUANTE", "BUFANDA", "VESTIDO", "SANDALIA",
+    "CORBATA", "CALCETÍN", "SOMBRERO", "GAFAS", "GAFASDESOL", "BOLSO", "CARTERA", "MOCHILA", "ANILLO", "BIKINI",
+  ],
+  Transporte: [
+    "AUTO", "MOTO", "BUS", "TREN", "BARCO", "BOTE", "TAXI", "METRO", "AVIÓN", "CAMIÓN",
+    "CANOA", "BICICLETA", "PATINETA", "TRACTOR", "COHETE", "HELICÓPTERO", "AMBULANCIA", "TRANVÍA", "VELERO", "FERRY",
+  ],
+  Escuela: [
+    "LIBRO", "LÁPIZ", "REGLA", "MAPA", "PAPEL", "CUADERNO", "MOCHILA", "TIJERA", "COLORES", "COMPUTADORA",
+    "CALCULADORA", "PINCEL", "BOLÍGRAFO", "PLUMA", "CARPETA", "CLIP", "ESCUELA", "MAESTRA", "MAESTRO", "TECLADO",
+  ],
 };
 
 function cleanCandidateWords(words: readonly string[]) {
@@ -64,10 +80,10 @@ export const MASTER_CANDIDATE_WORDS: Record<string, readonly string[]> = {
   Casa: prioritizeChapterOne("Casa", CASA_WORDS),
   Comida: prioritizeChapterOne("Comida", COMIDA_WORDS),
   Naturaleza: prioritizeChapterOne("Naturaleza", NATURALEZA_WORDS),
-  Cuerpo: cleanCandidateWords(CUERPO_WORDS),
-  Ropa: cleanCandidateWords(ROPA_WORDS),
-  Transporte: cleanCandidateWords(TRANSPORTE_WORDS),
-  Escuela: cleanCandidateWords(ESCUELA_WORDS),
+  Cuerpo: prioritizeChapterOne("Cuerpo", CUERPO_WORDS),
+  Ropa: prioritizeChapterOne("Ropa", ROPA_WORDS),
+  Transporte: prioritizeChapterOne("Transporte", TRANSPORTE_WORDS),
+  Escuela: prioritizeChapterOne("Escuela", ESCUELA_WORDS),
   Juguetes: cleanCandidateWords(JUGUETES_WORDS),
   Océano: cleanCandidateWords(OCEANO_WORDS),
   Espacio: cleanCandidateWords(ESPACIO_WORDS),
