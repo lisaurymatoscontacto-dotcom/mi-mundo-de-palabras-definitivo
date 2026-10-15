@@ -1,4 +1,5 @@
 import type { LearningMode, MasteryState, WordProgress } from "@mmdp/core";
+import { CURRICULUM_CHAPTERS } from "@mmdp/core/curriculum";
 import { touchSyncClock } from "./syncClock";
 
 const KEY = "mmdp-progress-v1";
@@ -90,16 +91,21 @@ export function completeCurriculumChapter(
   progress: ProfileProgress,
   mode: LearningMode,
   chapterId: string,
-  chapterOrder: number,
+  _chapterOrder: number,
 ): ProfileProgress {
   const curriculum = normalizeCurriculum(progress.curriculum);
   const track = curriculum[mode];
   const completedChapterIds = track.completedChapterIds.includes(chapterId)
     ? track.completedChapterIds
     : [...track.completedChapterIds, chapterId];
+  const completed = new Set(completedChapterIds);
+  const firstIncomplete = CURRICULUM_CHAPTERS.find((chapter) => !completed.has(chapter.id));
   const nextTrack: CurriculumTrackProgress = {
     completedChapterIds,
-    currentChapterOrder: Math.max(track.currentChapterOrder, chapterOrder + 1),
+    // Progress always points at the first incomplete chapter globally. This
+    // prevents completing chapter 4 before chapter 1–3 from accidentally
+    // unlocking a later block.
+    currentChapterOrder: firstIncomplete?.order ?? CURRICULUM_CHAPTERS.length + 1,
   };
   return {
     ...progress,
