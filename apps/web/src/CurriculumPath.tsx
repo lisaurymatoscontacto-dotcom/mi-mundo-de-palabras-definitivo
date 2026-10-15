@@ -1,8 +1,10 @@
 import type { LearningMode, WordCard } from "@mmdp/core";
 import { CURRICULUM_CHAPTERS, type CurriculumChapter } from "@mmdp/core/curriculum";
-import { LEARNING_WORLDS } from "@mmdp/core/worlds";
+import { worldForCategory } from "@mmdp/core/worlds";
 import { curriculumTrack, type ProfileProgress } from "./progress";
 import { buildCurriculumSession } from "./curriculumSession";
+
+export const CURRICULUM_UNLOCK_BATCH_SIZE = 4;
 
 const MODE_LABEL: Record<LearningMode, string> = {
   reading: "Leer",
@@ -10,10 +12,24 @@ const MODE_LABEL: Record<LearningMode, string> = {
   mixed: "Mixto",
 };
 
-export function nextChapterForWorld(category: string, completedChapterIds: readonly string[]) {
+export function curriculumBatches(chapters: readonly CurriculumChapter[] = CURRICULUM_CHAPTERS) {
+  const batches: CurriculumChapter[][] = [];
+  for (let index = 0; index < chapters.length; index += CURRICULUM_UNLOCK_BATCH_SIZE) {
+    batches.push(chapters.slice(index, index + CURRICULUM_UNLOCK_BATCH_SIZE));
+  }
+  return batches;
+}
+
+export function currentCurriculumBatch(completedChapterIds: readonly string[]) {
   const completed = new Set(completedChapterIds);
-  const chapters = CURRICULUM_CHAPTERS.filter((chapter) => chapter.category === category);
-  return chapters.find((chapter) => !completed.has(chapter.id)) ?? chapters.at(-1);
+  const batches = curriculumBatches();
+  const batchIndex = batches.findIndex((batch) => batch.some((chapter) => !completed.has(chapter.id)));
+  const safeIndex = batchIndex >= 0 ? batchIndex : Math.max(0, batches.length - 1);
+  return {
+    batch: batches[safeIndex] ?? [],
+    batchIndex: safeIndex,
+    totalBatches: batches.length,
+  };
 }
 
 interface CurriculumPathProps {
@@ -28,51 +44,61 @@ interface CurriculumPathProps {
 export function CurriculumPath({ mode, progress, cards, message, onBack, onStart }: CurriculumPathProps) {
   const track = curriculumTrack(progress, mode);
   const completed = new Set(track.completedChapterIds);
-  const chapterCards = LEARNING_WORLDS.map((world) => {
-    const chapter = nextChapterForWorld(world.category, track.completedChapterIds);
-    if (!chapter) return null;
+  const { batch, batchIndex, totalBatches } = currentCurriculumBatch(track.completedChapterIds);
+  const chapterCards = batch.map((chapter) => {
+    const world = worldForCategory(chapter.category);
     const session = buildCurriculumSession(chapter, cards, progress.words);
-    const completedInWorld = CURRICULUM_CHAPTERS.filter(
-      (candidate) => candidate.category === world.category && completed.has(candidate.id),
-    ).length;
-    return { world, chapter, session, completedInWorld };
-  }).filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+    const done = completed.has(chapter.id);
+    return { world, chapter, session, done };
+  });
 
-  const readyCount = chapterCards.filter((entry) => entry.session.ready).length;
+  const completedInBatch = chapterCards.filter((entry) => entry.done).length;
+  const readyInBatch = chapterCards.filter((entry) => entry.session.ready).length;
+  const allComplete = track.completedChapterIds.length >= CURRICULUM_CHAPTERS.length;
 
   return (
     <>
       <button className="text-button" onClick={onBack}>← Inicio</button>
       <section className="curriculum-summary" aria-label={`Progreso de ${MODE_LABEL[mode]}`}>
         <div>
-          <span className="eyebrow">Camino de {MODE_LABEL[mode]}</span>
-          <h2>{track.completedChapterIds.length} capítulos completados</h2>
-          <p>Cada capítulo tiene 20 cartas. Los capítulos avanzados mezclan palabras nuevas con 4–5 repasos elegidos por dificultad.</p>
+          <span className="eyebrow">Camino de {MODE_LABEL[mode]} · Bloque {batchIndex + 1} de {totalBatches}</span>
+          <h2>{allComplete ? "¡Ruta completa!" : `${completedInBatch} de ${batch.length} capítulos completados`}</h2>
+          <p>
+            {allComplete
+              ? "Puedes volver a practicar cualquier capítulo de este bloque."
+              : "Completa los cuatro capítulos de este bloque para abrir el siguiente. Cada capítulo usa 20 cartas sin repeticiones de relleno."}
+          </p>
         </div>
-        <strong>{readyCount} listos ahora</strong>
+        <strong>{readyInBatch}/{batch.length} listos</strong>
       </section>
       {message && <p className="theme-message" role="status">{message}</p>}
       <section className="theme-grid curriculum-grid">
-        {chapterCards.map(({ world, chapter, session, completedInWorld }) => {
+        {chapterCards.map(({ world, chapter, session, done }) => {
           const readyCards = session.cards.length;
           return (
             <button
-              className={`theme-card world-${world.id} curriculum-card ${session.ready ? "is-ready" : "is-preparing"}`}
+              className={`theme-card world-${world?.id ?? chapter.worldId} curriculum-card ${done ? "is-complete" : session.ready ? "is-ready" : "is-preparing"}`}
               key={chapter.id}
               disabled={!session.ready}
               onClick={() => onStart(chapter)}
             >
-              <span>{world.icon}</span>
+              <span>{world?.icon ?? "✨"}</span>
               <strong>{chapter.label}</strong>
-              <small>{world.name} · {completedInWorld}/19 completados</small>
+              <small>{world?.name ?? chapter.worldName} · capítulo {chapter.chapterNumber} de 19</small>
               <span className="chapter-readiness">
-                {session.ready ? "✓ 20/20 cartas listas" : `En preparación · ${readyCards}/20 listas`}
+                {done
+                  ? "✓ Completado · puedes repasar"
+                  : session.ready
+                    ? "✓ 20/20 cartas listas"
+                    : `En preparación · ${readyCards}/20 listas`}
               </span>
             </button>
           );
         })}
       </section>
-      <p className="curriculum-note">Los capítulos en preparación no repiten cartas para rellenar huecos: se habilitan solo cuando sus 20 conceptos tienen contenido aprobado.</p>
+      <p className="curriculum-note">
+        Después de los 12 primeros mundos, la ruta vuelve a ellos con vocabulario nuevo: Animales 2, Casa 2, Comida 2 y así sucesivamente. Los capítulos avanzados reservan 4–5 cartas para repasar palabras difíciles.
+      </p>
     </>
   );
 }
