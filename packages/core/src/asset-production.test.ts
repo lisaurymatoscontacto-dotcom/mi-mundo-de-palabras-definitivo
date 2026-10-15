@@ -6,7 +6,13 @@ describe("asset production manifest", () => {
   it("creates one deterministic task per candidate word", () => {
     const manifest = createAssetProductionManifest(CANDIDATE_WORDS);
     expect(manifest).toHaveLength(CANDIDATE_WORD_COUNT);
-    expect(new Set(manifest.map((task) => task.id)).size).toBe(CANDIDATE_WORD_COUNT);
+    const seen = new Set<string>();
+    const duplicates: string[] = [];
+    for (const task of manifest) {
+      if (seen.has(task.id)) duplicates.push(`${task.id} (${task.category}: ${task.word})`);
+      seen.add(task.id);
+    }
+    expect(duplicates, `asset-id collisions: ${duplicates.join(", ")}`).toEqual([]);
   });
 
   it("creates stable accent-safe photo and audio paths", () => {
