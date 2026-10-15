@@ -2,7 +2,9 @@ import { CANDIDATE_WORDS } from "./candidate.words";
 import { LEARNING_WORLDS } from "./worlds";
 
 export const WORDS_PER_CHAPTER = 20;
+/** Preferred maximum of new concepts after a world's first chapter. */
 export const NEW_WORDS_PER_CHAPTER = 16;
+/** Preferred minimum review count; balanced chapters can use five reviews. */
 export const REVIEW_WORDS_PER_CHAPTER = WORDS_PER_CHAPTER - NEW_WORDS_PER_CHAPTER;
 
 export interface CurriculumChapter {
@@ -15,10 +17,14 @@ export interface CurriculumChapter {
   label: string;
   newWords: string[];
   reviewPool: string[];
+  reviewCount: number;
+  targetSize: number;
 }
 
 function slug(value: string) {
   return value
+    .replace(/ñ/g, "ny")
+    .replace(/Ñ/g, "NY")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
@@ -27,23 +33,47 @@ function slug(value: string) {
 }
 
 /**
+ * Splits one world's bank so full-sized banks do not end with a tiny chapter.
+ * For a 300-word world the result is:
+ *   - chapter 1: 20 new
+ *   - 10 chapters: 16 new + 4 review
+ *   - 8 chapters: 15 new + 5 review
+ * = 19 chapters, every one targeting exactly 20 cards.
+ */
+export function balancedNewWordCounts(totalWords: number): number[] {
+  const total = Math.max(0, Math.floor(totalWords));
+  if (total === 0) return [];
+  if (total <= WORDS_PER_CHAPTER) return [total];
+
+  const remaining = total - WORDS_PER_CHAPTER;
+  const continuationCount = Math.ceil(remaining / NEW_WORDS_PER_CHAPTER);
+  const base = Math.floor(remaining / continuationCount);
+  const extra = remaining % continuationCount;
+  return [
+    WORDS_PER_CHAPTER,
+    ...Array.from({ length: continuationCount }, (_, index) => base + (index < extra ? 1 : 0)),
+  ];
+}
+
+/**
  * Builds an interleaved curriculum: Animales 1, Casa 1, Comida 1, ...,
  * then those worlds return later as Animales 2, Casa 2, etc.
- *
- * Chapter 1 of a world introduces up to 20 new concepts. Later chapters
- * introduce up to 16 new concepts and reserve four slots for intentional
- * review chosen at runtime from previously seen/difficult words.
+ * Repetition is intentional review only; it is never filler duplication.
  */
 export function buildCurriculumChapters(
   bank: Record<string, string[]> = CANDIDATE_WORDS,
 ): CurriculumChapter[] {
-  const worldState = LEARNING_WORLDS.map((world) => ({
-    world,
-    words: bank[world.category] ?? [],
-    offset: 0,
-    chapterNumber: 1,
-    seen: [] as string[],
-  }));
+  const worldState = LEARNING_WORLDS.map((world) => {
+    const words = bank[world.category] ?? [];
+    return {
+      world,
+      words,
+      chapterSizes: balancedNewWordCounts(words.length),
+      offset: 0,
+      chapterNumber: 1,
+      seen: [] as string[],
+    };
+  });
 
   const chapters: CurriculumChapter[] = [];
   let order = 1;
@@ -53,14 +83,15 @@ export function buildCurriculumChapters(
     madeProgress = false;
 
     for (const state of worldState) {
-      if (state.offset >= state.words.length) continue;
+      const newCount = state.chapterSizes[state.chapterNumber - 1];
+      if (!newCount) continue;
       madeProgress = true;
 
-      const newCount = state.chapterNumber === 1 ? WORDS_PER_CHAPTER : NEW_WORDS_PER_CHAPTER;
       const newWords = state.words.slice(state.offset, state.offset + newCount);
       state.offset += newWords.length;
-
       const chapterNumber = state.chapterNumber;
+      const reviewCount = chapterNumber === 1 ? 0 : Math.max(0, WORDS_PER_CHAPTER - newWords.length);
+
       chapters.push({
         id: `${state.world.id}-${chapterNumber}`,
         order,
@@ -71,6 +102,8 @@ export function buildCurriculumChapters(
         label: `${state.world.category} ${chapterNumber}`,
         newWords,
         reviewPool: [...state.seen],
+        reviewCount,
+        targetSize: newWords.length + Math.min(reviewCount, state.seen.length),
       });
 
       state.seen.push(...newWords);
