@@ -19,4 +19,14 @@ describe("candidate lexicon", () => {
       expect(new Set(words).size, category).toBe(words.length);
     }
   });
+
+  it("contains only normalized Spanish display characters", () => {
+    const allowed = /^[A-ZÁÉÍÓÚÜÑ0-9 -]+$/u;
+    for (const [category, words] of Object.entries(CANDIDATE_WORDS)) {
+      for (const word of words) {
+        expect(word, `${category}: ${word}`).toBe(word.trim());
+        expect(allowed.test(word), `${category}: ${word}`).toBe(true);
+      }
+    }
+  });
 });
