@@ -1,0 +1,412 @@
+/* Responsive learning layout
+ * The visual supports the word; it must never displace the reading/writing task.
+ * TV rules target the Android/Google TV 10-foot layout and 5% safe area.
+ */
+
+/* ---------- Shared learning cards ---------- */
+.discovered .card-visual-image-wrap {
+  width: min(100%, 210px);
+  height: min(28vw, 180px);
+  min-height: 0;
+}
+
+.discovered .card-visual-circular {
+  width: min(100%, 190px);
+  height: auto;
+}
+
+.writing-stage {
+  gap: clamp(10px, 2.2vh, 18px);
+}
+
+.writing-stage .card-visual-image-wrap,
+.writing-stage .preview.card-visual-image-wrap {
+  width: min(100%, 145px);
+  height: min(22vw, 132px);
+  min-height: 0;
+}
+
+.writing-stage .card-visual-circular,
+.writing-stage .preview.card-visual-circular {
+  width: min(100%, 125px);
+  height: auto;
+}
+
+/* Covers the rare fallback visual that is rendered as text instead of an asset. */
+.writing-stage > .visual:not(.card-visual-image-wrap) {
+  font-size: clamp(4.5rem, 18vw, 7rem);
+  line-height: .9;
+}
+
+.answer-slots {
+  max-width: 100%;
+  row-gap: 6px;
+}
+
+.answer-slots span {
+  width: clamp(30px, 7vw, 42px);
+  height: clamp(40px, 9vw, 50px);
+  font-size: clamp(1.35rem, 4.5vw, 1.8rem);
+}
+
+.letter-bank {
+  max-width: 100%;
+  row-gap: 8px;
+}
+
+.letter-bank button {
+  width: clamp(44px, 10vw, 52px);
+  height: clamp(44px, 10vw, 52px);
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 560px) {
+  .word-card {
+    min-height: 0;
+    padding: 20px 16px 22px;
+  }
+
+  .word-title {
+    font-size: clamp(2.45rem, 13vw, 4.25rem);
+  }
+
+  .reveal-stage {
+    min-height: 0;
+    margin: 10px 0 16px;
+    padding: 14px 10px;
+  }
+
+  .discovered {
+    min-height: 245px;
+  }
+
+  .discovered .card-visual-image-wrap {
+    width: min(100%, 170px);
+    height: 150px;
+  }
+
+  .discovered .card-visual-circular {
+    width: min(100%, 155px);
+    height: auto;
+  }
+
+  .writing-stage .card-visual-image-wrap,
+  .writing-stage .preview.card-visual-image-wrap {
+    width: min(100%, 120px);
+    height: 105px;
+  }
+
+  .writing-stage .card-visual-circular,
+  .writing-stage .preview.card-visual-circular {
+    width: min(100%, 100px);
+    height: auto;
+  }
+
+  .writing-stage > .visual:not(.card-visual-image-wrap) {
+    font-size: clamp(3.75rem, 17vw, 5.25rem);
+  }
+
+  .answer-slots {
+    gap: 6px;
+  }
+
+  .answer-slots span {
+    width: clamp(28px, 8vw, 36px);
+    height: 42px;
+  }
+
+  .letter-bank {
+    gap: 8px;
+  }
+
+  .letter-bank button {
+    width: clamp(42px, 12vw, 48px);
+    height: clamp(42px, 12vw, 48px);
+    border-radius: 14px;
+  }
+}
+
+/* ---------- Android TV / Google TV ----------
+ * Google TV design reference: 960 x 540 dp, with ~5% safe margins.
+ */
+html[data-tv="true"] {
+  font-size: 18px;
+}
+
+html[data-tv="true"] .app-shell {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 27px 48px;
+}
+
+html[data-tv="true"] .topbar {
+  gap: 16px;
+}
+
+html[data-tv="true"] .eyebrow {
+  margin-bottom: 2px;
+  font-size: .72rem;
+}
+
+html[data-tv="true"] h1 {
+  font-size: clamp(1.65rem, 4vw, 2.45rem);
+  line-height: 1;
+}
+
+html[data-tv="true"] .top-actions {
+  gap: 8px;
+}
+
+html[data-tv="true"] .level-pill,
+html[data-tv="true"] .star-counter {
+  min-height: 42px;
+  padding: 7px 12px;
+  font-size: .92rem;
+}
+
+html[data-tv="true"] .mini-profile {
+  min-height: 44px;
+  padding: 5px 10px 5px 6px;
+}
+
+html[data-tv="true"] .mini-profile > span:first-child {
+  width: 34px;
+  height: 34px;
+  font-size: 1.35rem;
+}
+
+html[data-tv="true"] .text-button {
+  margin: 8px 0;
+  min-height: 38px;
+}
+
+html[data-tv="true"] .lesson {
+  width: min(760px, 100%);
+  margin: 6px auto 0;
+}
+
+html[data-tv="true"] .lesson-meta {
+  margin: 0 6px 5px;
+  font-size: .78rem;
+}
+
+html[data-tv="true"] .progress-track {
+  height: 7px;
+  margin: 0 6px 8px;
+}
+
+html[data-tv="true"] .word-card {
+  min-height: 0;
+  padding: 14px 22px 16px;
+  border-width: 4px;
+  border-radius: 28px;
+}
+
+html[data-tv="true"] .word-card.is-revealed {
+  transform: none;
+}
+
+html[data-tv="true"] .word-title,
+html[data-tv="true"] .age-inicio .word-title {
+  font-size: clamp(2.15rem, 5vw, 3.2rem);
+}
+
+html[data-tv="true"] .reveal-stage {
+  min-height: 184px;
+  margin: 7px 0 10px;
+  padding: 9px 12px;
+  border-radius: 22px;
+}
+
+html[data-tv="true"] .discovered {
+  min-height: 184px;
+}
+
+html[data-tv="true"] .discovered .card-visual-image-wrap {
+  width: min(100%, 150px);
+  height: 128px;
+}
+
+html[data-tv="true"] .discovered .card-visual-circular {
+  width: min(100%, 132px);
+  height: auto;
+  border-width: 3px;
+}
+
+html[data-tv="true"] .writing-stage {
+  gap: 7px;
+}
+
+html[data-tv="true"] .writing-stage .card-visual-image-wrap,
+html[data-tv="true"] .writing-stage .preview.card-visual-image-wrap {
+  width: min(100%, 108px);
+  height: 92px;
+}
+
+html[data-tv="true"] .writing-stage .card-visual-circular,
+html[data-tv="true"] .writing-stage .preview.card-visual-circular {
+  width: min(100%, 88px);
+  height: auto;
+  border-width: 3px;
+}
+
+html[data-tv="true"] .writing-stage > .visual:not(.card-visual-image-wrap) {
+  font-size: 4.25rem;
+}
+
+html[data-tv="true"] .answer-slots {
+  gap: 6px;
+}
+
+html[data-tv="true"] .answer-slots span {
+  width: 34px;
+  height: 39px;
+  font-size: 1.35rem;
+  border-bottom-width: 3px;
+}
+
+html[data-tv="true"] .letter-bank {
+  gap: 7px;
+}
+
+html[data-tv="true"] .letter-bank button {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+html[data-tv="true"] .success,
+html[data-tv="true"] .syllables {
+  margin-block: 2px;
+  font-size: .86rem;
+}
+
+html[data-tv="true"] .actions {
+  gap: 10px;
+}
+
+html[data-tv="true"] .primary,
+html[data-tv="true"] .secondary,
+html[data-tv="true"] .age-inicio .primary,
+html[data-tv="true"] .age-inicio .secondary {
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 15px;
+  font-size: .92rem;
+}
+
+/* Keep TV menus useful without turning each choice into a full-screen tile. */
+html[data-tv="true"] .level-banner {
+  margin: 14px auto 0;
+  padding: 12px 18px;
+  border-radius: 22px;
+}
+
+html[data-tv="true"] .level-banner h2 {
+  margin: 2px 0;
+  font-size: 1.15rem;
+}
+
+html[data-tv="true"] .level-banner p,
+html[data-tv="true"] .level-banner span {
+  font-size: .72rem;
+}
+
+html[data-tv="true"] .home-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px auto 12px;
+}
+
+html[data-tv="true"] .mode-card {
+  min-height: 112px;
+  padding: 10px;
+  border-radius: 22px;
+  gap: 3px;
+}
+
+html[data-tv="true"] .mode-card > span {
+  font-size: 2.35rem;
+}
+
+html[data-tv="true"] .mode-card strong {
+  font-size: 1.05rem;
+}
+
+html[data-tv="true"] .mode-card small {
+  font-size: .72rem;
+}
+
+html[data-tv="true"] .progress-summary {
+  padding: 11px 18px;
+  border-radius: 18px;
+}
+
+html[data-tv="true"] .theme-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+html[data-tv="true"] .theme-card {
+  min-height: 118px;
+  padding: 10px;
+  border-radius: 22px;
+  gap: 3px;
+}
+
+html[data-tv="true"] .theme-card > span {
+  font-size: 2.45rem;
+}
+
+html[data-tv="true"] .theme-card strong {
+  font-size: .98rem;
+}
+
+html[data-tv="true"] .theme-card small {
+  font-size: .68rem;
+}
+
+html[data-tv="true"] .album-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+html[data-tv="true"] .album-card {
+  min-height: 150px;
+  padding: 10px;
+  border-radius: 22px;
+}
+
+html[data-tv="true"] .album-visual.card-visual-image-wrap {
+  height: 82px;
+}
+
+html[data-tv="true"] .album-visual.card-visual-circular {
+  width: min(100%, 78px);
+  height: auto;
+}
+
+/* Short TV panels (common on 720p devices) get one more compact step. */
+@media (max-height: 620px) {
+  html[data-tv="true"] .app-shell {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  html[data-tv="true"] .reveal-stage,
+  html[data-tv="true"] .discovered {
+    min-height: 168px;
+  }
+
+  html[data-tv="true"] .discovered .card-visual-image-wrap {
+    height: 116px;
+  }
+
+  html[data-tv="true"] .word-title,
+  html[data-tv="true"] .age-inicio .word-title {
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+  }
+}
