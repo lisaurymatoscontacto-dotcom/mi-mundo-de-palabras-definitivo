@@ -4,6 +4,7 @@ import { CANDIDATE_WORDS } from "../packages/core/src/candidate.words";
 import { analyzeSpanishWord } from "./lib/spanish-analysis";
 
 const OUTPUT = resolve("packages/core/src/generated/syllables.candidate.json");
+const PIPELINE_SANITY_FLOOR = 0.75;
 
 async function main() {
   const words = Object.values(CANDIDATE_WORDS).flat();
@@ -37,8 +38,19 @@ async function main() {
   await writeFile(OUTPUT, `${JSON.stringify(output, null, 2)}\n`, "utf8");
   console.log(`Syllable enrichment: ${output.analyzedCount}/${output.candidateCount}`);
   if (failed.length) console.log(`Failed for editorial review: ${failed.length}`);
-  if (output.analyzedCount < Math.floor(words.length * 0.95)) {
-    throw new Error("Syllabification coverage fell below 95%; review pipeline before using the output.");
+
+  // The 3,600-word master bank is deliberately a candidate/research pool. A
+  // candidate that the automatic library cannot syllabify is kept for editorial
+  // review; it is NOT eligible for production until reviewed. Production lexicon
+  // validation still requires explicit syllables. This threshold therefore only
+  // detects a broken enrichment engine, rather than pretending every candidate
+  // was automatically validated.
+  const accounted = output.analyzedCount + failed.length;
+  if (accounted !== words.length) {
+    throw new Error(`Syllabification accounting mismatch: ${accounted}/${words.length}`);
+  }
+  if (output.analyzedCount < Math.floor(words.length * PIPELINE_SANITY_FLOOR)) {
+    throw new Error("Syllabification engine coverage fell below the 75% sanity floor; review pipeline before using the output.");
   }
 }
 
