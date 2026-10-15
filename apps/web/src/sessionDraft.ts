@@ -6,8 +6,11 @@ export interface SessionDraftV1 {
   mode: LearningMode;
   wordIds: string[];
   index: number;
+  /** Legacy global level retained for old drafts/story compatibility. */
   level: number;
   category?: string;
+  /** New themed curriculum chapter. Optional keeps old saved drafts valid. */
+  chapterId?: string;
   sessionStartStars: number;
   sessionCorrect: number;
   missedWordIds: string[];
@@ -31,6 +34,8 @@ export function validateSessionDraft(value: unknown): value is SessionDraftV1 {
     && Number.isInteger(draft.level)
     && (draft.level ?? 0) >= 1
     && (draft.level ?? 0) <= 48
+    && (draft.category === undefined || typeof draft.category === "string")
+    && (draft.chapterId === undefined || typeof draft.chapterId === "string")
     && typeof draft.sessionStartStars === "number"
     && typeof draft.sessionCorrect === "number"
     && Array.isArray(draft.missedWordIds)
