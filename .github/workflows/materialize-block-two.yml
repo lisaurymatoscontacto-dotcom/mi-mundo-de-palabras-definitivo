@@ -1,0 +1,77 @@
+name: Materialize curriculum block two
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/materialize-block-two.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Activate controlled block-two transition cards
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile, writeFile } from 'node:fs/promises';
+          const path = 'packages/core/src/index.ts';
+          let source = await readFile(path, 'utf8');
+          const importAnchor = 'import { TRANSITION_CHAPTER_ONE_CARDS } from "./transition-chapter-one";';
+          const importReplacement = `${importAnchor}\nimport { TRANSITION_BLOCK_TWO_CARDS } from "./transition-chapter-block-two";`;
+          if (!source.includes(importAnchor)) throw new Error('index import anchor missing');
+          if (!source.includes('TRANSITION_BLOCK_TWO_CARDS } from')) source = source.replace(importAnchor, importReplacement);
+
+          const endAnchor = '  ...TRANSITION_CHAPTER_ONE_CARDS,\n];';
+          const endReplacement = '  ...TRANSITION_CHAPTER_ONE_CARDS,\n  ...TRANSITION_BLOCK_TWO_CARDS,\n];';
+          if (!source.includes(endAnchor) && !source.includes('...TRANSITION_BLOCK_TWO_CARDS')) throw new Error('DEMO_WORDS block-two insertion anchor missing');
+          if (!source.includes('...TRANSITION_BLOCK_TWO_CARDS')) source = source.replace(endAnchor, endReplacement);
+          await writeFile(path, source, 'utf8');
+          NODE
+
+      - name: Materialize 80 controlled Twemoji resources
+        run: npx tsx scripts/materialize-block-two-emojis.ts
+
+      - name: Publish and validate block two
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+          npm test
+          npm run typecheck
+          npm run build
+
+      - name: Verify all eight introductory chapters are ready
+        run: |
+          npx tsx -e '
+            import { DEMO_WORDS } from "./packages/core/src/index.ts";
+            import { CURRICULUM_CHAPTERS } from "./packages/core/src/curriculum.ts";
+            import { buildCurriculumSession } from "./apps/web/src/curriculumSession.ts";
+            for (const chapter of CURRICULUM_CHAPTERS.slice(0, 8)) {
+              const session = buildCurriculumSession(chapter, DEMO_WORDS, {});
+              if (!session.ready || session.cards.length !== 20) throw new Error(`${chapter.label}: ${session.cards.length}/20 ready`);
+              console.log(`${chapter.label}: 20/20 ready`);
+            }
+          '
+
+      - name: Commit completed block two
+        run: |
+          rm scripts/materialize-block-two-emojis.ts .github/workflows/materialize-block-two.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: complete curriculum block two with 80 reviewed cards"
+          git pull --rebase origin main
+          git push origin main
