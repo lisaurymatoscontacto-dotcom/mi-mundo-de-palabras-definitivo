@@ -1,0 +1,71 @@
+.curriculum-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin: 1rem 0 1.35rem;
+  padding: 1.15rem 1.35rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 35px rgba(36, 52, 71, 0.1);
+}
+
+.curriculum-summary h2,
+.curriculum-summary p { margin: 0.2rem 0; }
+.curriculum-summary p { max-width: 720px; color: #596579; }
+.curriculum-summary > strong {
+  flex: 0 0 auto;
+  padding: 0.65rem 0.9rem;
+  border-radius: 999px;
+  background: #edf8ef;
+  color: #237a3b;
+}
+
+.curriculum-card { position: relative; min-height: 168px; }
+.curriculum-card.is-preparing { opacity: 0.72; }
+.curriculum-card.is-ready { outline: 3px solid rgba(71, 176, 91, 0.18); }
+.curriculum-card > strong { font-size: clamp(1.15rem, 2vw, 1.45rem); }
+.chapter-readiness {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.45rem;
+  padding: 0.38rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.72);
+  font-size: 0.82rem !important;
+  font-weight: 800;
+}
+.curriculum-note {
+  margin: 1rem auto 0;
+  max-width: 760px;
+  text-align: center;
+  color: #647087;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 700px) {
+  .curriculum-summary { align-items: flex-start; flex-direction: column; }
+  .curriculum-card { min-height: 150px; }
+}
+
+html[data-tv="true"] .curriculum-summary {
+  margin: 0.35rem 0 0.7rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 18px;
+}
+html[data-tv="true"] .curriculum-summary h2 { font-size: 1.25rem; }
+html[data-tv="true"] .curriculum-summary p { font-size: 0.82rem; line-height: 1.25; }
+html[data-tv="true"] .curriculum-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+html[data-tv="true"] .curriculum-card {
+  min-height: 118px;
+  padding: 0.65rem;
+}
+html[data-tv="true"] .curriculum-card > span:first-child { font-size: 1.8rem; }
+html[data-tv="true"] .curriculum-card > strong { font-size: 1rem; }
+html[data-tv="true"] .curriculum-card small,
+html[data-tv="true"] .chapter-readiness,
+html[data-tv="true"] .curriculum-note { font-size: 0.72rem !important; }
