@@ -23,6 +23,8 @@ jobs:
 
       - run: npm ci
 
+      # Controlled retry after the transition-card test was updated for the
+      # expanded twenty-word Animales 1 chapter.
       - name: Queue the fourteen missing Animales 1 concepts
         run: >-
           npm run content:assets:queue --
