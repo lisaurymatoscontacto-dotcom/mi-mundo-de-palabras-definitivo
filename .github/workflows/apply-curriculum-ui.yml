@@ -1,0 +1,45 @@
+name: Apply curriculum UI migration
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/apply-curriculum-ui.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Apply guarded App migration
+        run: node scripts/apply-curriculum-ui-migration.mjs
+
+      - name: Validate curriculum UI
+        run: |
+          npm test
+          npm run typecheck
+          npm run content:assets:validate
+          npm run content:assets:files
+          npm run build
+
+      - name: Commit migration and remove temporary migration helpers
+        run: |
+          rm scripts/apply-curriculum-ui-migration.mjs .github/workflows/apply-curriculum-ui.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: replace prototype levels with themed curriculum path"
+          git pull --rebase origin main
+          git push origin main
