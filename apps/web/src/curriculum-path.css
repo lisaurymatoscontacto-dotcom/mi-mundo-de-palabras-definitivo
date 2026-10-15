@@ -24,6 +24,24 @@
 .curriculum-card { position: relative; min-height: 168px; }
 .curriculum-card.is-preparing { opacity: 0.72; }
 .curriculum-card.is-ready { outline: 3px solid rgba(71, 176, 91, 0.18); }
+.curriculum-card.is-complete {
+  outline: 3px solid rgba(30, 137, 72, 0.34);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.38), 0 12px 26px rgba(31, 124, 68, 0.12);
+}
+.curriculum-card.is-complete::after {
+  content: "✓";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.75rem;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: #27894b;
+  color: #fff;
+  font-weight: 900;
+}
 .curriculum-card > strong { font-size: clamp(1.15rem, 2vw, 1.45rem); }
 .chapter-readiness {
   display: inline-flex;
@@ -35,6 +53,10 @@
   background: rgba(255,255,255,0.72);
   font-size: 0.82rem !important;
   font-weight: 800;
+}
+.curriculum-card.is-complete .chapter-readiness {
+  background: rgba(225, 248, 231, 0.94);
+  color: #236e3c;
 }
 .curriculum-note {
   margin: 1rem auto 0;
@@ -63,6 +85,13 @@ html[data-tv="true"] .curriculum-grid {
 html[data-tv="true"] .curriculum-card {
   min-height: 118px;
   padding: 0.65rem;
+}
+html[data-tv="true"] .curriculum-card.is-complete::after {
+  width: 1.45rem;
+  height: 1.45rem;
+  top: 0.45rem;
+  right: 0.45rem;
+  font-size: 0.8rem;
 }
 html[data-tv="true"] .curriculum-card > span:first-child { font-size: 1.8rem; }
 html[data-tv="true"] .curriculum-card > strong { font-size: 1rem; }
