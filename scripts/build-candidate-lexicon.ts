@@ -100,7 +100,7 @@ function editorialEntry(category: string, word: string): LexiconEntry {
       ...difficulty.reasons,
       emojiCandidate
         ? `Visual sugerido: emoji Unicode ${emojiCandidate}; validar claridad pedagógica antes de aprobar.`
-        : `Visual sugerido: foto local WebP con fuente verificable y licencia Public Domain o CC0.`,
+        : "Visual sugerido: foto local WebP con fuente verificable y licencia Public Domain o CC0.",
       ...(regional ? [`Regionalización conceptual pendiente: ${regional.conceptId}`] : []),
       ...(ageOfAcquisitionYears === undefined ? ["AoA no disponible en la fuente Alonso-2015; revisar con fuentes adicionales."] : []),
     ],
@@ -108,9 +108,21 @@ function editorialEntry(category: string, word: string): LexiconEntry {
 }
 
 async function main() {
-  const entries = Object.entries(CANDIDATE_WORDS).flatMap(([category, words]) =>
-    words.map((word) => editorialEntry(category, word)),
-  );
+  const entries: LexiconEntry[] = [];
+  const failed: Array<{ category: string; word: string; error: string }> = [];
+  const allWords = Object.entries(CANDIDATE_WORDS).flatMap(([category, words]) => words.map((word) => ({ category, word })));
+
+  for (const { category, word } of allWords) {
+    try {
+      entries.push(editorialEntry(category, word));
+    } catch (error) {
+      failed.push({ category, word, error: error instanceof Error ? error.message : String(error) });
+    }
+  }
+
+  // Candidate enrichment is allowed to flag unsupported terms for human review.
+  // No failed entry can reach production because publish-approved-content can only
+  // approve entries present in this validated `entries` array.
   const validation = validateLexicon(entries, false);
   if (!validation.valid) {
     throw new Error(`Candidate lexicon validation failed:\n${validation.errors.join("\n")}`);
@@ -126,16 +138,23 @@ async function main() {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
     status: "editorial-review",
-    candidateCount: entries.length,
+    candidateCount: allWords.length,
+    analyzedCount: entries.length,
+    failedCount: failed.length,
+    failed,
     uniqueConceptCount: conceptCounts.size,
     duplicateConceptIds,
     validationWarnings: validation.warnings,
     entries,
   };
 
+  if (entries.length < Math.floor(allWords.length * 0.75)) {
+    throw new Error(`Candidate lexicon analyzer coverage too low: ${entries.length}/${allWords.length}`);
+  }
+
   await mkdir(dirname(OUTPUT), { recursive: true });
   await writeFile(OUTPUT, `${JSON.stringify(output, null, 2)}\n`, "utf8");
-  console.log(`Candidate lexicon: ${entries.length} words, ${conceptCounts.size} concepts.`);
+  console.log(`Candidate lexicon: ${entries.length}/${allWords.length} automatically analyzed; ${failed.length} flagged for editorial review.`);
   console.log(`Concept collisions for editorial review: ${duplicateConceptIds.length}`);
 }
 
