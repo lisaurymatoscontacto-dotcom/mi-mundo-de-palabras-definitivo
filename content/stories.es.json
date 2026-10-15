@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 1,
+  "language": "es",
+  "provenance": {
+    "kind": "original",
+    "createdFor": "Mi Mundo de Palabras",
+    "createdAt": "2026-10-15",
+    "authoring": "Textos originales redactados para el proyecto con asistencia de IA.",
+    "editorialStatus": "reviewed-for-pilot",
+    "specialistValidation": "pending",
+    "note": "Propuesta de lectura acompañada. La etapa orienta la dificultad; no es una evaluación individual ni sustituye la revisión pedagógica especializada."
+  },
+  "stories": [
+    {
+      "id": "lola-sopa",
+      "stage": 1,
+      "title": "Lola y la sopa",
+      "value": "Compartir",
+      "knowledge": "Podemos compartir lo que tenemos.",
+      "pages": [
+        "Lola toma sopa.\nPapá no tiene sopa.",
+        "Lola le da sopa a Papá.\nPapá toma la sopa.",
+        "Papá le da un mimo a Lola.\nLola ama a Papá."
+      ],
+      "vocabulary": [
+        {
+          "word": "mimo",
+          "meaning": "Un gesto de cariño que nos gusta recibir."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué le da Lola a Papá?",
+          "options": [
+            "Sopa",
+            "Una mesa",
+            "Una pala"
+          ],
+          "answer": 0,
+          "explanation": "Lola le da sopa a Papá."
+        },
+        {
+          "prompt": "¿Qué hace Lola?",
+          "options": [
+            "Se lleva toda la sopa",
+            "Comparte la sopa",
+            "Rompe la mesa"
+          ],
+          "answer": 1,
+          "explanation": "Lola da una parte de la sopa a Papá."
+        }
+      ],
+      "talk": "¿Qué te gusta compartir? También puedes decir qué cosas prefieres guardar para ti."
+    },
+    {
+      "id": "pepa-mesa",
+      "stage": 1,
+      "title": "Pepa y la mesa",
+      "value": "Colaborar",
+      "knowledge": "Cada persona puede ayudar con una tarea pequeña.",
+      "pages": [
+        "Pepa ve la mesa.\nLa mesa tiene una miga.",
+        "Pepa toma un paño.\nPepa pasa el paño.",
+        "La mesa ya no tiene la miga.\nMamá le da un beso a Pepa."
+      ],
+      "vocabulary": [
+        {
+          "word": "miga",
+          "meaning": "Un pedacito de pan."
+        },
+        {
+          "word": "paño",
+          "meaning": "Una tela para limpiar."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué tiene la mesa?",
+          "options": [
+            "Una rana",
+            "Una miga",
+            "Una nube"
+          ],
+          "answer": 1,
+          "explanation": "Pepa ve una miga en la mesa."
+        },
+        {
+          "prompt": "¿Qué usa Pepa?",
+          "options": [
+            "Una sopa",
+            "Un dado",
+            "Un paño"
+          ],
+          "answer": 2,
+          "explanation": "Pepa limpia con un paño."
+        }
+      ],
+      "talk": "¿Qué tarea pequeña te gustaría hacer con una persona adulta?"
+    },
+    {
+      "id": "semilla-lina",
+      "stage": 2,
+      "title": "La semilla de Lina",
+      "value": "Cuidar con paciencia",
+      "knowledge": "Una semilla necesita condiciones adecuadas para germinar; una planta requiere agua y luz.",
+      "pages": [
+        "Lina pone una semilla en una maceta.\nSu abuelo le ayuda.",
+        "Lina moja un poco la tierra.\nNo sale nada ese día.",
+        "Cada día mira la maceta.\nUn día sale una hojita.",
+        "Lina pone la maceta cerca de la luz.\nLa cuida con su abuelo."
+      ],
+      "vocabulary": [
+        {
+          "word": "semilla",
+          "meaning": "De ella puede nacer una planta."
+        },
+        {
+          "word": "maceta",
+          "meaning": "Un recipiente donde podemos cultivar una planta."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Sale una hoja el primer día?",
+          "options": [
+            "Sí, de inmediato",
+            "No",
+            "Sale una pelota"
+          ],
+          "answer": 1,
+          "explanation": "Lina espera varios días antes de ver una hojita."
+        },
+        {
+          "prompt": "¿Quién ayuda a Lina?",
+          "options": [
+            "Su abuelo",
+            "Un pez",
+            "Su pelota"
+          ],
+          "answer": 0,
+          "explanation": "Su abuelo la acompaña a cuidar la planta."
+        }
+      ],
+      "talk": "¿Qué cosas estás aprendiendo que necesitan tiempo?"
+    },
+    {
+      "id": "taza-mateo",
+      "stage": 2,
+      "title": "La taza de Mateo",
+      "value": "Reconocer y reparar errores",
+      "knowledge": "Avisar permite buscar ayuda y resolver un accidente.",
+      "pages": [
+        "Mateo mueve la mano.\nLa taza cae y se rompe.",
+        "Mateo tiene pena.\nLlama a su tía y le dice lo que pasó.",
+        "Su tía le dice que se aleje de los pedazos.\nElla los recoge con cuidado.",
+        "Luego Mateo pone una taza nueva en la mesa.\nSu tía le da las gracias por avisar."
+      ],
+      "vocabulary": [
+        {
+          "word": "pedazos",
+          "meaning": "Partes de algo que se ha roto."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué hace Mateo cuando cae la taza?",
+          "options": [
+            "Oculta lo que pasó",
+            "Pisa los pedazos",
+            "Avisa a su tía"
+          ],
+          "answer": 2,
+          "explanation": "Mateo cuenta lo ocurrido para que su tía lo ayude."
+        },
+        {
+          "prompt": "¿Quién recoge los pedazos?",
+          "options": [
+            "La tía",
+            "Mateo con la mano",
+            "Un bebé"
+          ],
+          "answer": 0,
+          "explanation": "La persona adulta se ocupa de los pedazos que pueden cortar."
+        }
+      ],
+      "talk": "¿A quién puedes pedir ayuda cuando algo se rompe?"
+    },
+    {
+      "id": "turno-columpio",
+      "stage": 3,
+      "title": "Un turno para Sol",
+      "value": "Respetar turnos",
+      "knowledge": "Un acuerdo ayuda a compartir un espacio de juego.",
+      "pages": [
+        "Sol llega al parque y ve a Iván en el columpio.\nElla también quiere subir.",
+        "Sol espera un poco, pero siente impaciencia.\nEn vez de empujar, pregunta cuándo puede jugar.",
+        "Iván propone contar diez balanceos más.\nSol acepta y cuenta a su lado.",
+        "Al terminar, Iván baja y Sol sube.\nLuego le ofrece un nuevo turno.",
+        "Los dos pueden jugar.\nSu acuerdo deja tiempo para cada uno."
+      ],
+      "vocabulary": [
+        {
+          "word": "turno",
+          "meaning": "El momento que le corresponde a cada persona."
+        },
+        {
+          "word": "impaciencia",
+          "meaning": "La sensación de querer que algo ocurra ya."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué hace Sol para poder jugar?",
+          "options": [
+            "Empuja a Iván",
+            "Propone hablar de los turnos",
+            "Se lleva el columpio"
+          ],
+          "answer": 1,
+          "explanation": "Sol pregunta y ambos llegan a un acuerdo."
+        },
+        {
+          "prompt": "¿Qué ocurre después de los diez balanceos?",
+          "options": [
+            "Sol tiene su turno",
+            "Nadie juega más",
+            "Iván rompe el acuerdo"
+          ],
+          "answer": 0,
+          "explanation": "Iván baja del columpio y Sol sube."
+        }
+      ],
+      "talk": "¿Cómo pueden decidir los turnos sin dejar a nadie fuera?"
+    },
+    {
+      "id": "luz-patio",
+      "stage": 3,
+      "title": "La luz del patio",
+      "value": "Usar los recursos con cuidado",
+      "knowledge": "Apagar una luz que no hace falta evita gastar electricidad.",
+      "pages": [
+        "Es de día y el sol ilumina el patio.\nLa lámpara sigue encendida.",
+        "Álex ve la luz y llama a su mamá.\nLe pregunta si todavía hace falta.",
+        "Mamá mira el patio y dice que ya pueden apagarla.\nÁlex usa el interruptor con las manos secas.",
+        "Ahora la luz del sol basta para ver.\nPor la noche podrán encender la lámpara otra vez.",
+        "Álex aprende que cuidar la energía también está en gestos pequeños."
+      ],
+      "vocabulary": [
+        {
+          "word": "interruptor",
+          "meaning": "El botón o la palanca para encender y apagar una luz."
+        },
+        {
+          "word": "energía",
+          "meaning": "La electricidad permite que una lámpara funcione."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Por qué apagan la lámpara?",
+          "options": [
+            "Porque el sol ya ilumina el patio",
+            "Porque nunca usarán luz",
+            "Porque está lloviendo dentro"
+          ],
+          "answer": 0,
+          "explanation": "No necesitan la lámpara mientras la luz natural les permite ver."
+        },
+        {
+          "prompt": "¿Qué hace Álex antes de apagarla?",
+          "options": [
+            "Toca un cable",
+            "Moja sus manos",
+            "Pregunta a su mamá"
+          ],
+          "answer": 2,
+          "explanation": "Álex consulta con una persona adulta."
+        }
+      ],
+      "talk": "¿Qué luces de casa hacen falta ahora y cuáles podrían apagarse?"
+    },
+    {
+      "id": "puente-amigos",
+      "stage": 4,
+      "title": "El puente de papel",
+      "value": "Cooperar",
+      "knowledge": "Cambiar la forma de un papel puede cambiar cuánto peso sostiene.",
+      "pages": [
+        "Bruno y Ada quieren hacer un puente de papel entre dos cajas.\nPonen una hoja plana, pero se dobla al apoyar un muñeco.",
+        "Bruno piensa en abandonar.\nAda propone probar otra forma y escuchar las ideas de los dos.",
+        "Pliegan la hoja como un acordeón.\nDespués la colocan sobre las cajas y prueban con el mismo muñeco.",
+        "Esta vez el papel sostiene mejor el peso.\nObservan los pliegues y comparan las dos formas.",
+        "No todas las pruebas salen como esperan.\nPero cada intento les ayuda a aprender algo y a trabajar juntos."
+      ],
+      "vocabulary": [
+        {
+          "word": "pliegue",
+          "meaning": "Un doblez hecho en el papel."
+        },
+        {
+          "word": "comparar",
+          "meaning": "Mirar dos cosas para descubrir en qué se parecen y en qué cambian."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué cambian en la segunda prueba?",
+          "options": [
+            "El nombre de Ada",
+            "La forma de la hoja",
+            "El color del muñeco"
+          ],
+          "answer": 1,
+          "explanation": "Doblan la hoja como un acordeón."
+        },
+        {
+          "prompt": "¿Qué les ayuda a encontrar una idea?",
+          "options": [
+            "Escucharse y probar",
+            "Burlarse del otro",
+            "No volver a intentar"
+          ],
+          "answer": 0,
+          "explanation": "Las ideas de ambos ayudan a buscar una solución."
+        }
+      ],
+      "talk": "¿Qué otra forma de doblar una hoja podrían probar con ayuda?"
+    },
+    {
+      "id": "banco-azul",
+      "stage": 4,
+      "title": "Un sitio en el banco",
+      "value": "Incluir y respetar",
+      "knowledge": "Preguntar es una forma de conocer lo que otra persona necesita.",
+      "pages": [
+        "En el recreo, Mara ve a Leo sentado en el banco azul.\nLeo acaba de llegar a la escuela y aún conoce a pocas personas.",
+        "Mara se acerca y pregunta si quiere jugar con su grupo.\nLeo dice que prefiere mirar un rato.",
+        "Mara respeta su respuesta.\nLe cuenta dónde estarán, por si después le apetece unirse.",
+        "Al cabo de un rato, Leo se acerca y pide jugar.\nEl grupo explica las reglas y deja un sitio para él.",
+        "Invitar no significa obligar.\nLeo puede elegir y sabe que es bienvenido."
+      ],
+      "vocabulary": [
+        {
+          "word": "invitar",
+          "meaning": "Ofrecer a alguien participar."
+        },
+        {
+          "word": "respetar",
+          "meaning": "Tener en cuenta a otra persona y sus decisiones."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué hace Mara cuando Leo prefiere mirar?",
+          "options": [
+            "Lo obliga a jugar",
+            "Se burla de él",
+            "Respeta su decisión"
+          ],
+          "answer": 2,
+          "explanation": "Mara le deja elegir y le explica dónde estará el grupo."
+        },
+        {
+          "prompt": "¿Cómo recibe el grupo a Leo después?",
+          "options": [
+            "Le explica las reglas y le hace sitio",
+            "Lo ignora",
+            "Le quita el turno"
+          ],
+          "answer": 0,
+          "explanation": "El grupo le ayuda a incorporarse al juego."
+        }
+      ],
+      "talk": "¿Cómo te gusta que te inviten a jugar?"
+    },
+    {
+      "id": "agua-lluvia",
+      "stage": 5,
+      "title": "La visita de la lluvia",
+      "value": "Cuidar el agua",
+      "knowledge": "La lluvia puede recogerse para regar; el agua recogida no es necesariamente potable.",
+      "pages": [
+        "Una lluvia suave cae sobre el patio de Julia.\nCon su abuela, coloca un recipiente limpio para recoger un poco de agua.",
+        "Cuando deja de llover, observan cuánta agua hay.\nLa abuela explica que pueden usarla para regar las plantas.",
+        "Julia pregunta si también puede beberla.\nSu abuela le dice que no: puede contener suciedad aunque parezca clara.",
+        "Juntas riegan las macetas sin encharcar la tierra.\nDespués vacían el recipiente y lo guardan seco.",
+        "Julia mira las hojas mojadas y recuerda la diferencia.\nEl agua para beber debe ser segura; la que recogieron tuvo otro uso útil."
+      ],
+      "vocabulary": [
+        {
+          "word": "potable",
+          "meaning": "Agua que es segura para beber."
+        },
+        {
+          "word": "encharcar",
+          "meaning": "Dejar tanta agua que se forma un charco."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Para qué usan el agua recogida?",
+          "options": [
+            "Para beberla sin revisarla",
+            "Para regar las plantas",
+            "Para llenar la cama"
+          ],
+          "answer": 1,
+          "explanation": "Julia y su abuela la usan para regar."
+        },
+        {
+          "prompt": "¿Por qué Julia no la bebe?",
+          "options": [
+            "Porque toda el agua es peligrosa",
+            "Porque no tiene color azul",
+            "Porque puede contener suciedad"
+          ],
+          "answer": 2,
+          "explanation": "Que el agua se vea clara no garantiza que sea potable."
+        }
+      ],
+      "talk": "¿Qué otras maneras de cuidar el agua conoces?"
+    },
+    {
+      "id": "pausa-caida",
+      "stage": 5,
+      "title": "Una pausa para volver",
+      "value": "Reconocer emociones y pedir apoyo",
+      "knowledge": "Una pausa puede ayudarnos a decidir qué hacer cuando algo cuesta.",
+      "pages": [
+        "Diego intenta construir una torre muy alta.\nLa última pieza se mueve y la torre cae con ruido.",
+        "Diego siente rabia y ganas de lanzar las piezas.\nSe detiene y le dice a su hermana: «Estoy muy enfadado».",
+        "Su hermana lo escucha.\nDiego aparta las piezas y decide descansar un momento a su lado.",
+        "Cuando se siente preparado, vuelve a mirar la base.\nEsta vez elige piezas anchas para que la torre tenga más apoyo.",
+        "La nueva torre queda más baja, pero se sostiene.\nDiego no necesita estar contento todo el tiempo para aprender: puede sentir, pedir ayuda y volver a intentar."
+      ],
+      "vocabulary": [
+        {
+          "word": "pausa",
+          "meaning": "Un momento de descanso antes de continuar."
+        },
+        {
+          "word": "base",
+          "meaning": "La parte de abajo que sostiene algo."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué hace Diego antes de volver a construir?",
+          "options": [
+            "Descansa y habla de lo que siente",
+            "Lanza las piezas a su hermana",
+            "Finge que no pasó nada"
+          ],
+          "answer": 0,
+          "explanation": "Diego se toma una pausa y busca apoyo."
+        },
+        {
+          "prompt": "¿Qué cambia en la nueva torre?",
+          "options": [
+            "La hace sin base",
+            "Usa piezas anchas en la base",
+            "La pone sobre una pelota"
+          ],
+          "answer": 1,
+          "explanation": "Una base más ancha ayuda a sostener su construcción."
+        }
+      ],
+      "talk": "¿Qué te ayuda a hacer una pausa cuando te enfadas?"
+    },
+    {
+      "id": "plaza-limpia",
+      "stage": 6,
+      "title": "Un plan para la plaza",
+      "value": "Responsabilidad compartida",
+      "knowledge": "Separar residuos requiere conocer las normas del lugar; los objetos peligrosos los maneja un adulto.",
+      "pages": [
+        "Clara y Bruno quieren jugar en la plaza, pero encuentran papeles alrededor del banco.\nBuscan a las personas adultas que los acompañan y proponen hacer un pequeño plan.",
+        "Primero observan el suelo desde una distancia segura.\nUna botella rota queda marcada para que nadie se acerque; una persona adulta se ocupa de retirarla.",
+        "Los niños recogen solo los papeles que sus acompañantes consideran seguros, usando guantes.\nDespués se lavan las manos y preguntan dónde se tira cada residuo.",
+        "Los colores de los recipientes no significan lo mismo en todos los lugares.\nPor eso leen los carteles y siguen las indicaciones de la plaza.",
+        "Al terminar queda espacio para jugar.\nAcuerdan llevar una bolsa para sus propios residuos en la próxima visita."
+      ],
+      "vocabulary": [
+        {
+          "word": "residuo",
+          "meaning": "Algo que desechamos después de usarlo."
+        },
+        {
+          "word": "plan",
+          "meaning": "Un acuerdo sobre los pasos que vamos a seguir."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Quién retira la botella rota?",
+          "options": [
+            "Bruno sin guantes",
+            "Los niños por turnos",
+            "Una persona adulta"
+          ],
+          "answer": 2,
+          "explanation": "Los objetos que pueden cortar quedan a cargo de un adulto."
+        },
+        {
+          "prompt": "¿Por qué leen los carteles?",
+          "options": [
+            "Para saber dónde va cada residuo allí",
+            "Porque los colores son iguales en todo el mundo",
+            "Para contar las letras solamente"
+          ],
+          "answer": 0,
+          "explanation": "Las normas de separación pueden cambiar según el lugar."
+        }
+      ],
+      "talk": "¿Qué plan sencillo ayudaría a mantener limpio un lugar que compartes?"
+    },
+    {
+      "id": "prestamo-libro",
+      "stage": 6,
+      "title": "El libro prestado",
+      "value": "Cuidar lo compartido",
+      "knowledge": "Un préstamo permite usar algo por un tiempo y luego devolverlo.",
+      "pages": [
+        "Pedro lleva a casa un libro de la biblioteca.\nEn la primera página hay un papel con la fecha de devolución y decide guardarlo en un lugar visible.",
+        "Cada tarde lee unas páginas con su prima.\nUsan un marcador de cartón para recordar dónde terminaron, sin doblar las hojas.",
+        "Un día Pedro descubre que una página se ha soltado.\nSiente preocupación, pero no intenta pegarla por su cuenta ni esconderla.",
+        "Al devolver el libro, explica lo sucedido a la bibliotecaria.\nElla le agradece que avise y lo aparta para repararlo con el material adecuado.",
+        "Pedro pregunta cuándo podrá pedir otro libro.\nAprende que cuidar algo compartido también incluye reconocer un problema y buscar la forma de repararlo."
+      ],
+      "vocabulary": [
+        {
+          "word": "préstamo",
+          "meaning": "Permiso para usar algo durante un tiempo y devolverlo después."
+        },
+        {
+          "word": "bibliotecaria",
+          "meaning": "Persona que trabaja en una biblioteca y ayuda a usar sus libros."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Cómo recuerdan dónde dejaron la lectura?",
+          "options": [
+            "Arrancan una hoja",
+            "Usan un marcador de cartón",
+            "Escriben encima del cuento"
+          ],
+          "answer": 1,
+          "explanation": "El marcador señala la página sin doblarla."
+        },
+        {
+          "prompt": "¿Qué hace Pedro con la página suelta?",
+          "options": [
+            "La esconde",
+            "Tira el libro",
+            "Explica el problema al devolverlo"
+          ],
+          "answer": 2,
+          "explanation": "Avisar permite que la biblioteca lo repare correctamente."
+        }
+      ],
+      "talk": "¿Cómo puedes cuidar algo que otra persona te presta?"
+    },
+    {
+      "id": "huerto-equipo",
+      "stage": 7,
+      "title": "Un huerto para todos",
+      "value": "Repartir responsabilidades con justicia",
+      "knowledge": "Las necesidades de riego cambian; conviene observar la tierra antes de añadir agua.",
+      "pages": [
+        "En el huerto de la escuela, un equipo se encarga de cuidar unas plantas.\nAl principio todos quieren usar la regadera, pero nadie recuerda revisar la tierra.",
+        "Quique propone una tabla de turnos.\nHugo señala que algunas personas no pueden cargar la regadera llena y necesitan otra manera de participar.",
+        "El grupo escucha y reparte varias tareas: observar las hojas, comprobar la humedad con ayuda, anotar cambios y regar cuando haga falta.\nCada persona elige una tarea que puede realizar.",
+        "Una mañana la tierra sigue húmeda por la lluvia.\nAunque le toca regar, Quique pregunta y decide esperar: seguir un turno no significa echar agua sin observar.",
+        "Al final de la semana comparan sus notas.\nHay hojas nuevas y también una planta que necesita atención especial. Trabajar en equipo les permite descubrir ambas cosas y ajustar el cuidado."
+      ],
+      "vocabulary": [
+        {
+          "word": "humedad",
+          "meaning": "La cantidad de agua que contiene algo, como la tierra."
+        },
+        {
+          "word": "responsabilidad",
+          "meaning": "Un compromiso que cuidamos y cumplimos, pidiendo ayuda si hace falta."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Por qué reparten tareas diferentes?",
+          "options": [
+            "Para que cada persona pueda participar",
+            "Para que solo Quique trabaje",
+            "Para evitar cuidar las plantas"
+          ],
+          "answer": 0,
+          "explanation": "Hay distintas formas de colaborar y distintas necesidades."
+        },
+        {
+          "prompt": "¿Por qué Quique espera antes de regar?",
+          "options": [
+            "Porque ha perdido su turno",
+            "Porque la tierra sigue húmeda",
+            "Porque las plantas nunca necesitan agua"
+          ],
+          "answer": 1,
+          "explanation": "Observa la tierra y consulta antes de añadir más agua."
+        }
+      ],
+      "talk": "¿Cómo repartirías una tarea para que todos puedan colaborar?"
+    },
+    {
+      "id": "rumor-pajaro",
+      "stage": 7,
+      "title": "Antes de compartir",
+      "value": "Comprobar y hablar con cuidado",
+      "knowledge": "Una observación puede necesitar más información antes de sacar una conclusión.",
+      "pages": [
+        "Raquel oye a alguien decir que un pájaro del patio no puede volar.\nOtra persona asegura que está abandonado y propone llevarlo a casa.",
+        "Raquel se queda a distancia y llama a su maestra.\nLe cuenta lo que vio y separa esa observación de lo que otras personas imaginaron.",
+        "La maestra pide que no toquen al animal.\nExplica que algunos pájaros jóvenes pasan tiempo en el suelo mientras aprenden y que sus cuidadores pueden estar cerca.",
+        "Observan sin rodearlo y mantienen alejados a los animales domésticos.\nLa maestra consulta qué ayuda especializada corresponde si el pájaro parece herido o está en peligro.",
+        "Raquel cambia el mensaje que iba a contar.\nEn vez de repetir que está abandonado, dice que han visto un pájaro y han pedido ayuda para saber qué necesita."
+      ],
+      "vocabulary": [
+        {
+          "word": "observación",
+          "meaning": "Algo que vemos o comprobamos directamente."
+        },
+        {
+          "word": "conclusión",
+          "meaning": "Una idea a la que llegamos usando la información que tenemos."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué hace Raquel al ver el pájaro?",
+          "options": [
+            "Lo lleva sola a casa",
+            "Lo persigue para que vuele",
+            "Busca ayuda y observa a distancia"
+          ],
+          "answer": 2,
+          "explanation": "Evita tocarlo y consulta a una persona adulta."
+        },
+        {
+          "prompt": "¿Qué cambia Raquel en su mensaje?",
+          "options": [
+            "Distingue lo observado de lo que no sabe",
+            "Inventa un final",
+            "Repite el rumor más fuerte"
+          ],
+          "answer": 0,
+          "explanation": "Solo afirma lo que sabe y explica que han pedido ayuda."
+        }
+      ],
+      "talk": "¿Qué puedes preguntar antes de repetir una noticia sobre otra persona o un animal?"
+    },
+    {
+      "id": "feria-ideas",
+      "stage": 8,
+      "title": "La feria de las ideas",
+      "value": "Escuchar, comprobar y cambiar de opinión",
+      "knowledge": "Una comparación justa cambia una condición a la vez y observa los resultados.",
+      "pages": [
+        "Para la feria de la escuela, Inés y Samuel quieren investigar cómo se derrite el hielo.\nInés cree que un cubito grande desaparecerá antes; Samuel piensa que lo hará uno pequeño. Ninguno está seguro.",
+        "Su maestra les ayuda a preparar una comparación.\nColocan dos cubitos de tamaños diferentes en recipientes iguales, dentro de la misma habitación y lejos del sol directo. Anotan la hora y observan sin tocarlos.",
+        "Cuando el cubito pequeño termina de derretirse, el grande todavía conserva una parte sólida.\nInés se sorprende, pero decide escribir lo que ocurrió en lugar de cambiar el resultado para que coincida con su idea.",
+        "Repiten la prueba otro día y explican las condiciones de su experimento.\nTambién reconocen lo que no han comprobado: otro lugar, otro recipiente o una temperatura diferente podrían cambiar los tiempos.",
+        "En la feria, Samuel presenta las notas e Inés cuenta cómo cambió de opinión.\nDescubren que investigar no consiste en ganar una discusión, sino en hacer preguntas y aprender de las pruebas."
+      ],
+      "vocabulary": [
+        {
+          "word": "comparación justa",
+          "meaning": "Una prueba en la que se mantienen iguales las condiciones que no se quieren estudiar."
+        },
+        {
+          "word": "evidencia",
+          "meaning": "Información observada que ayuda a apoyar o revisar una idea."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué mantienen igual en la comparación?",
+          "options": [
+            "El tamaño de los cubitos",
+            "Los recipientes y la habitación",
+            "El tiempo que tarda cada cubito"
+          ],
+          "answer": 1,
+          "explanation": "Cambian el tamaño y mantienen iguales otras condiciones."
+        },
+        {
+          "prompt": "¿Qué hace Inés cuando el resultado no coincide con su idea?",
+          "options": [
+            "Oculta las notas",
+            "Cambia los cubitos sin decirlo",
+            "Anota el resultado y revisa su idea"
+          ],
+          "answer": 2,
+          "explanation": "Acepta lo observado y usa las pruebas para aprender."
+        }
+      ],
+      "talk": "¿Recuerdas una ocasión en la que aprendiste algo que cambió tu opinión?"
+    },
+    {
+      "id": "fiesta-diferente",
+      "stage": 8,
+      "title": "Una fiesta con muchas formas de participar",
+      "value": "Empatía y participación",
+      "knowledge": "Las personas pueden disfrutar y participar de maneras diferentes.",
+      "pages": [
+        "El grupo de Amira prepara una fiesta para despedir el curso.\nHay propuestas de música, juegos, dibujos y una mesa para conversar. Al revisar el plan, descubren que casi todas las actividades serán ruidosas.",
+        "Nicolás explica que el ruido intenso le resulta incómodo.\nAmira no intenta convencerlo de que aguante; pregunta qué cambios podrían ayudarlo a participar. Otras personas también agradecen tener un lugar tranquilo.",
+        "El grupo acuerda bajar el volumen y reservar una zona con libros y materiales para dibujar.\nPublican un horario sencillo para que cada persona pueda elegir. Además, preguntan qué alimentos pueden ofrecer, con ayuda de las familias, para cuidar las necesidades de todos.",
+        "Durante la fiesta, algunas personas bailan y otras conversan o dibujan.\nNicolás participa en un juego y después descansa. Nadie tiene que disfrutar de la misma actividad ni permanecer contento todo el tiempo.",
+        "Al recoger, cada persona ayuda de una manera posible para ella.\nAmira comprende que una celebración compartida puede tener muchos ritmos: escuchar las necesidades de los demás les permitió crear un lugar más acogedor."
+      ],
+      "vocabulary": [
+        {
+          "word": "empatía",
+          "meaning": "Intentar comprender cómo se siente otra persona y tenerlo en cuenta."
+        },
+        {
+          "word": "acogedor",
+          "meaning": "Un lugar donde las personas se sienten recibidas y respetadas."
+        }
+      ],
+      "questions": [
+        {
+          "prompt": "¿Qué hace Amira cuando Nicolás habla del ruido?",
+          "options": [
+            "Pregunta qué cambios lo ayudarían",
+            "Le exige que se acostumbre",
+            "Decide por él sin escucharlo"
+          ],
+          "answer": 0,
+          "explanation": "Amira escucha y busca cambios con el grupo."
+        },
+        {
+          "prompt": "¿Cómo pueden participar en la fiesta?",
+          "options": [
+            "Todos deben bailar siempre",
+            "Eligiendo actividades y descansos según sus necesidades",
+            "Solo si les gusta el ruido"
+          ],
+          "answer": 1,
+          "explanation": "El plan ofrece distintas formas de disfrutar y colaborar."
+        }
+      ],
+      "talk": "¿Qué cambiarías en una reunión para que otra persona se sienta bienvenida?"
+    }
+  ]
+}

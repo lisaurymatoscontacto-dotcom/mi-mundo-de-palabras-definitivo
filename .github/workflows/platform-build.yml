@@ -19,6 +19,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run typecheck
+      - run: npm run content:stories:validate
       - run: npm run content:assets:validate && npm run content:assets:files
       - run: npm run build
       - run: npx playwright install --with-deps chromium
@@ -87,6 +88,12 @@ jobs:
       - name: Smoke test packaged Linux app
         if: matrix.platform == 'linux' && matrix.arch == 'x64'
         run: xvfb-run -a node scripts/smoke-desktop.mjs
+      - name: Smoke test packaged Windows app
+        if: matrix.platform == 'win32' && matrix.arch == 'x64'
+        run: node scripts/smoke-desktop.mjs "build/packages/Mi Mundo de Palabras-win32-x64/mi-mundo-de-palabras.exe"
+      - name: Smoke test packaged Mac app on matching architecture
+        if: matrix.platform == 'darwin' && ((matrix.arch == 'arm64' && runner.arch == 'ARM64') || (matrix.arch == 'x64' && runner.arch == 'X64'))
+        run: node scripts/smoke-desktop.mjs "build/packages/Mi Mundo de Palabras-darwin-${{ matrix.arch }}/Mi Mundo de Palabras.app/Contents/MacOS/mi-mundo-de-palabras"
       - name: Archive preserving executable permissions
         shell: bash
         run: |
@@ -97,8 +104,7 @@ jobs:
             tar -czf "build/download/Palabras-${{ matrix.platform }}-${{ matrix.arch }}.tar.gz" -C build/packages "Mi Mundo de Palabras-${{ matrix.platform }}-${{ matrix.arch }}"
           fi
           cp INSTALLATION.md build/download/
-          cd build/download
-          shasum -a 256 Palabras-* > SHA256SUMS.txt
+          node scripts/checksums.mjs build/download
       - uses: actions/upload-artifact@v4
         with:
           name: Escritorio-${{ matrix.platform }}-${{ matrix.arch }}

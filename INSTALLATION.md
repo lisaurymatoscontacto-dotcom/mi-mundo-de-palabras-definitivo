@@ -108,6 +108,16 @@ Con una dirección HTTPS operativa, en Chrome/Edge abre la aplicación y utiliza
 
 Para probar localmente desde el código: `npm ci`, `npm run build`, `npm run preview --workspace @mmdp/web` y abre http://localhost:4173. La excepción de seguridad para localhost solo vale en ese equipo; acceder por la IP de la red sin HTTPS no equivale a instalar una PWA offline.
 
+## Fotos en las cartas
+
+Las fotos e ilustraciones se muestran completas, centradas dentro de un marco circular verde. El encuadre se ajusta a la proporción de cada archivo para conservar el objeto entero. Los emojis mantienen su presentación. Este formato también se aplica a las vistas de escritura y al álbum.
+
+## Modo Historias
+
+En la pantalla principal, entra en **Historias**. Hay 16 relatos originales: dos por cada una de las ocho etapas. Se ofrecen las historias de la etapa alcanzada y las anteriores. Puedes cambiar el tamaño de la letra, escuchar una página si el dispositivo tiene voz española disponible, volver a leer y responder preguntas de comprensión. El botón Atrás del mando o Escape vuelve a la biblioteca.
+
+Las historias proponen valores y conocimientos mediante situaciones cotidianas y preguntas para conversar. La dificultad es orientativa y se recomienda acompañamiento adulto, especialmente al inicio. Son contenido original del piloto con revisión editorial; su validación por un especialista en pedagogía queda pendiente. Están incluidas localmente en cada paquete.
+
 ## Progreso, actualizaciones y comprobación
 
 El progreso está separado entre la aplicación de escritorio, la PWA, Android y cada navegador. No se sincroniza automáticamente solo por instalar. Antes de cambiar de plataforma, usa **Área de adultos** para exportar una copia y luego importarla en el destino. Guarda el archivo fuera de la carpeta de la aplicación.

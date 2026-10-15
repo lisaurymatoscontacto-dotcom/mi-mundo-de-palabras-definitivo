@@ -31,7 +31,8 @@
     "cap:android": "npm run build && npx cap open android",
     "cap:ios": "npm run build && npx cap open ios",
     "desktop:package": "npm run build && node scripts/package-desktop.mjs",
-    "platform:icons": "node scripts/platform-icons.mjs"
+    "platform:icons": "node scripts/platform-icons.mjs",
+    "content:stories:validate": "tsx scripts/validate-stories.ts"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3"

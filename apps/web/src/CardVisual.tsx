@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { circleImageLayout } from "./circleImageLayout";
 import type { WordCard } from "@mmdp/core";
 import { bundledEmojiUrl } from "./emojiAssets";
 import "./card-media.css";
@@ -14,6 +16,8 @@ function localEmojiArtwork(card: WordCard) {
 }
 
 export function CardVisual({ card, className = "visual" }: CardVisualProps) {
+  const [imageSize, setImageSize] = useState({ width: 1, height: 1 });
+  const circleLayout = circleImageLayout(imageSize.width, imageSize.height);
   const bundledEmoji = localEmojiArtwork(card);
   if (bundledEmoji) {
     return (
@@ -33,10 +37,12 @@ export function CardVisual({ card, className = "visual" }: CardVisualProps) {
   if (card.visualKind === "image" || card.visualKind === "photo") {
     const mediaClass = card.visualKind === "photo" ? "card-visual-photo" : "card-visual-illustration";
     return (
-      <div className={`${className} card-visual-image-wrap ${mediaClass}`}>
+      <div className={`${className} card-visual-image-wrap card-visual-circular ${mediaClass}`}>
         <img
           className="card-visual-image"
           src={card.visual}
+          style={{ width: circleLayout.width + "%", height: circleLayout.height + "%" }}
+          onLoad={(event) => setImageSize({ width: event.currentTarget.naturalWidth, height: event.currentTarget.naturalHeight })}
           alt={card.word.toLocaleLowerCase("es")}
           draggable={false}
           loading="eager"

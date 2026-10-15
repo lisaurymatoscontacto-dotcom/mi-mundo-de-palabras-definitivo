@@ -1,0 +1,36 @@
+.stories-shell { max-width: 1120px; margin: auto; }
+.stories-heading { margin: 22px auto; max-width: 800px; }
+.stories-heading h1 { font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.15; margin: 10px 0; }
+.stories-heading p { color: #505b83; line-height: 1.6; }
+.stories-heading .level-pill { display: inline-flex; }
+.story-guidance { max-width: 800px; margin: 20px auto; line-height: 1.6; }
+.stories-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 18px; }
+.story-tile { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 12px; padding: 24px; border: 3px solid white; border-radius: 24px; background: #fffdf6; color: #30386f; box-shadow: 0 10px 30px #30386f12; cursor: pointer; min-height: 200px; }
+.story-tile strong { font-size: 1.4rem; }
+.story-stage { font-size: .85rem; color: #555a7e; }
+.story-tile small { margin-top: auto; font-weight: 800; color: #5149be; }
+.story-locked { background: #edf0f5; box-shadow: none; cursor: default; }
+.story-tools, .story-navigation { display: flex; gap: 12px; flex-wrap: wrap; max-width: 800px; margin: 18px auto; }
+.story-navigation { justify-content: space-between; }
+.story-tools button, .story-navigation button { min-height: 48px; }
+.story-paper { max-width: 800px; margin: 24px auto; padding: clamp(24px,5vw,56px); border-radius: 28px; background: #fffdf6; box-shadow: 0 18px 50px #30386f12; }
+.story-paper p { font-size: clamp(1.45rem,3vw,2rem); line-height: 1.85; color: #252b4d; overflow-wrap: break-word; }
+.story-paper.story-large p { font-size: clamp(1.8rem,4vw,2.5rem); }
+.story-vocabulary, .story-conversation { max-width: 800px; margin: 28px auto; padding: 24px; background: #eef0ff; border-radius: 22px; line-height: 1.65; }
+.story-vocabulary h2, .story-conversation h2 { font-size: 1.2rem; margin-top: 0; }
+.story-vocabulary dl { margin: 0; }
+.story-vocabulary dt { font-weight: 800; }
+.story-vocabulary dd { margin: 0 0 12px; }
+.story-questions { max-width: 800px; margin: auto; }
+.story-questions fieldset { min-width: 0; padding: 24px; margin: 24px 0; border: 2px solid #d6d8f0; border-radius: 22px; background: white; }
+.story-questions legend { font-weight: 800; font-size: 1.2rem; padding: 0 8px; }
+.story-options { display: grid; gap: 12px; }
+.story-options button { white-space: normal; text-align: left; min-height: 52px; }
+.story-choice { outline: 3px solid #6c63ff; outline-offset: 2px; }
+.story-questions [role="status"] { line-height: 1.6; }
+.home-grid .stories-mode { background: linear-gradient(145deg,#fff8df,#f1ecff); }
+@media(max-width:560px) {
+  .story-tools button { flex: 1 1 140px; }
+  .story-navigation button { flex: 1 1 140px; }
+  .story-questions fieldset { padding: 16px; }
+}

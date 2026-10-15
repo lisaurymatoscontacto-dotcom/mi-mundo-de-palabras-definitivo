@@ -31,6 +31,8 @@ describe("writing letter undo", () => {
 
 describe("mobile back navigation", () => {
   it("moves through app screens instead of exiting", () => {
+    expect(backTargetForScreen("story")).toBe("stories");
+    expect(backTargetForScreen("stories")).toBe("home");
     expect(backTargetForScreen("play")).toBe("themes");
     expect(backTargetForScreen("themes")).toBe("home");
     expect(backTargetForScreen("album")).toBe("home");

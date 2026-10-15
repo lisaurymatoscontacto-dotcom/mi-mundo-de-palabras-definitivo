@@ -39,13 +39,15 @@ export function shuffledLetterTokens(word: string): LetterToken[] {
   return result;
 }
 
-export type AppScreen = "profiles" | "create" | "home" | "themes" | "play" | "album" | "complete" | "parent";
+export type AppScreen = "profiles" | "create" | "home" | "themes" | "play" | "album" | "complete" | "parent" | "stories" | "story";
 
 export function backTargetForScreen(screen: AppScreen): AppScreen {
   switch (screen) {
     case "create": return "profiles";
     case "home": return "profiles";
     case "themes": return "home";
+    case "stories": return "home";
+    case "story": return "stories";
     case "play": return "themes";
     case "album": return "home";
     case "complete": return "home";

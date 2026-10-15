@@ -20,6 +20,7 @@
     "./runtime-catalog": "./src/runtime-catalog.ts",
     "./session-performance": "./src/session-performance.ts",
     "./asset-production": "./src/asset-production.ts",
-    "./aoa": "./src/generated/aoa.alonso2015.compact.ts"
+    "./aoa": "./src/generated/aoa.alonso2015.compact.ts",
+    "./stories": "./src/stories.ts"
   }
 }

@@ -26,6 +26,8 @@ import {
 } from "./profile";
 import { loadProgress, masteryLabel, saveProgress, type ProfileProgress } from "./progress";
 import { pronounceWord } from "./pronunciation";
+import { StoryLibrary, StoryReader } from "./StoryMode";
+import { storyMinimumLevel, type Story } from "@mmdp/core/stories";
 import { ParentDataControls } from "./ParentDataControls";
 import { CardVisual } from "./CardVisual";
 import { loadRuntimeCards } from "./runtimeContent";
@@ -56,6 +58,7 @@ export function App() {
   const [profiles, setProfiles] = useState<ChildProfile[]>(() => loadProfiles());
   const [activeId, setActiveId] = useState<string | null>(() => initialActiveId);
   const [screen, setScreen] = useState<Screen>(() => (initialActiveId ? "home" : "profiles"));
+  const [selectedStory, setSelectedStory] = useState<Story | null>(null);
   const [mode, setMode] = useState<LearningMode>("reading");
   const [draftName, setDraftName] = useState("");
   const [draftAge, setDraftAge] = useState(6);
@@ -498,6 +501,13 @@ export function App() {
     );
   }
 
+  if (screen === "stories" || (screen === "story" && (!selectedStory || storyMinimumLevel(selectedStory) > progress.currentLevel))) {
+    return <StoryLibrary level={progress.currentLevel} onBack={() => setScreen("home")} onSelect={(story) => { setSelectedStory(story); setScreen("story"); }} />;
+  }
+  if (screen === "story" && selectedStory) {
+    return <StoryReader key={activeProfile.id + selectedStory.id} story={selectedStory} onBack={() => setScreen("stories")} />;
+  }
+
   const title = screen === "home"
     ? `¡Hola, ${activeProfile.name}!`
     : screen === "album"
@@ -548,6 +558,7 @@ export function App() {
           <strong>{progress.completedLevels.length}/48</strong>
         </section>
         <section className="home-grid">
+          <button className="mode-card stories-mode" onClick={() => setScreen("stories")}><span>📚</span><strong>Historias</strong><small>Lee, imagina y descubre valores</small></button>
           <button className="mode-card reading" onClick={() => chooseMode("reading")}><span>📖</span><strong>Leer</strong><small>Lee y descubre cartas</small></button>
           <button className="mode-card writing" onClick={() => chooseMode("writing")}><span>✏️</span><strong>Escribir</strong><small>Ordena las letras</small></button>
           <button className="mode-card mixed" onClick={() => chooseMode("mixed")}><span>🎲</span><strong>Mixto</strong><small>Combina los retos</small></button>
@@ -600,7 +611,7 @@ export function App() {
         {header}
         <button className="text-button" onClick={() => setScreen("home")}>← Inicio</button>
         <section className="album-grid">
-          {DEMO_WORDS.map((item) => {
+          {runtimeWords.map((item) => {
             const known = progress.discovered.includes(item.id);
             const state = progress.words[item.id]?.mastery ?? "new";
             return (

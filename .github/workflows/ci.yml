@@ -17,6 +17,7 @@ jobs:
       - run: npm audit --omit=dev --audit-level=high
       - run: npm run test
       - run: npm run typecheck
+      - run: npm run content:stories:validate
       - run: npm run sync-api:check
       - run: npm run sync-api:smoke
       - run: npm run content:assets:validate

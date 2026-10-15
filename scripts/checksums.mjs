@@ -1,0 +1,10 @@
+import { createHash } from 'node:crypto';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
+const directory=process.argv[2];
+if(!directory)throw new Error('Output directory required');
+const files=(await readdir(directory)).filter(f=>/\.(zip|gz|apk)$/.test(f)).sort();
+if(!files.length)throw new Error('No packages found');
+const lines=[];
+for(const file of files)lines.push(createHash('sha256').update(await readFile(join(directory,file))).digest('hex')+'  '+file);
+await writeFile(join(directory,'SHA256SUMS.txt'),lines.join('\n')+'\n');
