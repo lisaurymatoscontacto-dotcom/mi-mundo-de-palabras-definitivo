@@ -23,6 +23,8 @@ jobs:
 
       - run: npm ci
 
+      # Retry after updating the offline transition-card test so it follows the
+      # published bank dynamically instead of assuming Animales is forever 20 cards.
       - name: Activate 64 chapter-two transition cards
         run: node scripts/activate-block-four.mjs
 
