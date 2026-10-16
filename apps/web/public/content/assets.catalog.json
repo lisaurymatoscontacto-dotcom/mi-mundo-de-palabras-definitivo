@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T04:15:02.701Z",
+  "generated_at": "2026-10-16T04:17:29.397Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -19774,20 +19774,21 @@
       "asset_type": "photo",
       "asset_path": "photos/espacio/mercurio.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AMESSENGER.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/MESSENGER.jpg/1920px-MESSENGER.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "author": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AMercury_in_true_color.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Arizona State University/Carnegie Institution of Washington",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "NASA · Wikimedia Commons · Public Domain",
+      "attribution_text": "NASA/Johns Hopkins University Applied Physics Laboratory/Arizona State University/Carnegie Institution of Washington · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T04:15:02.701Z",
+      "downloaded_at": "2026-10-16T04:17:29.397Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/mercurio.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Mercury planet MESSENGER NASA"
+        "Wikimedia search query: Mercury planet MESSENGER NASA",
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Mercury in true color.jpg."
       ]
     },
     {
@@ -19826,20 +19827,21 @@
       "asset_type": "photo",
       "asset_path": "photos/espacio/marte.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AMarsSunset.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/MarsSunset.jpg/1920px-MarsSunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "author": "NASA/JPL/Texas A&M/Cornell",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AMars_Valles_Marineris.jpeg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Mars_Valles_Marineris.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "author": "NASA / USGS (see PIA04304 catalog page )",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "NASA/JPL/Texas A&M/Cornell · Wikimedia Commons · Public Domain",
+      "attribution_text": "NASA / USGS (see PIA04304 catalog page ) · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T04:15:02.701Z",
+      "downloaded_at": "2026-10-16T04:17:29.397Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/marte.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Mars planet NASA"
+        "Wikimedia search query: Mars planet NASA",
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Mars Valles Marineris.jpeg."
       ]
     },
     {
@@ -19878,20 +19880,21 @@
       "asset_type": "photo",
       "asset_path": "photos/espacio/saturno.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ACassini_preflight_testing.jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Cassini_preflight_testing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ASaturn_during_Equinox.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/1920px-Saturn_during_Equinox.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "NASA / JPL / Space Science Institute",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "NASA · Wikimedia Commons · Public Domain",
+      "attribution_text": "NASA / JPL / Space Science Institute · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T04:15:02.701Z",
+      "downloaded_at": "2026-10-16T04:17:29.397Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/saturno.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Saturn planet Cassini NASA"
+        "Wikimedia search query: Saturn planet Cassini NASA",
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Saturn during Equinox.jpg."
       ]
     },
     {
@@ -19956,20 +19959,21 @@
       "asset_type": "photo",
       "asset_path": "photos/espacio/pluton.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ANew_horizons_(NASA).jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/New_horizons_%28NASA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3APluto_in_True_Color_-_High-Res.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/1920px-Pluto_in_True_Color_-_High-Res.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Alex Parker",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "NASA · Wikimedia Commons · Public Domain",
+      "attribution_text": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Alex Parker · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T04:15:02.701Z",
+      "downloaded_at": "2026-10-16T04:17:29.397Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/pluton.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Pluto New Horizons NASA"
+        "Wikimedia search query: Pluto New Horizons NASA",
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Pluto in True Color - High-Res.jpg."
       ]
     },
     {
@@ -20086,20 +20090,21 @@
       "asset_type": "photo",
       "asset_path": "photos/espacio/estacion.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AEtna_eruption_seen_from_the_International_Space_Station.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Etna_eruption_seen_from_the_International_Space_Station.jpg/1920px-Etna_eruption_seen_from_the_International_Space_Station.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "author": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AInternational_Space_Station_after_undocking_of_STS-132.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/International_Space_Station_after_undocking_of_STS-132.jpg/1920px-International_Space_Station_after_undocking_of_STS-132.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "NASA/Crew of STS-132",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "NASA · Wikimedia Commons · Public Domain",
+      "attribution_text": "NASA/Crew of STS-132 · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T04:15:02.701Z",
+      "downloaded_at": "2026-10-16T04:17:29.397Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/estacion.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: International Space Station NASA photograph"
+        "Wikimedia search query: International Space Station NASA photograph",
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:International Space Station after undocking of STS-132.jpg."
       ]
     },
     {
