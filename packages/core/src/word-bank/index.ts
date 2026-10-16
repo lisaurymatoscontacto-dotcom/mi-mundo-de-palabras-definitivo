@@ -103,6 +103,22 @@ const CHAPTER_TWO_PRIORITY: Record<string, readonly string[]> = {
     "BIBLIOTECA", "ACUARELA", "ÁBACO", "LABORATORIO", "ALUMNO", "TAREA", "PREGUNTA", "SUMA",
     "RESTA", "MULTIPLICACIÓN", "DIVISIÓN", "BIOLOGÍA", "MICROSCOPIO", "PROYECTOR", "AURICULAR", "TROFEO",
   ],
+  Juguetes: [
+    "AJEDREZ", "BOLOS", "DIANA", "BUMERÁN", "PATINETE", "SKATE", "PATINES", "BICICLETA",
+    "PINTURA", "PINCEL", "LUPA", "BRÚJULA", "DRAGÓN", "HADA", "PRINCESA", "BIBERÓN",
+  ],
+  "Océano": [
+    "PLAYA", "ISLA", "KAYAK", "YATE", "CRUCERO", "BRÚJULA", "BUZO", "NADADOR",
+    "SURFISTA", "PESCADOR", "SALVAVIDAS", "TESORO", "MAPA", "RECICLAJE", "SIRENA", "HURACÁN",
+  ],
+  Espacio: [
+    "RADIACIÓN", "LUZ", "ENERGÍA", "ROTACIÓN", "HIELO", "ROCA", "METAL", "MOTOR",
+    "BATERÍA", "DESPEGUE", "ATERRIZAJE", "NAVEGACIÓN", "SEÑAL", "CONTROL", "TIEMPO", "DISTANCIA",
+  ],
+  Granja: [
+    "TRIGO", "PAPA", "TOMATE", "ZANAHORIA", "CALABAZA", "MANZANA", "NARANJA", "LIMÓN",
+    "FRESA", "UVA", "SANDÍA", "MELÓN", "PIMIENTO", "BERENJENA", "PEPINO", "CEBOLLA",
+  ],
 };
 
 function cleanCandidateWords(words: readonly string[]) {
