@@ -1,0 +1,56 @@
+name: Stage remaining Casa and Naturaleza chapter-five photos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stage-chapter-five-home-nature-missing.yml
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Stage 16 legal photo candidates
+        run: npx tsx scripts/stage-chapter-five-home-nature-missing.ts
+      - name: Validate pending assets and application
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+          npm test
+          npm run typecheck
+          npm run build
+      - name: Verify staging contract
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const review = JSON.parse(fs.readFileSync('content/asset-reviews/chapter-five-home-nature-missing.json','utf8'));
+          if (review.status !== 'pending_visual_review' || review.assets.length !== 16) throw new Error('Expected 16 pending candidates');
+          const byCategory = review.assets.reduce((acc,item)=>{acc[item.category]=(acc[item.category]||0)+1;return acc;},{});
+          if (byCategory.Casa !== 10 || byCategory.Naturaleza !== 6) throw new Error(`Unexpected category counts ${JSON.stringify(byCategory)}`);
+          if (review.assets.some((item)=>item.visual_review !== 'pending' || !/^[a-f0-9]{40}$/.test(item.source_canonical_sha1 || ''))) throw new Error('Every candidate must remain pending with canonical SHA-1');
+          const catalog = JSON.parse(fs.readFileSync('content/assets.catalog.json','utf8'));
+          for (const item of review.assets) {
+            const asset = catalog.assets.find((candidate)=>candidate.id===item.id);
+            if (!asset || asset.review_status !== 'pending_review' || asset.asset_type !== 'photo') throw new Error(`${item.id} must remain pending photo`);
+          }
+          NODE
+      - name: Commit pending review batch
+        run: |
+          rm scripts/stage-chapter-five-home-nature-missing.ts .github/workflows/stage-chapter-five-home-nature-missing.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: stage remaining chapter-five home and nature photos"
+          git pull --rebase origin main
+          git push origin main
