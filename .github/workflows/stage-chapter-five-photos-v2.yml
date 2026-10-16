@@ -56,3 +56,5 @@ jobs:
           git commit -m "chore: stage reduced chapter-five photo candidates"
           git pull --rebase origin main
           git push origin main
+
+# Retry: all Naturaleza 5 candidates are now pinned to exact reviewed photographic sources.
