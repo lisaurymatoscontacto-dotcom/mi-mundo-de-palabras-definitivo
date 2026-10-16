@@ -58,7 +58,12 @@ describe("reviewed pilot photos", () => {
     const emojiCount = cards.filter((card) => card.visualKind === "emoji").length;
     expect(photoCount).toBe(6);
     expect(emojiCount).toBe(DEMO_WORDS.length - photoCount);
-    expect(cards.filter((card) => card.category === "Animales")).toHaveLength(20);
+
+    const expectedAnimals = DEMO_WORDS.filter((card) => card.category === "Animales");
+    const runtimeAnimals = cards.filter((card) => card.category === "Animales");
+    expect(runtimeAnimals).toHaveLength(expectedAnimals.length);
+    expect(new Set(runtimeAnimals.map((card) => card.id))).toEqual(new Set(expectedAnimals.map((card) => card.id)));
+
     for (const word of ["MAR", "PLATO", "VASO"]) {
       expect(cards.find((card) => card.word === word)?.visualKind).toBe("photo");
     }
