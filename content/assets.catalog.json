@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T14:40:22.374Z",
+  "generated_at": "2026-10-16T14:51:15.724Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -22033,6 +22033,136 @@
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
         "Pinned Wikimedia source: File:Wheat flour 01.jpg",
         "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
+      ]
+    },
+    {
+      "id": "animales.burro",
+      "word": "BURRO",
+      "normalized_word": "BURRO",
+      "category": "Animales",
+      "world": "animals",
+      "difficulty": 2,
+      "asset_type": "emoji",
+      "asset_path": "emoji/twemoji/1facf.svg",
+      "source": "Twemoji",
+      "source_url": "https://github.com/jdecked/twemoji/blob/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1facf.svg",
+      "download_url": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1facf.svg",
+      "author": "Twemoji contributors",
+      "license": "CC-BY-4.0",
+      "attribution_required": true,
+      "attribution_text": "Twemoji graphics © Twitter, Inc. and other contributors, licensed CC-BY 4.0.",
+      "verified": true,
+      "downloaded_at": "2026-10-16T14:51:15.724Z",
+      "review_status": "approved",
+      "emoji_unicode": "🫏",
+      "thumbnail_path": null,
+      "notes": [
+        "Chapter-five wave-one editorial approval: exact Unicode concept with no pedagogical substitution; local pinned Twemoji materialized after explicit manifest review.",
+        "Twemoji pinned revision b6b55fef1e8636b540a6d016a4729ca8cdf2e60b."
+      ]
+    },
+    {
+      "id": "animales.tejon",
+      "word": "TEJÓN",
+      "normalized_word": "TEJON",
+      "category": "Animales",
+      "world": "animals",
+      "difficulty": 3,
+      "asset_type": "emoji",
+      "asset_path": "emoji/twemoji/1f9a1.svg",
+      "source": "Twemoji",
+      "source_url": "https://github.com/jdecked/twemoji/blob/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1f9a1.svg",
+      "download_url": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1f9a1.svg",
+      "author": "Twemoji contributors",
+      "license": "CC-BY-4.0",
+      "attribution_required": true,
+      "attribution_text": "Twemoji graphics © Twitter, Inc. and other contributors, licensed CC-BY 4.0.",
+      "verified": true,
+      "downloaded_at": "2026-10-16T14:51:15.724Z",
+      "review_status": "approved",
+      "emoji_unicode": "🦡",
+      "thumbnail_path": null,
+      "notes": [
+        "Chapter-five wave-one editorial approval: exact Unicode concept with no pedagogical substitution; local pinned Twemoji materialized after explicit manifest review.",
+        "Twemoji pinned revision b6b55fef1e8636b540a6d016a4729ca8cdf2e60b."
+      ]
+    },
+    {
+      "id": "animales.alce",
+      "word": "ALCE",
+      "normalized_word": "ALCE",
+      "category": "Animales",
+      "world": "animals",
+      "difficulty": 3,
+      "asset_type": "emoji",
+      "asset_path": "emoji/twemoji/1face.svg",
+      "source": "Twemoji",
+      "source_url": "https://github.com/jdecked/twemoji/blob/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1face.svg",
+      "download_url": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1face.svg",
+      "author": "Twemoji contributors",
+      "license": "CC-BY-4.0",
+      "attribution_required": true,
+      "attribution_text": "Twemoji graphics © Twitter, Inc. and other contributors, licensed CC-BY 4.0.",
+      "verified": true,
+      "downloaded_at": "2026-10-16T14:51:15.724Z",
+      "review_status": "approved",
+      "emoji_unicode": "🫎",
+      "thumbnail_path": null,
+      "notes": [
+        "Chapter-five wave-one editorial approval: exact Unicode concept with no pedagogical substitution; local pinned Twemoji materialized after explicit manifest review.",
+        "Twemoji pinned revision b6b55fef1e8636b540a6d016a4729ca8cdf2e60b."
+      ]
+    },
+    {
+      "id": "animales.ciervo",
+      "word": "CIERVO",
+      "normalized_word": "CIERVO",
+      "category": "Animales",
+      "world": "animals",
+      "difficulty": 4,
+      "asset_type": "emoji",
+      "asset_path": "emoji/twemoji/1f98c.svg",
+      "source": "Twemoji",
+      "source_url": "https://github.com/jdecked/twemoji/blob/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1f98c.svg",
+      "download_url": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1f98c.svg",
+      "author": "Twemoji contributors",
+      "license": "CC-BY-4.0",
+      "attribution_required": true,
+      "attribution_text": "Twemoji graphics © Twitter, Inc. and other contributors, licensed CC-BY 4.0.",
+      "verified": true,
+      "downloaded_at": "2026-10-16T14:51:15.724Z",
+      "review_status": "approved",
+      "emoji_unicode": "🦌",
+      "thumbnail_path": null,
+      "notes": [
+        "Chapter-five wave-one editorial approval: exact Unicode concept with no pedagogical substitution; local pinned Twemoji materialized after explicit manifest review.",
+        "Twemoji pinned revision b6b55fef1e8636b540a6d016a4729ca8cdf2e60b."
+      ]
+    },
+    {
+      "id": "casa.cuadro",
+      "word": "CUADRO",
+      "normalized_word": "CUADRO",
+      "category": "Casa",
+      "world": "home",
+      "difficulty": 4,
+      "asset_type": "emoji",
+      "asset_path": "emoji/twemoji/1f5bc.svg",
+      "source": "Twemoji",
+      "source_url": "https://github.com/jdecked/twemoji/blob/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1f5bc.svg",
+      "download_url": "https://raw.githubusercontent.com/jdecked/twemoji/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b/assets/svg/1f5bc.svg",
+      "author": "Twemoji contributors",
+      "license": "CC-BY-4.0",
+      "attribution_required": true,
+      "attribution_text": "Twemoji graphics © Twitter, Inc. and other contributors, licensed CC-BY 4.0.",
+      "verified": true,
+      "downloaded_at": "2026-10-16T14:51:15.724Z",
+      "review_status": "approved",
+      "emoji_unicode": "🖼️",
+      "thumbnail_path": null,
+      "notes": [
+        "Chapter-five wave-one editorial approval: exact Unicode concept with no pedagogical substitution; local pinned Twemoji materialized after explicit manifest review.",
+        "Twemoji pinned revision b6b55fef1e8636b540a6d016a4729ca8cdf2e60b."
       ]
     }
   ]

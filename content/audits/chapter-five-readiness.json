@@ -1,40 +1,40 @@
 {
-  "generated_at": "2026-10-16T14:45:06.257Z",
+  "generated_at": "2026-10-16T14:51:25.394Z",
   "scope": "Curriculum chapter 5 readiness for Animales, Casa, Comida and Naturaleza",
   "readiness_rule": "A concept is ready only when an explicitly published editorial card and a publishable approved local asset both exist.",
   "total_concepts": 64,
-  "ready_concepts": 0,
-  "ready_percent": 0,
-  "cards_published": 0,
-  "assets_publishable": 15,
+  "ready_concepts": 20,
+  "ready_percent": 31.3,
+  "cards_published": 20,
+  "assets_publishable": 20,
   "worlds": [
     {
       "category": "Animales",
       "chapter_id": "animals-5",
       "expected_new_words": 16,
-      "ready": 0,
-      "cards_published": 0,
-      "assets_publishable": 0,
+      "ready": 4,
+      "cards_published": 4,
+      "assets_publishable": 4,
       "concepts": [
         {
           "id": "animales.burro",
           "word": "BURRO",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "emoji",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
           "id": "animales.tejon",
           "word": "TEJÓN",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "emoji",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
           "id": "animales.comadreja",
@@ -149,12 +149,12 @@
         {
           "id": "animales.alce",
           "word": "ALCE",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "emoji",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
           "id": "animales.reno",
@@ -169,12 +169,12 @@
         {
           "id": "animales.ciervo",
           "word": "CIERVO",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "emoji",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         }
       ]
     },
@@ -182,9 +182,9 @@
       "category": "Casa",
       "chapter_id": "home-5",
       "expected_new_words": 16,
-      "ready": 0,
-      "cards_published": 0,
-      "assets_publishable": 4,
+      "ready": 5,
+      "cards_published": 5,
+      "assets_publishable": 5,
       "concepts": [
         {
           "id": "casa.foco",
@@ -249,22 +249,22 @@
         {
           "id": "casa.toalla",
           "word": "TOALLA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "casa.nevera",
           "word": "NEVERA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "casa.estufa",
@@ -319,32 +319,32 @@
         {
           "id": "casa.armario",
           "word": "ARMARIO",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "casa.cuadro",
           "word": "CUADRO",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "emoji",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
           "id": "casa.horno",
           "word": "HORNO",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         }
       ]
     },
@@ -352,19 +352,19 @@
       "category": "Comida",
       "chapter_id": "food-5",
       "expected_new_words": 16,
-      "ready": 0,
-      "cards_published": 0,
+      "ready": 3,
+      "cards_published": 3,
       "assets_publishable": 3,
       "concepts": [
         {
           "id": "comida.yuca",
           "word": "YUCA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "comida.cereal",
@@ -389,12 +389,12 @@
         {
           "id": "comida.lenteja",
           "word": "LENTEJA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "comida.guineo",
@@ -459,12 +459,12 @@
         {
           "id": "comida.papaya",
           "word": "PAPAYA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "comida.lechosa",
@@ -522,19 +522,19 @@
       "category": "Naturaleza",
       "chapter_id": "nature-5",
       "expected_new_words": 16,
-      "ready": 0,
-      "cards_published": 0,
+      "ready": 8,
+      "cards_published": 8,
       "assets_publishable": 8,
       "concepts": [
         {
           "id": "naturaleza.lago",
           "word": "LAGO",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.rama",
@@ -549,12 +549,12 @@
         {
           "id": "naturaleza.arena",
           "word": "ARENA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.monte",
@@ -589,22 +589,22 @@
         {
           "id": "naturaleza.bosque",
           "word": "BOSQUE",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.cueva",
           "word": "CUEVA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.cielo",
@@ -619,42 +619,42 @@
         {
           "id": "naturaleza.cascada",
           "word": "CASCADA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.valle",
           "word": "VALLE",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.selva",
           "word": "SELVA",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.prado",
           "word": "PRADO",
-          "card_published": false,
+          "card_published": true,
           "asset_present": true,
           "asset_type": "photo",
           "asset_review_status": "approved",
           "asset_publishable": true,
-          "ready": false
+          "ready": true
         },
         {
           "id": "naturaleza.trueno",
