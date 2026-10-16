@@ -4,7 +4,7 @@ import { curriculumBatches, currentCurriculumBatch } from "./CurriculumPath";
 describe("curriculum unlock batches", () => {
   it("starts with the four approved introductory worlds", () => {
     const batches = curriculumBatches();
-    expect(batches).toHaveLength(57);
+    expect(batches).toHaveLength(66);
     expect(batches[0].map((chapter) => chapter.label)).toEqual([
       "Animales 1",
       "Casa 1",
