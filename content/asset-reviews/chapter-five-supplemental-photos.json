@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T14:38:24.119Z",
-  "status": "pending_visual_review",
+  "generated_at": "2026-10-16T14:40:22.374Z",
+  "status": "approved",
   "assets": [
     {
       "id": "casa.toalla",
@@ -16,8 +16,9 @@
       "source_sha256": "a13e74b817d97079dbe27dafe923dbbb76f9884bcf14e9472b4c2d6b621132b6",
       "asset_sha256": "f5d48f1fbf6fea7d843d74f3bb6dbb2eb07cf61bacdf7e4a38de3710a2c53c7b",
       "thumbnail_sha256": "359365d87969c9204452b50410f6962cff9ff68d0bcb5bb33aaf0897b4d3c9c9",
-      "visual_review": "pending",
-      "source_canonical_sha1": "4bb5ebe6adae58e50233a4d1f635262117624f7b"
+      "visual_review": "approved",
+      "source_canonical_sha1": "4bb5ebe6adae58e50233a4d1f635262117624f7b",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "casa.colchon",
@@ -33,8 +34,9 @@
       "source_sha256": "951191b31806aedbf429c6facb2fd88482255d0dc4dc3f955722b9445ab1db77",
       "asset_sha256": "a84afb1cc715fe3e43e55e703ed27849c725fc7265f36a5e001df4d4b1776919",
       "thumbnail_sha256": "4346421e40a77157a20204ae79023e46d6a03b66b7b98b33c99579d057690152",
-      "visual_review": "pending",
-      "source_canonical_sha1": "749d89452076f001a37ec7ac73496fa1bc634048"
+      "visual_review": "approved",
+      "source_canonical_sha1": "749d89452076f001a37ec7ac73496fa1bc634048",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "casa.armario",
@@ -50,8 +52,9 @@
       "source_sha256": "c2fca18431b9f5d75eedad70bec69d3884d70016fc457b25d62e387936c3c30b",
       "asset_sha256": "beeddf1590e000f3c01aad1539d9c1a11d49885dab3690020b5c8a1769c6b9c7",
       "thumbnail_sha256": "3ed65a45b6faf6cacc6fefcc16dbc2e48e5410e7b7171abc7f9ae82c1c9c1f92",
-      "visual_review": "pending",
-      "source_canonical_sha1": "3b337390b9e3a43b96dc09576b5b6b64de10257e"
+      "visual_review": "approved",
+      "source_canonical_sha1": "3b337390b9e3a43b96dc09576b5b6b64de10257e",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "casa.escritorio",
@@ -67,8 +70,9 @@
       "source_sha256": "d5aa7e707d2417a883a6222969065363fa4ce33efe57d895646319ba79c45c5a",
       "asset_sha256": "1f507c212bf61f8c79021da56396c9c8ab2ebbb32f271726baced2c6ab3dd14c",
       "thumbnail_sha256": "dc974dd17a96306dafcbfab3fd9945ff9c8cb9176373d7bef4d09084ca55fb70",
-      "visual_review": "pending",
-      "source_canonical_sha1": "dc7ff43436ce79f9da6506a4a56a8316b393e93d"
+      "visual_review": "approved",
+      "source_canonical_sha1": "dc7ff43436ce79f9da6506a4a56a8316b393e93d",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "casa.horno",
@@ -84,8 +88,9 @@
       "source_sha256": "8d597f48f8def3588514cb722b41a2187d623ccda6750f9385b42bd49e9e5e76",
       "asset_sha256": "29ed9946e5b1d5c775cdcb4fc0af858a8d1c75952ef777bc4a0458f309c5538f",
       "thumbnail_sha256": "91e55bccf5df23b9277ba5a9d8d805d77c7aa6334feb6de408646acd6ef573c9",
-      "visual_review": "pending",
-      "source_canonical_sha1": "95471b9bc979f4d671642149d2154e532d7cf81c"
+      "visual_review": "approved",
+      "source_canonical_sha1": "95471b9bc979f4d671642149d2154e532d7cf81c",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "casa.ventilador",
@@ -101,8 +106,9 @@
       "source_sha256": "127b49af8a499dd2e95581cd01b72103421b35cb2ecc949b81136f8ba0ac0a0e",
       "asset_sha256": "b73542b3485e8c42908a1032430ac7fe2d593ac137f0546af5401e608c1f6a80",
       "thumbnail_sha256": "5d8431c858d59061b2479de7fd0154dd927e03d77431e5bff46c1e159ad7d3fd",
-      "visual_review": "pending",
-      "source_canonical_sha1": "e21ab8da8a2702ff121e0da23c24399fad6dbae8"
+      "visual_review": "approved",
+      "source_canonical_sha1": "e21ab8da8a2702ff121e0da23c24399fad6dbae8",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "comida.yuca",
@@ -118,8 +124,9 @@
       "source_sha256": "6994587c0a2765479e03c99ab4a976380707609350779b9dadf3d2de5a64121c",
       "asset_sha256": "53869c3442c711e3d77a017c2fbac92af419c7024175c31f4e761600f91f3505",
       "thumbnail_sha256": "c63b9bd6055a2fc113603ced96745c011dcb1a703c51dcd2d77b14045788500c",
-      "visual_review": "pending",
-      "source_canonical_sha1": "201d057de803efd90093c16934cb35f41eaea9fd"
+      "visual_review": "approved",
+      "source_canonical_sha1": "201d057de803efd90093c16934cb35f41eaea9fd",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "comida.papaya",
@@ -135,8 +142,9 @@
       "source_sha256": "bfaf90ba18995ac5d8e6d5fa17eed580a120d98c3ac64843eb5647e4b3268b12",
       "asset_sha256": "7310166960e969b1756e1c9a3827d7bad1c8f0b1b7ace91f80251fc464a26e3c",
       "thumbnail_sha256": "c7ccd4945a97aa83ccaacdfceca5f3443ef27fbebf1f54ac764d837207af400b",
-      "visual_review": "pending",
-      "source_canonical_sha1": "8857041408dee6db184d6d1dbffe15c8a4df227e"
+      "visual_review": "approved",
+      "source_canonical_sha1": "8857041408dee6db184d6d1dbffe15c8a4df227e",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "comida.lenteja",
@@ -152,8 +160,9 @@
       "source_sha256": "db95f8e1e16674d0bac8cead411a7b47e4ef0e32269111387a09e24fce4b541d",
       "asset_sha256": "914abeb237057108dc4dc7ba23d7bc37c5ce8f9473fe2bb85dfd85634698ffa4",
       "thumbnail_sha256": "6107126ad70980a7fe246b1090c743b668f750cbf8449247aca95613f4540c1e",
-      "visual_review": "pending",
-      "source_canonical_sha1": "7d1ab3c69cafe90fa8ff4a4f5f6d2c3effeeeb9a"
+      "visual_review": "approved",
+      "source_canonical_sha1": "7d1ab3c69cafe90fa8ff4a4f5f6d2c3effeeeb9a",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     },
     {
       "id": "comida.harina",
@@ -169,8 +178,9 @@
       "source_sha256": "ee9e7f13c388ac51249e1f7d7c7afad8b7381d1c8e295ce2e7e91dc890d7bf7d",
       "asset_sha256": "bc6df6c46be312006e929984b1d5e5898020c35c1030db1a89a9beebee55e9d2",
       "thumbnail_sha256": "6df26f8352c54991130647a552cd3c13551827a389ec861c6cd89976b74c44b1",
-      "visual_review": "pending",
-      "source_canonical_sha1": "588de3cb754a697d02b7d643c29fa16cc6731f21"
+      "visual_review": "approved",
+      "source_canonical_sha1": "588de3cb754a697d02b7d643c29fa16cc6731f21",
+      "review_note": "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
     }
   ]
 }

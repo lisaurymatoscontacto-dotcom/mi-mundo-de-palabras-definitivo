@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T14:38:24.119Z",
+  "generated_at": "2026-10-16T14:40:22.374Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -21782,12 +21782,13 @@
       "attribution_text": "StockyPics · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/toalla.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:White towel (23403430576).jpg"
+        "Pinned Wikimedia source: File:White towel (23403430576).jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21808,12 +21809,13 @@
       "attribution_text": "No machine-readable author provided. Ilkant~commonswiki assumed (based on copyright claims). · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/colchon.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:Mattress.jpg"
+        "Pinned Wikimedia source: File:Mattress.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21834,13 +21836,14 @@
       "attribution_text": "Herter Brothers · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/armario.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
         "Pinned Wikimedia source: File:Napoleon's Wardrobe.jpg",
-        "Supplemental refinement: replaced ornate historical wardrobe candidate with a clearer full-object CC0 MET wardrobe photograph; visual approval remains pending."
+        "Supplemental refinement: replaced ornate historical wardrobe candidate with a clearer full-object CC0 MET wardrobe photograph; visual approval remains pending.",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21861,12 +21864,13 @@
       "attribution_text": "Nono cocon · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/escritorio.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:Full view of desk.jpg"
+        "Pinned Wikimedia source: File:Full view of desk.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21887,12 +21891,13 @@
       "attribution_text": "Stilfehler · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/horno.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:High End Double Oven 1.jpg"
+        "Pinned Wikimedia source: File:High End Double Oven 1.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21913,12 +21918,13 @@
       "attribution_text": "LION DIOR 2008 MEN · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/ventilador.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:HK 電風扇 electric fan white 日本 Plus Minus Zero Co 中國製造 made in China 卓領亞太 觀塘 Kwun Tong 入口 家福送贈 Hong Kong Family Welfare sponsor June 2026 N13P 01.jpg"
+        "Pinned Wikimedia source: File:HK 電風扇 electric fan white 日本 Plus Minus Zero Co 中國製造 made in China 卓領亞太 觀塘 Kwun Tong 入口 家福送贈 Hong Kong Family Welfare sponsor June 2026 N13P 01.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21939,12 +21945,13 @@
       "attribution_text": "စာကလေး SarKaLay · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/yuca.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:PeeLawPeeNam Cassava root Yuca Manioc.jpg"
+        "Pinned Wikimedia source: File:PeeLawPeeNam Cassava root Yuca Manioc.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21965,12 +21972,13 @@
       "attribution_text": "စာကလေး SarKaLay · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/papaya.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:PAPAYA.jpg"
+        "Pinned Wikimedia source: File:PAPAYA.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -21991,12 +21999,13 @@
       "attribution_text": "Bean appreciator · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/lenteja.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:Lentil.jpg"
+        "Pinned Wikimedia source: File:Lentil.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     },
     {
@@ -22017,12 +22026,13 @@
       "attribution_text": "congerdesign · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/harina.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:Wheat flour 01.jpg"
+        "Pinned Wikimedia source: File:Wheat flour 01.jpg",
+        "Chapter-five supplemental editorial approval: exact Wikimedia title, CC0/Public Domain license, canonical source SHA-1, local WebP and thumbnail hashes were revalidated; the photo directly represents the written concept under the one-word/one-concept policy."
       ]
     }
   ]
