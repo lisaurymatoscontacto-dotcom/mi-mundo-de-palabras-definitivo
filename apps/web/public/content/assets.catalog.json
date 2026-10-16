@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T13:10:30.606Z",
+  "generated_at": "2026-10-16T13:19:25.654Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -21381,20 +21381,21 @@
       "asset_type": "photo",
       "asset_path": "photos/naturaleza/cueva.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ATimpanogos_Cave_National_Monument_TICA2279.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Timpanogos_Cave_National_Monument_TICA2279.jpg/1920px-Timpanogos_Cave_National_Monument_TICA2279.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "author": "National Park Service Digital Image Archives",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ADeep_Cave_(51202093762).jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Deep_Cave_%2851202093762%29.jpg/1920px-Deep_Cave_%2851202093762%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "CarlsbadCavernsNPS",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "National Park Service Digital Image Archives · Wikimedia Commons · Public Domain",
+      "attribution_text": "CarlsbadCavernsNPS · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T13:10:30.606Z",
+      "downloaded_at": "2026-10-16T13:19:25.654Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/cueva.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Timpanogos Cave National Monument TICA2279.jpg"
+        "Pinned replacement Wikimedia source: File:Deep Cave (51202093762).jpg",
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
       ]
     },
     {
@@ -21407,20 +21408,21 @@
       "asset_type": "photo",
       "asset_path": "photos/naturaleza/cascada.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AWaterfall_along_the_East_Entrance_Road_(42284009144).jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Waterfall_along_the_East_Entrance_Road_%2842284009144%29.jpg/1920px-Waterfall_along_the_East_Entrance_Road_%2842284009144%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "author": "Yellowstone National Park",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AButtermilk_Falls%2C_on_the_New_Jersey_side_of_the_Delaware_River._(4e60164f-1dd8-b71b-0bcd-a1953bd6a54a).jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Buttermilk_Falls%2C_on_the_New_Jersey_side_of_the_Delaware_River._%284e60164f-1dd8-b71b-0bcd-a1953bd6a54a%29.jpg/1920px-Buttermilk_Falls%2C_on_the_New_Jersey_side_of_the_Delaware_River._%284e60164f-1dd8-b71b-0bcd-a1953bd6a54a%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "NPS",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "Yellowstone National Park · Wikimedia Commons · Public Domain",
+      "attribution_text": "NPS · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T13:10:30.606Z",
+      "downloaded_at": "2026-10-16T13:19:25.654Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/cascada.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Waterfall along the East Entrance Road (42284009144).jpg"
+        "Pinned replacement Wikimedia source: File:Buttermilk Falls, on the New Jersey side of the Delaware River. (4e60164f-1dd8-b71b-0bcd-a1953bd6a54a).jpg",
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
       ]
     },
     {
@@ -21589,20 +21591,21 @@
       "asset_type": "photo",
       "asset_path": "photos/naturaleza/iceberg.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AIceberg_in_the_Atlantic_Ocean%2C_off_the_coast_of_Labrador_LCCN2012645565.jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Iceberg_in_the_Atlantic_Ocean%2C_off_the_coast_of_Labrador_LCCN2012645565.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "Pierce, William H., photographer; Bradford, William, 1823-1892.",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AFront_row_Iceberg-Chugach-KK-005_(52503186215).jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Front_row_Iceberg-Chugach-KK-005_%2852503186215%29.jpg/1920px-Front_row_Iceberg-Chugach-KK-005_%2852503186215%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Forest Service Alaska Region, USDA",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "Pierce, William H., photographer; Bradford, William, 1823-1892. · Wikimedia Commons · Public Domain",
+      "attribution_text": "Forest Service Alaska Region, USDA · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T13:10:30.606Z",
+      "downloaded_at": "2026-10-16T13:19:25.654Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/iceberg.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Iceberg in the Atlantic Ocean, off the coast of Labrador LCCN2012645565.jpg"
+        "Pinned replacement Wikimedia source: File:Front row Iceberg-Chugach-KK-005 (52503186215).jpg",
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
       ]
     },
     {
@@ -21641,20 +21644,21 @@
       "asset_type": "photo",
       "asset_path": "photos/naturaleza/geiser.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ARiverside_Geyser_1959.jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Riverside_Geyser_1959.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "NPS/Haselton",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ARiverside_Geyser_eruption_(38396853531).jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Riverside_Geyser_eruption_%2838396853531%29.jpg/1920px-Riverside_Geyser_eruption_%2838396853531%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Yellowstone National Park",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "NPS/Haselton · Wikimedia Commons · Public Domain",
+      "attribution_text": "Yellowstone National Park · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T13:10:30.606Z",
+      "downloaded_at": "2026-10-16T13:19:25.654Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/geiser.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Riverside Geyser 1959.jpg"
+        "Pinned replacement Wikimedia source: File:Riverside Geyser eruption (38396853531).jpg",
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
       ]
     },
     {
@@ -21693,20 +21697,21 @@
       "asset_type": "photo",
       "asset_path": "photos/naturaleza/cuarzo.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AQuartz_Crystal.jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Quartz_Crystal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "USGS",
-      "license": "PUBLIC-DOMAIN",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AQuartz_(GeoDIL_number_-_2254).jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Quartz_%28GeoDIL_number_-_2254%29.jpg/1920px-Quartz_%28GeoDIL_number_-_2254%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Shannon Heinle",
+      "license": "CC0-1.0",
       "attribution_required": false,
-      "attribution_text": "USGS · Wikimedia Commons · Public Domain",
+      "attribution_text": "Shannon Heinle · Wikimedia Commons · CC0 1.0",
       "verified": true,
-      "downloaded_at": "2026-10-16T13:10:30.606Z",
+      "downloaded_at": "2026-10-16T13:19:25.654Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/cuarzo.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Quartz Crystal.jpg"
+        "Pinned replacement Wikimedia source: File:Quartz (GeoDIL number - 2254).jpg",
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
       ]
     }
   ]
