@@ -22,6 +22,7 @@ jobs:
       - run: npm run sync-api:smoke
       - run: npm run content:assets:validate
       - run: npm run content:assets:files
+      - run: npm run content:curriculum:verify
       - run: npm run content:assets:publish
       - name: Verify committed asset metadata is current
         run: git diff --exit-code -- apps/web/public/content/assets.catalog.json
