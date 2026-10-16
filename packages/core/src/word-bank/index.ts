@@ -70,24 +70,58 @@ const CHAPTER_ONE_PRIORITY: Record<string, readonly string[]> = {
   ],
 };
 
+const CHAPTER_TWO_PRIORITY: Record<string, readonly string[]> = {
+  Animales: [
+    "ÁGUILA", "JIRAFA", "CEBRA", "GORILA", "KOALA", "BALLENA", "DELFÍN", "TORTUGA",
+    "COCODRILO", "MARIPOSA", "ELEFANTE", "MURCIÉLAGO", "HIPOPÓTAMO", "RINOCERONTE", "PINGÜINO", "BÚHO",
+  ],
+  Casa: [
+    "VENTANA", "ESCOBA", "CUBETA", "ESCALERA", "INODORO", "BAÑERA", "JABÓN", "TETERA",
+    "ENCHUFE", "ANTENA", "IMPRESORA", "TECLADO", "MONITOR", "MARTILLO", "LINTERNA", "EXTINTOR",
+  ],
+  Comida: [
+    "NARANJA", "GALLETA", "HELADO", "ZANAHORIA", "AGUACATE", "SANDÍA", "CHOCOLATE", "FRIJOL",
+    "PLÁTANO", "CEREZA", "KIWI", "LECHUGA", "PEPINO", "BERENJENA", "BRÓCOLI", "PIZZA",
+  ],
+  Naturaleza: [
+    "PINO", "VIENTO", "RELÁMPAGO", "AGUA", "HIELO", "NIEBLA", "TORNADO", "AMANECER",
+    "PALMERA", "BAMBÚ", "ROSA", "TULIPÁN", "GIRASOL", "LOTO", "CACTUS", "HONGO",
+  ],
+};
+
 function cleanCandidateWords(words: readonly string[]) {
   return words.map((word) => TYPOGRAPHIC_FIXES[word] ?? word);
 }
 
-function prioritizeChapterOne(category: string, words: readonly string[]) {
+function prioritizeCurriculumStart(category: string, words: readonly string[]) {
   const cleaned = cleanCandidateWords(words);
-  const priority = CHAPTER_ONE_PRIORITY[category];
-  if (!priority) return cleaned;
+  const first = CHAPTER_ONE_PRIORITY[category] ?? cleaned.slice(0, 20);
+  if (first.length !== 20 || new Set(first).size !== 20) {
+    throw new Error(`${category}: chapter one priority must contain exactly 20 distinct concepts`);
+  }
+
   const available = new Set(cleaned);
-  for (const word of priority) {
+  for (const word of first) {
     if (!available.has(word)) throw new Error(`${category}: prioritized chapter-one concept is missing from master bank: ${word}`);
   }
-  const selected = new Set(priority);
-  return [...priority, ...cleaned.filter((word) => !selected.has(word))];
+
+  const firstSet = new Set(first);
+  const remaining = cleaned.filter((word) => !firstSet.has(word));
+  const second = CHAPTER_TWO_PRIORITY[category] ?? [];
+  if (second.length && (second.length !== 16 || new Set(second).size !== 16)) {
+    throw new Error(`${category}: chapter two priority must contain exactly 16 distinct concepts`);
+  }
+  const remainingSet = new Set(remaining);
+  for (const word of second) {
+    if (!remainingSet.has(word)) throw new Error(`${category}: prioritized chapter-two concept is missing or already used in chapter one: ${word}`);
+  }
+
+  const secondSet = new Set(second);
+  return [...first, ...second, ...remaining.filter((word) => !secondSet.has(word))];
 }
 
 function buildCategory(category: string, baseWords: readonly string[]) {
-  const base = prioritizeChapterOne(category, baseWords);
+  const base = prioritizeCurriculumStart(category, baseWords);
   const expansion = cleanCandidateWords(MASTER_EXPANSION_WORDS[category] ?? []);
   if (expansion.length !== 50) {
     throw new Error(`${category}: expected exactly 50 expansion concepts, received ${expansion.length}`);
