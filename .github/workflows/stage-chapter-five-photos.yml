@@ -1,0 +1,57 @@
+name: Stage chapter-five photos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stage-chapter-five-photos.yml
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Stage 36 legal chapter-five photo candidates
+        run: npx tsx scripts/stage-chapter-five-photos.ts
+      - name: Publish metadata and validate staged files
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+      - name: Verify all chapter-five photos remain pending
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const review = JSON.parse(fs.readFileSync('content/asset-reviews/chapter-five-photos.json', 'utf8'));
+          if (review.assets.length !== 36) throw new Error(`Expected 36 review assets, got ${review.assets.length}`);
+          if (review.status !== 'pending_visual_review') throw new Error(`Unexpected review status: ${review.status}`);
+          if (review.assets.some((asset) => asset.visual_review !== 'pending')) throw new Error('No chapter-five photo may be auto-approved');
+          const byCategory = review.assets.reduce((acc, asset) => { acc[asset.category] = (acc[asset.category] || 0) + 1; return acc; }, {});
+          if (byCategory.Casa !== 16 || byCategory.Comida !== 4 || byCategory.Naturaleza !== 16) throw new Error(`Unexpected category counts: ${JSON.stringify(byCategory)}`);
+          const catalog = JSON.parse(fs.readFileSync('content/assets.catalog.json', 'utf8'));
+          for (const item of review.assets) {
+            const asset = catalog.assets.find((candidate) => candidate.id === item.id);
+            if (!asset || asset.review_status !== 'pending_review') throw new Error(`${item.id} must remain pending_review`);
+          }
+          NODE
+          npm test
+          npm run typecheck
+          npm run build
+      - name: Commit pending chapter-five review batch
+        run: |
+          rm scripts/stage-chapter-five-photos.ts .github/workflows/stage-chapter-five-photos.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: stage chapter-five photo candidates"
+          git pull --rebase origin main
+          git push origin main
