@@ -52,6 +52,22 @@ const CHAPTER_ONE_PRIORITY: Record<string, readonly string[]> = {
     "LIBRO", "LÁPIZ", "REGLA", "MAPA", "PAPEL", "CUADERNO", "MOCHILA", "TIJERA", "CRAYÓN", "COMPUTADORA",
     "CALCULADORA", "PINCEL", "BOLÍGRAFO", "CARPETA", "CLIP", "ESCUELA", "MAESTRA", "MAESTRO", "TECLADO", "IMPRESORA",
   ],
+  Juguetes: [
+    "DADO", "YO-YO", "PELOTA", "COMETA", "ROBOT", "TAMBOR", "PELUCHE", "VIDEOJUEGO", "BURBUJA", "ROMPECABEZAS",
+    "GLOBO", "FRISBI", "MARACA", "PIANO", "GUITARRA", "MICRÓFONO", "DINOSAURIO", "UNICORNIO", "COHETE", "AVIÓN",
+  ],
+  "Océano": [
+    "OLA", "CORAL", "FOCA", "PULPO", "TIBURÓN", "MEDUSA", "CANGREJO", "CONCHA", "LANGOSTA", "CALAMAR",
+    "ANCLA", "OSTRA", "BALLENA", "DELFÍN", "TORTUGA", "PINGÜINO", "CAMARÓN", "BARCO", "BOTE", "VELERO",
+  ],
+  Espacio: [
+    "PLANETA", "SATÉLITE", "ASTRONAUTA", "GALAXIA", "METEORITO", "TELESCOPIO", "SOL", "LUNA", "TIERRA", "COHETE",
+    "RADIO", "COMPUTADORA", "LABORATORIO", "ANTENA", "GUANTE", "BOTA", "CÁMARA", "ALIEN", "OVNI", "ESTRELLA",
+  ],
+  Granja: [
+    "GALLO", "GALLINA", "SEMILLA", "PALA", "CAMPESINO", "LECHUGA", "VACA", "TORO", "CERDO", "OVEJA",
+    "CABRA", "CABALLO", "BURRO", "CONEJO", "PATO", "GANSO", "PAVO", "HUEVO", "MAÍZ", "TRACTOR",
+  ],
 };
 
 function cleanCandidateWords(words: readonly string[]) {
