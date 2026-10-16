@@ -87,6 +87,22 @@ const CHAPTER_TWO_PRIORITY: Record<string, readonly string[]> = {
     "PINO", "VIENTO", "RELÁMPAGO", "AGUA", "HIELO", "NIEBLA", "TORNADO", "AMANECER",
     "PALMERA", "BAMBÚ", "ROSA", "TULIPÁN", "GIRASOL", "LOTO", "CACTUS", "HONGO",
   ],
+  Cuerpo: [
+    "PULGAR", "PUÑO", "PALMADA", "ABRAZO", "BESO", "CAMINAR", "CORRER", "NADAR",
+    "DORMIR", "BEBÉ", "NIÑO", "NIÑA", "HOMBRE", "MUJER", "TERMÓMETRO", "JERINGA",
+  ],
+  Ropa: [
+    "BLUSA", "CHAQUETA", "SHORT", "ZAPATILLA", "KIMONO", "CORONA", "CASCO", "RELOJ",
+    "LANA", "HILO", "AGUJA", "TIJERA", "LAZO", "TACÓN", "BAÑADOR", "DISFRAZ",
+  ],
+  Transporte: [
+    "CAMIONETA", "TELEFÉRICO", "PARACAÍDAS", "TROLEBÚS", "SCOOTER", "LOCOMOTORA", "AVIONETA", "CRUCERO",
+    "YATE", "ASCENSOR", "RUEDA", "GASOLINERA", "CARRETERA", "SEMÁFORO", "EQUIPAJE", "PATINETE",
+  ],
+  Escuela: [
+    "BIBLIOTECA", "ACUARELA", "ÁBACO", "LABORATORIO", "ALUMNO", "TAREA", "PREGUNTA", "SUMA",
+    "RESTA", "MULTIPLICACIÓN", "DIVISIÓN", "BIOLOGÍA", "MICROSCOPIO", "PROYECTOR", "AURICULAR", "TROFEO",
+  ],
 };
 
 function cleanCandidateWords(words: readonly string[]) {
