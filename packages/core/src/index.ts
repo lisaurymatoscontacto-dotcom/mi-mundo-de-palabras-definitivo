@@ -1,10 +1,5 @@
 import type { VisualKind, VisualLicense } from "./media";
-import { TRANSITION_CHAPTER_ONE_CARDS } from "./transition-chapter-one";
-import { TRANSITION_BLOCK_TWO_CARDS } from "./transition-chapter-block-two";
-import { TRANSITION_BLOCK_THREE_CARDS } from "./transition-chapter-block-three";
-import { TRANSITION_BLOCK_FOUR_CARDS } from "./transition-chapter-block-four";
-import { TRANSITION_BLOCK_FIVE_CARDS } from "./transition-chapter-block-five";
-import { TRANSITION_BLOCK_SIX_CARDS } from "./transition-chapter-block-six";
+import { PUBLISHED_TRANSITION_CARDS } from "./transition-published";
 export type { VisualKind, VisualLicense } from "./media";
 
 export type LearningMode = "reading" | "writing" | "mixed";
@@ -200,12 +195,7 @@ export const DEMO_WORDS: WordCard[] = [
   pilot("uva", "UVA", "Comida", "🍇", ["U", "VA"], 2),
   pilot("tomate", "TOMATE", "Comida", "🍅", ["TO", "MA", "TE"], 2),
   pilot("queso", "QUESO", "Comida", "🧀", ["QUE", "SO"], 3, 4, 5, true),
-  ...TRANSITION_CHAPTER_ONE_CARDS,
-  ...TRANSITION_BLOCK_TWO_CARDS,
-  ...TRANSITION_BLOCK_THREE_CARDS,
-  ...TRANSITION_BLOCK_FOUR_CARDS,
-  ...TRANSITION_BLOCK_FIVE_CARDS,
-  ...TRANSITION_BLOCK_SIX_CARDS,
+  ...PUBLISHED_TRANSITION_CARDS,
 ];
 
 export const DEMO_CATEGORIES = [...new Set(DEMO_WORDS.map((word) => word.category))];
