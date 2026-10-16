@@ -20,6 +20,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "ARDILLA", "CASTOR", "NUTRIA", "MAPACHE", "ERIZO", "LEOPARDO", "BISONTE", "BÚFALO",
       "CAMELLO", "DROMEDARIO", "LLAMA", "CANGURO", "PEREZOSO", "HAMSTER", "CISNE", "PAVO",
     ],
+    [
+      "GALLO", "GALLINA", "POLLO", "GANSO", "FLAMENCO", "LORO", "PALOMA", "SERPIENTE",
+      "TIBURÓN", "PULPO", "CALAMAR", "MEDUSA", "CANGREJO", "LANGOSTA", "CAMARÓN", "CARACOL",
+    ],
   ],
   Casa: [
     [
@@ -33,6 +37,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "ESPONJA", "CUENCO", "BATERÍA", "ALTAVOZ", "LADRILLO", "DESTORNILLADOR", "TIJERA", "BOLSA",
       "MALETA", "PAPELERA", "VELA", "ABANICO", "JARRÓN", "MACETA", "CALENDARIO", "ALARMA",
+    ],
+    [
+      "FRASCO", "PEINE", "AFEITADORA", "GRIFO", "BALANZA", "GUANTE", "TIMBRE", "COMPUTADORA",
+      "RATÓN", "TORNILLO", "SERRUCHO", "GANCHO", "CLIP", "AGUJA", "HILO", "PORTARRETRATO",
     ],
   ],
   Comida: [
@@ -48,6 +56,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "SAL", "ENSALADA", "PASTA", "DURAZNO", "ARÁNDANO", "CALABAZA", "PIMIENTO", "CEBOLLA",
       "AJO", "GUISANTE", "TOCINO", "HAMBURGUESA", "MANTEQUILLA", "SUSHI", "TACO", "SÁNDWICH",
     ],
+    [
+      "POLLO", "CARNE", "CAMARÓN", "CANGREJO", "LANGOSTA", "PULPO", "CALAMAR", "PAELLA",
+      "BURRITO", "CAFÉ", "TÉ", "AGUA", "JUGO", "DONA", "FLAN", "MANÍ",
+    ],
   ],
   Naturaleza: [
     [
@@ -61,6 +73,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "FRÍO", "HURACÁN", "ATARDECER", "TEMPERATURA", "TRÉBOL", "COMETA", "NORTE", "SUR",
       "ESTE", "OESTE", "PRIMAVERA", "OTOÑO", "INVIERNO", "PAISAJE", "FAUNA", "HORIZONTE",
+    ],
+    [
+      "ARCE", "BROTE", "TRONCO", "HIERBA", "TERMAS", "METEORO", "OLEAJE", "PLANETA",
+      "SATÉLITE", "GALAXIA", "BRISA", "CALOR", "ARRECIFE", "CORDILLERA", "LUZ", "CONTINENTE",
     ],
   ],
   Cuerpo: [
