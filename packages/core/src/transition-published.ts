@@ -11,6 +11,7 @@ import { TRANSITION_BLOCK_TEN_CARDS } from "./transition-chapter-block-ten";
 import { TRANSITION_BLOCK_ELEVEN_CARDS } from "./transition-chapter-block-eleven";
 import { TRANSITION_BLOCK_TWELVE_CARDS } from "./transition-chapter-block-twelve";
 import { TRANSITION_CHAPTER_FIVE_WAVE_ONE_CARDS } from "./transition-chapter-five-wave-one";
+import { TRANSITION_CHAPTER_FIVE_WAVE_TWO_CARDS } from "./transition-chapter-five-wave-two";
 
 /**
  * Explicitly curated transition cards that may participate in the publish
@@ -31,4 +32,5 @@ export const PUBLISHED_TRANSITION_CARDS = [
   ...TRANSITION_BLOCK_ELEVEN_CARDS,
   ...TRANSITION_BLOCK_TWELVE_CARDS,
   ...TRANSITION_CHAPTER_FIVE_WAVE_ONE_CARDS,
+  ...TRANSITION_CHAPTER_FIVE_WAVE_TWO_CARDS,
 ];

@@ -2,37 +2,32 @@ import { describe, expect, it } from "vitest";
 import { chaptersForCategory } from "./curriculum";
 import { REGIONAL_LEXEMES } from "./regional-vocabulary";
 
-const EXPECTED_COMIDA_FIVE = ["YUCA","CEREAL","YOGUR","LENTEJA","MANDARINA","TORONJA","LIMA","GUAYABA","PAPAYA","MARACUYÁ","GRANADA","CIRUELA","NECTARINA","ALBARICOQUE","FRAMBUESA","MORA"] as const;
-
+const EXPECTED = { Casa: ["COLCHÓN","PISO","TECHO","PATIO","BAÑO","COCINA","TOALLA","NEVERA","ESTUFA","ALMOHADA","SÁBANA","CORTINA","LÁMPARA","ARMARIO","CUADRO","HORNO"], Comida: ["YUCA","CEREAL","YOGUR","LENTEJA","MANDARINA","TORONJA","LIMA","GUAYABA","PAPAYA","MARACUYÁ","GRANADA","CIRUELA","PESCADO","SALCHICHA","HARINA","CHURRO"], Naturaleza: ["LAGO","RAMA","ARENA","ACANTILADO","CAMPO","TIERRA","BOSQUE","CUEVA","CIELO","CASCADA","VALLE","SELVA","PRADO","CAÑÓN","OCÉANO","ARROYO"] } as const;
 function conceptKey(word: string) {
-  const lexeme = REGIONAL_LEXEMES.find((item) =>
-    item.defaultWord === word ||
-    item.acceptedAlternatives?.includes(word) ||
-    Object.values(item.variants).includes(word),
-  );
+  const lexeme = REGIONAL_LEXEMES.find((item) => item.defaultWord === word || item.acceptedAlternatives?.includes(word) || Object.values(item.variants).includes(word));
   return lexeme ? `regional:${lexeme.conceptId}` : `word:${word}`;
 }
 
-describe("Comida 5 regional semantics", () => {
-  it("pins sixteen genuinely distinct early concepts", () => {
+describe("chapter-five early curriculum semantics", () => {
+  for (const [category, expected] of Object.entries(EXPECTED)) {
+    it(`pins 16 reviewed concepts for ${category}`, () => {
+      const chapter = chaptersForCategory(category).find((item) => item.chapterNumber === 5);
+      expect(chapter?.newWords).toEqual([...expected]);
+      expect(new Set((chapter?.newWords ?? []).map(conceptKey)).size).toBe(16);
+    });
+  }
+  it("does not repeat regional synonyms already taught in Comida 1-4", () => {
     const chapters = chaptersForCategory("Comida");
-    const chapterFive = chapters.find((chapter) => chapter.chapterNumber === 5);
-    expect(chapterFive?.newWords).toEqual([...EXPECTED_COMIDA_FIVE]);
-    expect(new Set((chapterFive?.newWords ?? []).map(conceptKey)).size).toBe(16);
+    const previous = new Set(chapters.filter((c) => c.chapterNumber < 5).flatMap((c) => c.newWords).map(conceptKey));
+    for (const word of chapters.find((c) => c.chapterNumber === 5)!.newWords) expect(previous.has(conceptKey(word)), word).toBe(false);
   });
-
-  it("does not reintroduce a regional synonym already taught in chapters 1-4", () => {
-    const chapters = chaptersForCategory("Comida");
-    const earlierKeys = new Set(chapters.filter((chapter) => chapter.chapterNumber < 5).flatMap((chapter) => chapter.newWords).map(conceptKey));
-    const chapterFive = chapters.find((chapter) => chapter.chapterNumber === 5)!;
-    for (const word of chapterFive.newWords) expect(earlierKeys.has(conceptKey(word)), word).toBe(false);
+  it("keeps known regional synonym families under one concept identity", () => {
+    for (const [a,b] of [["BANANA","GUINEO"],["PAPAYA","LECHOSA"],["MARACUYÁ","CHINOLA"],["TORONJA","POMELO"],["BOMBILLA","FOCO"]]) expect(conceptKey(a)).toBe(conceptKey(b));
   });
-
-  it("models the four known synonym families as shared concepts", () => {
-    const key = (word: string) => conceptKey(word);
-    expect(key("BANANA")).toBe(key("GUINEO"));
-    expect(key("PAPAYA")).toBe(key("LECHOSA"));
-    expect(key("MARACUYÁ")).toBe(key("CHINOLA"));
-    expect(key("TORONJA")).toBe(key("POMELO"));
+  it("removes ambiguous/duplicate early entries", () => {
+    expect(chaptersForCategory("Casa").find((c) => c.chapterNumber === 5)!.newWords).not.toContain("FOCO");
+    const nature = chaptersForCategory("Naturaleza").find((c) => c.chapterNumber === 5)!.newWords;
+    expect(nature).not.toContain("MONTE");
+    expect(nature).not.toContain("TRUENO");
   });
 });

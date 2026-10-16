@@ -42,6 +42,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "FRASCO", "PEINE", "AFEITADORA", "GRIFO", "BALANZA", "GUANTE", "TIMBRE", "COMPUTADORA",
       "RATÓN", "TORNILLO", "SERRUCHO", "GANCHO", "CLIP", "AGUJA", "HILO", "PORTARRETRATO",
     ],
+    [
+      "COLCHÓN", "PISO", "TECHO", "PATIO", "BAÑO", "COCINA", "TOALLA", "NEVERA",
+      "ESTUFA", "ALMOHADA", "SÁBANA", "CORTINA", "LÁMPARA", "ARMARIO", "CUADRO", "HORNO",
+    ],
   ],
   Comida: [
     [
@@ -62,7 +66,7 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     ],
     [
       "YUCA", "CEREAL", "YOGUR", "LENTEJA", "MANDARINA", "TORONJA", "LIMA", "GUAYABA",
-      "PAPAYA", "MARACUYÁ", "GRANADA", "CIRUELA", "NECTARINA", "ALBARICOQUE", "FRAMBUESA", "MORA",
+      "PAPAYA", "MARACUYÁ", "GRANADA", "CIRUELA", "PESCADO", "SALCHICHA", "HARINA", "CHURRO",
     ],
   ],
   Naturaleza: [
@@ -81,6 +85,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "ARCE", "BROTE", "TRONCO", "HIERBA", "TERMAS", "METEORO", "OLEAJE", "PLANETA",
       "SATÉLITE", "GALAXIA", "BRISA", "CALOR", "ARRECIFE", "CORDILLERA", "LUZ", "CONTINENTE",
+    ],
+    [
+      "LAGO", "RAMA", "ARENA", "ACANTILADO", "CAMPO", "TIERRA", "BOSQUE", "CUEVA",
+      "CIELO", "CASCADA", "VALLE", "SELVA", "PRADO", "CAÑÓN", "OCÉANO", "ARROYO",
     ],
   ],
   Cuerpo: [

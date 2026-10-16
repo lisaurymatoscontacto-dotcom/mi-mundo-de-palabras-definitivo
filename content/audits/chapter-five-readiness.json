@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-16T14:54:41.240Z",
+  "generated_at": "2026-10-16T14:57:59.328Z",
   "scope": "Curriculum chapter 5 readiness for Animales, Casa, Comida and Naturaleza",
   "readiness_rule": "A concept is ready only when an explicitly published editorial card and a publishable approved local asset both exist.",
   "total_concepts": 64,
-  "ready_concepts": 20,
-  "ready_percent": 31.3,
-  "cards_published": 20,
-  "assets_publishable": 20,
+  "ready_concepts": 27,
+  "ready_percent": 42.2,
+  "cards_published": 27,
+  "assets_publishable": 27,
   "worlds": [
     {
       "category": "Animales",
@@ -182,19 +182,19 @@
       "category": "Casa",
       "chapter_id": "home-5",
       "expected_new_words": 16,
-      "ready": 5,
-      "cards_published": 5,
-      "assets_publishable": 5,
+      "ready": 6,
+      "cards_published": 6,
+      "assets_publishable": 6,
       "concepts": [
         {
-          "id": "casa.foco",
-          "word": "FOCO",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "id": "casa.colchon",
+          "word": "COLCHÓN",
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "photo",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
           "id": "casa.piso",
@@ -352,9 +352,9 @@
       "category": "Comida",
       "chapter_id": "food-5",
       "expected_new_words": 16,
-      "ready": 3,
-      "cards_published": 3,
-      "assets_publishable": 3,
+      "ready": 7,
+      "cards_published": 7,
+      "assets_publishable": 7,
       "concepts": [
         {
           "id": "comida.yuca",
@@ -477,44 +477,44 @@
           "ready": false
         },
         {
-          "id": "comida.nectarina",
-          "word": "NECTARINA",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "id": "comida.pescado",
+          "word": "PESCADO",
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "photo",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
-          "id": "comida.albaricoque",
-          "word": "ALBARICOQUE",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "id": "comida.salchicha",
+          "word": "SALCHICHA",
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "photo",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
-          "id": "comida.frambuesa",
-          "word": "FRAMBUESA",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "id": "comida.harina",
+          "word": "HARINA",
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "photo",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
-          "id": "comida.mora",
-          "word": "MORA",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "id": "comida.churro",
+          "word": "CHURRO",
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "photo",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         }
       ]
     },
@@ -522,9 +522,9 @@
       "category": "Naturaleza",
       "chapter_id": "nature-5",
       "expected_new_words": 16,
-      "ready": 8,
-      "cards_published": 8,
-      "assets_publishable": 8,
+      "ready": 10,
+      "cards_published": 10,
+      "assets_publishable": 10,
       "concepts": [
         {
           "id": "naturaleza.lago",
@@ -557,14 +557,14 @@
           "ready": true
         },
         {
-          "id": "naturaleza.monte",
-          "word": "MONTE",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "id": "naturaleza.acantilado",
+          "word": "ACANTILADO",
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "photo",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
           "id": "naturaleza.campo",
@@ -657,14 +657,14 @@
           "ready": true
         },
         {
-          "id": "naturaleza.trueno",
-          "word": "TRUENO",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
+          "id": "naturaleza.canyon",
+          "word": "CAÑÓN",
+          "card_published": true,
+          "asset_present": true,
+          "asset_type": "photo",
+          "asset_review_status": "approved",
+          "asset_publishable": true,
+          "ready": true
         },
         {
           "id": "naturaleza.oceano",

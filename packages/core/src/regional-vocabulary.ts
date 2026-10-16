@@ -93,6 +93,13 @@ export const REGIONAL_LEXEMES: RegionalLexeme[] = [
     acceptedAlternatives: ["POMELO"],
     reviewNote: "Toronja/pomelo are regional names for grapefruit; do not count them as two new concepts.",
   },
+  {
+    conceptId: "light-bulb",
+    defaultWord: "BOMBILLA",
+    variants: { latam: "BOMBILLA", caribbean: "BOMBILLA", andine: "BOMBILLA", "southern-cone": "BOMBILLA", mx: "FOCO" },
+    acceptedAlternatives: ["FOCO", "BOMBILLO"],
+    reviewNote: "Foco/bombilla/bombillo can name the same light-bulb concept regionally; do not spend separate curriculum positions on them.",
+  },
 ];
 
 export function wordForRegion(lexeme: RegionalLexeme, region: Region): string {
