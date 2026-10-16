@@ -1,6 +1,7 @@
 import type { VisualKind, VisualLicense } from "./media";
 import { TRANSITION_CHAPTER_ONE_CARDS } from "./transition-chapter-one";
 import { TRANSITION_BLOCK_TWO_CARDS } from "./transition-chapter-block-two";
+import { TRANSITION_BLOCK_THREE_CARDS } from "./transition-chapter-block-three";
 export type { VisualKind, VisualLicense } from "./media";
 
 export type LearningMode = "reading" | "writing" | "mixed";
@@ -154,9 +155,8 @@ const pilot = (
 
 /**
  * Banco de transición mientras el lexicón grande recibe revisión editorial.
- * Animales 1 ya contiene sus 20 conceptos oficiales; el resto de mundos se
- * ampliará por capítulos sin publicar candidatos que todavía no tengan visual
- * y metadatos pedagógicos aprobados.
+ * Los doce capítulos introductorios se materializan por bloques controlados; los
+ * capítulos posteriores solo aparecen cuando sus visuales y metadatos pasan revisión.
  */
 export const DEMO_WORDS: WordCard[] = [
   pilot("gato", "GATO", "Animales", "🐱", ["GA", "TO"], 1),
@@ -199,6 +199,7 @@ export const DEMO_WORDS: WordCard[] = [
   pilot("queso", "QUESO", "Comida", "🧀", ["QUE", "SO"], 3, 4, 5, true),
   ...TRANSITION_CHAPTER_ONE_CARDS,
   ...TRANSITION_BLOCK_TWO_CARDS,
+  ...TRANSITION_BLOCK_THREE_CARDS,
 ];
 
 export const DEMO_CATEGORIES = [...new Set(DEMO_WORDS.map((word) => word.category))];
