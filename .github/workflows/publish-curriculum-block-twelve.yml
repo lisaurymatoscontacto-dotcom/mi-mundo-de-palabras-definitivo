@@ -78,3 +78,5 @@ jobs:
           git commit -m "feat: complete chapter-four curriculum"
           git pull --rebase origin main
           git push origin main
+
+# Retry after replacing the stale fixed pilot-photo count with a catalog-derived assertion.
