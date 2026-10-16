@@ -164,6 +164,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "ARO", "BLOQUE", "CASTILLO", "ESPADA", "ESCUDO", "VARITA", "PIRATA", "CABALLITO",
       "TREN", "HELICÓPTERO", "TRACTOR", "AMBULANCIA", "CARPA", "TOBOGÁN", "IMÁN", "TELESCOPIO",
     ],
+    [
+      "CORONA", "COCHE", "BARCO", "CAMIÓN", "GRÚA", "CAJA", "DOCTOR", "HERRAMIENTA",
+      "MARTILLO", "CASA", "TIENDA", "PARACAÍDAS", "CRAYÓN", "ASTRONAUTA", "REY", "REINA",
+    ],
   ],
   "Océano": [
     [
@@ -177,6 +181,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "CARACOL", "ROCA", "SAL", "AGUA", "FERRY", "CANOA", "LANCHA", "RADAR",
       "BRISA", "RESIDUO", "ANZUELO", "CAÑA", "VOLCÁN", "MUSEO", "LARVA", "TORMENTA",
+    ],
+    [
+      "ORCA", "NARVAL", "BELUGA", "MANATÍ", "CACHALOTE", "MORSA", "MANTA", "PEZPAYASO",
+      "BARRACUDA", "MORENA", "ESTRELLA", "ERIZODEMAR", "PELICANO", "ALBATROS", "GAVIOTA", "FRAILECILLO",
     ],
   ],
   Espacio: [
@@ -192,6 +200,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "COMETA", "CIENTÍFICO", "PESO", "PILOTO", "COMBUSTIBLE", "RADAR", "LANZAMIENTO", "EXPEDICIÓN",
       "ASTRONOMÍA", "AÑO", "BIGBANG", "MAGNETISMO", "VOLCÁN", "VALLE", "DUNA", "EXPERIMENTO",
     ],
+    [
+      "MERCURIO", "VENUS", "MARTE", "JÚPITER", "SATURNO", "URANO", "NEPTUNO", "PLUTÓN",
+      "CERES", "ANDRÓMEDA", "NEBULOSA", "ROVER", "ESTACIÓN", "TRANSBORDADOR", "AURORA", "LLENA",
+    ],
   ],
   Granja: [
     [
@@ -205,6 +217,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "CARNERO", "POLLITO", "PLUMA", "ALA", "LANA", "LECHE", "MIEL", "ABEJA",
       "LOMBRIZ", "MARIPOSA", "MARIQUITA", "GIRASOL", "MANÍ", "AJO", "BRÓCOLI", "HACHA",
+    ],
+    [
+      "PERRO", "GATO", "RATÓN", "LECHUZA", "RANA", "FRIJOL", "BATATA", "MANGO",
+      "BANANA", "PIÑA", "COCO", "AGUACATE", "PERA", "MARTILLO", "SERRUCHO", "BALDE",
     ],
   ],
 };

@@ -9,6 +9,7 @@ import { TRANSITION_BLOCK_EIGHT_CARDS } from "./transition-chapter-block-eight";
 import { TRANSITION_BLOCK_NINE_CARDS } from "./transition-chapter-block-nine";
 import { TRANSITION_BLOCK_TEN_CARDS } from "./transition-chapter-block-ten";
 import { TRANSITION_BLOCK_ELEVEN_CARDS } from "./transition-chapter-block-eleven";
+import { TRANSITION_BLOCK_TWELVE_CARDS } from "./transition-chapter-block-twelve";
 
 /**
  * Explicitly curated transition cards that may participate in the publish
@@ -27,4 +28,5 @@ export const PUBLISHED_TRANSITION_CARDS = [
   ...TRANSITION_BLOCK_NINE_CARDS,
   ...TRANSITION_BLOCK_TEN_CARDS,
   ...TRANSITION_BLOCK_ELEVEN_CARDS,
+  ...TRANSITION_BLOCK_TWELVE_CARDS,
 ];
