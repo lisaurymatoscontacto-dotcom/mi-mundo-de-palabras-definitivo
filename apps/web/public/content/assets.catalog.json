@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T13:19:25.654Z",
+  "generated_at": "2026-10-16T13:22:50.099Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -21381,21 +21381,21 @@
       "asset_type": "photo",
       "asset_path": "photos/naturaleza/cueva.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ADeep_Cave_(51202093762).jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Deep_Cave_%2851202093762%29.jpg/1920px-Deep_Cave_%2851202093762%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "author": "CarlsbadCavernsNPS",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ARotunda_in_Mammoth_Cave%2C_NPS_Photo_(2649cd25-059e-442a-a255-329df533ee5f).jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Rotunda_in_Mammoth_Cave%2C_NPS_Photo_%282649cd25-059e-442a-a255-329df533ee5f%29.jpg/1920px-Rotunda_in_Mammoth_Cave%2C_NPS_Photo_%282649cd25-059e-442a-a255-329df533ee5f%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "NPS Photo",
       "license": "PUBLIC-DOMAIN",
       "attribution_required": false,
-      "attribution_text": "CarlsbadCavernsNPS · Wikimedia Commons · Public Domain",
+      "attribution_text": "NPS Photo · Wikimedia Commons · Public Domain",
       "verified": true,
-      "downloaded_at": "2026-10-16T13:19:25.654Z",
+      "downloaded_at": "2026-10-16T13:22:50.099Z",
       "review_status": "pending_review",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/cueva.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned replacement Wikimedia source: File:Deep Cave (51202093762).jpg",
-        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
+        "Pinned final Wikimedia source: File:Rotunda in Mammoth Cave, NPS Photo (2649cd25-059e-442a-a255-329df533ee5f).jpg",
+        "Final cave refinement uses a direct cave-room photograph without a named human subject in the source description."
       ]
     },
     {

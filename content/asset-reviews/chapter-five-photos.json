@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T13:19:25.654Z",
+  "generated_at": "2026-10-16T13:22:50.099Z",
   "status": "pending_visual_review",
   "assets": [
     {
@@ -211,16 +211,16 @@
       "word": "CUEVA",
       "category": "Naturaleza",
       "query": null,
-      "selected_title": "File:Deep Cave (51202093762).jpg",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ADeep_Cave_(51202093762).jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Deep_Cave_%2851202093762%29.jpg/1920px-Deep_Cave_%2851202093762%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-      "author": "CarlsbadCavernsNPS",
+      "selected_title": "File:Rotunda in Mammoth Cave, NPS Photo (2649cd25-059e-442a-a255-329df533ee5f).jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3ARotunda_in_Mammoth_Cave%2C_NPS_Photo_(2649cd25-059e-442a-a255-329df533ee5f).jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Rotunda_in_Mammoth_Cave%2C_NPS_Photo_%282649cd25-059e-442a-a255-329df533ee5f%29.jpg/1920px-Rotunda_in_Mammoth_Cave%2C_NPS_Photo_%282649cd25-059e-442a-a255-329df533ee5f%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "NPS Photo",
       "license": "PUBLIC-DOMAIN",
       "asset_path": "photos/naturaleza/cueva.webp",
       "thumbnail_path": "photos/naturaleza/cueva.thumb.webp",
-      "source_sha256": "1344609a956f27709428153450b0f2962e316ac016ef6ff29b4753c65e52c322",
-      "asset_sha256": "694412fe3ef4ebe38ff59dd201a704c597868a7286b8e13f18d319e746b41067",
-      "thumbnail_sha256": "378e516e86ce5dfe86252624e1bc4d68b9ab8aded5b1541de77be979274cf52f",
+      "source_sha256": "0a10b15a0be62d1ab0cbdc07722ce3e020455437a52c3fd975c4e4a40c25ed49",
+      "asset_sha256": "9204b6f166f49fb445f3110f6e2497fd810c8629f75c930a54f53c07d52a663b",
+      "thumbnail_sha256": "d5a212b2a4f8e75f7f4fa061c3411c2e248bc299943f8698e1c53b0c33c26bb8",
       "visual_review": "pending"
     },
     {
