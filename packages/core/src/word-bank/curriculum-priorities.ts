@@ -72,6 +72,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "PULGAR", "PUÑO", "PALMADA", "ABRAZO", "BESO", "CAMINAR", "CORRER", "NADAR",
       "DORMIR", "BEBÉ", "NIÑO", "NIÑA", "HOMBRE", "MUJER", "TERMÓMETRO", "JERINGA",
     ],
+    [
+      "CURITA", "MEDICINA", "LLANTO", "BOSTEZO", "ESTORNUDO", "FIEBRE", "MAREO", "NÁUSEA",
+      "FUERZA", "HABLAR", "CANTAR", "BEBER", "MIRAR", "ADN", "ANCIANO", "ANCIANA",
+    ],
   ],
   Ropa: [
     [
@@ -81,6 +85,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "BLUSA", "CHAQUETA", "SHORT", "ZAPATILLA", "KIMONO", "CORONA", "CASCO", "RELOJ",
       "LANA", "HILO", "AGUJA", "TIJERA", "LAZO", "TACÓN", "BAÑADOR", "DISFRAZ",
+    ],
+    [
+      "ROJO", "AZUL", "VERDE", "AMARILLO", "NEGRO", "BLANCO", "GRIS", "MARRÓN",
+      "ROSA", "MORADO", "NARANJA", "CARTERA", "COLLAR", "MÁSCARA", "TRAJE", "CHALECO",
     ],
   ],
   Transporte: [
@@ -92,6 +100,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "CAMIONETA", "TELEFÉRICO", "PARACAÍDAS", "TROLEBÚS", "SCOOTER", "LOCOMOTORA", "AVIONETA", "CRUCERO",
       "YATE", "ASCENSOR", "RUEDA", "GASOLINERA", "CARRETERA", "SEMÁFORO", "EQUIPAJE", "PATINETE",
     ],
+    [
+      "FURGONETA", "GRÚA", "MONORRIEL", "KART", "VAGÓN", "ESTACIÓN", "PUENTE", "MOTOR",
+      "NEUMÁTICO", "ASIENTO", "GASOLINA", "APARCAMIENTO", "BILLETE", "PAQUETE", "TRÁILER", "TRINEO",
+    ],
   ],
   Escuela: [
     [
@@ -101,6 +113,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "BIBLIOTECA", "ACUARELA", "ÁBACO", "LABORATORIO", "ALUMNO", "TAREA", "PREGUNTA", "SUMA",
       "RESTA", "MULTIPLICACIÓN", "DIVISIÓN", "BIOLOGÍA", "MICROSCOPIO", "PROYECTOR", "AURICULAR", "TROFEO",
+    ],
+    [
+      "LETRA", "NÚMERO", "PLUMA", "SILLA", "ESTUDIANTE", "EXAMEN", "TRIÁNGULO", "CUADRADO",
+      "CÍRCULO", "ROMBO", "MÚSICA", "ARTE", "DEPORTE", "ROBÓTICA", "PLANETA", "BANDERA",
     ],
   ],
   Juguetes: [
