@@ -56,7 +56,11 @@ describe("reviewed pilot photos", () => {
     expect(cards).toHaveLength(DEMO_WORDS.length);
     const photoCount = cards.filter((card) => card.visualKind === "photo").length;
     const emojiCount = cards.filter((card) => card.visualKind === "emoji").length;
-    expect(photoCount).toBe(6);
+    const expectedPhotoCount = DEMO_WORDS.filter((card) => {
+      const asset = catalog.assets.find((entry) => entry.id === card.id);
+      return asset?.review_status === "approved" && asset.asset_type === "photo";
+    }).length;
+    expect(photoCount).toBe(expectedPhotoCount);
     expect(emojiCount).toBe(DEMO_WORDS.length - photoCount);
 
     const expectedAnimals = DEMO_WORDS.filter((card) => card.category === "Animales");
