@@ -13,28 +13,32 @@ const TWEMOJI_BASE = `https://raw.githubusercontent.com/jdecked/twemoji/${TWEMOJ
 const TWEMOJI_SOURCE = "https://github.com/jdecked/twemoji";
 const REVIEW_NOTE = "Curriculum block 6 controlled review: direct Twemoji representation matches one clear written concept; local CC-BY-4.0 file, difficulty and pinned provenance verified.";
 
-function emojiCodepoints(emoji: string) {
-  return [...emoji]
-    .map((char) => char.codePointAt(0)!)
-    .filter((codepoint) => codepoint !== 0xfe0f)
-    .map((codepoint) => codepoint.toString(16))
-    .join("-");
+function emojiCodepointCandidates(emoji: string) {
+  const all = [...emoji].map((char) => char.codePointAt(0)!);
+  const stripped = all.filter((codepoint) => codepoint !== 0xfe0f).map((codepoint) => codepoint.toString(16)).join("-");
+  const preserved = all.map((codepoint) => codepoint.toString(16)).join("-");
+  return [...new Set([stripped, preserved])];
 }
 
 async function materialize(emoji: string) {
-  const codepoints = emojiCodepoints(emoji);
-  const relativePath = `emoji/twemoji/${codepoints}.svg`;
-  const target = resolve(PUBLIC_ROOT, relativePath);
-  const downloadUrl = `${TWEMOJI_BASE}/${codepoints}.svg`;
-  const response = await fetch(downloadUrl, {
-    headers: { "User-Agent": "MiMundoDePalabras/0.1 (https://github.com/lisaurymatoscontacto-dotcom/mi-mundo-de-palabras-definitivo)" },
-  });
-  if (!response.ok) throw new Error(`Twemoji ${codepoints} returned HTTP ${response.status}`);
-  const svg = await response.text();
-  if (!/^\s*<svg\b/i.test(svg)) throw new Error(`Twemoji ${codepoints} was not SVG`);
-  await mkdir(dirname(target), { recursive: true });
-  await writeFile(target, svg, "utf8");
-  return { codepoints, relativePath, downloadUrl };
+  const attempted: string[] = [];
+  for (const codepoints of emojiCodepointCandidates(emoji)) {
+    const relativePath = `emoji/twemoji/${codepoints}.svg`;
+    const downloadUrl = `${TWEMOJI_BASE}/${codepoints}.svg`;
+    attempted.push(codepoints);
+    const response = await fetch(downloadUrl, {
+      headers: { "User-Agent": "MiMundoDePalabras/0.1 (https://github.com/lisaurymatoscontacto-dotcom/mi-mundo-de-palabras-definitivo)" },
+    });
+    if (response.status === 404) continue;
+    if (!response.ok) throw new Error(`Twemoji ${codepoints} returned HTTP ${response.status}`);
+    const svg = await response.text();
+    if (!/^\s*<svg\b/i.test(svg)) throw new Error(`Twemoji ${codepoints} was not SVG`);
+    const target = resolve(PUBLIC_ROOT, relativePath);
+    await mkdir(dirname(target), { recursive: true });
+    await writeFile(target, svg, "utf8");
+    return { codepoints, relativePath, downloadUrl };
+  }
+  throw new Error(`Twemoji asset not found; tried ${attempted.join(", ")} for ${emoji}`);
 }
 
 async function main() {
