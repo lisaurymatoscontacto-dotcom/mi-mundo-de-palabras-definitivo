@@ -1,0 +1,53 @@
+name: Finalize chapter-five cave candidate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/finalize-chapter-five-cave-photo.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx tsx scripts/finalize-chapter-five-cave-photo.ts
+      - name: Validate pending batch
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const review = JSON.parse(fs.readFileSync('content/asset-reviews/chapter-five-photos.json', 'utf8'));
+          const cave = review.assets.find((item) => item.id === 'naturaleza.cueva');
+          const expected = 'File:Rotunda in Mammoth Cave, NPS Photo (2649cd25-059e-442a-a255-329df533ee5f).jpg';
+          if (!cave || cave.selected_title !== expected || cave.visual_review !== 'pending') throw new Error('Final cave candidate contract failed');
+          if (review.assets.length !== 25 || review.assets.some((item) => item.visual_review !== 'pending')) throw new Error('All 25 chapter-five decisions must remain pending');
+          const catalog = JSON.parse(fs.readFileSync('content/assets.catalog.json', 'utf8'));
+          for (const item of review.assets) {
+            const asset = catalog.assets.find((candidate) => candidate.id === item.id);
+            if (!asset || asset.review_status !== 'pending_review') throw new Error(`${item.id} must remain pending_review`);
+          }
+          NODE
+          npm test
+          npm run typecheck
+          npm run build
+      - name: Commit final pending cave candidate
+        run: |
+          rm scripts/finalize-chapter-five-cave-photo.ts .github/workflows/finalize-chapter-five-cave-photo.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: finalize chapter-five cave photo candidate"
+          git pull --rebase origin main
+          git push origin main
