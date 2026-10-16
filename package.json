@@ -20,6 +20,7 @@
     "content:assets:queue": "tsx scripts/queue-missing-assets.ts",
     "content:assets:import": "tsx scripts/import-assets.ts",
     "content:assets:review": "tsx scripts/review-assets.ts",
+    "content:curriculum:verify": "tsx scripts/verify-published-curriculum.ts --chapters=20",
     "content:enrich:aoa": "tsx scripts/enrich-aoa.ts",
     "content:enrich:syllables": "tsx scripts/enrich-syllables.ts",
     "content:manifest:assets": "tsx scripts/build-asset-manifest.ts",
