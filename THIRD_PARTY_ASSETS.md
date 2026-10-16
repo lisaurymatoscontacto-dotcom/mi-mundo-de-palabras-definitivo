@@ -22,7 +22,7 @@ Attribution used by the app:
 
 > Twemoji graphics © Twitter, Inc. and other contributors, licensed CC-BY 4.0.
 
-The exact approved set is intentionally derived from the machine-readable catalog instead of duplicated as a hand-maintained list here. The complete first three curriculum rounds plus the first chapter-four block are now publishable: **40 chapters** across the twelve learning worlds. The canonical catalog contains **688 approved local asset records**; review slots deliberately reuse earlier approved concepts instead of duplicating files. Their local paths, source revision, license, review status and pedagogical difficulty are enforced by `content/assets.catalog.json` and CI. Later chapters remain locked until their own new concepts pass the same review gates.
+The exact approved set is intentionally derived from the machine-readable catalog instead of duplicated as a hand-maintained list here. The complete first three curriculum rounds plus the first two chapter-four blocks are now publishable: **44 chapters** across the twelve learning worlds. The canonical catalog contains **752 approved local asset records**; review slots deliberately reuse earlier approved concepts instead of duplicating files. Their local paths, source revision, license, review status and pedagogical difficulty are enforced by `content/assets.catalog.json` and CI. Later chapters remain locked until their own new concepts pass the same review gates.
 
 The Unicode character remains in asset metadata as the semantic reference. Runtime rendering uses the approved local SVG `asset_path` directly, so adding a reviewed emoji does not require editing a hardcoded UI map.
 

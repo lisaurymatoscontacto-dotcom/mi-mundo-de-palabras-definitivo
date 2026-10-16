@@ -92,6 +92,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "CURITA", "MEDICINA", "LLANTO", "BOSTEZO", "ESTORNUDO", "FIEBRE", "MAREO", "NÁUSEA",
       "FUERZA", "HABLAR", "CANTAR", "BEBER", "MIRAR", "ADN", "ANCIANO", "ANCIANA",
     ],
+    [
+      "LABIO", "CRÁNEO", "LATIDO", "SUSPIRO", "CANSANCIO", "DESCANSO", "HERIDA", "DOLOR",
+      "MASCARILLA", "MÉDICO", "MÉDICA", "PEINE", "JABÓN", "ESPONJA", "ADULTO", "LÁGRIMA",
+    ],
   ],
   Ropa: [
     [
@@ -105,6 +109,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "ROJO", "AZUL", "VERDE", "AMARILLO", "NEGRO", "BLANCO", "GRIS", "MARRÓN",
       "ROSA", "MORADO", "NARANJA", "CARTERA", "COLLAR", "MÁSCARA", "TRAJE", "CHALECO",
+    ],
+    [
+      "CHANCLA", "BOTÍN", "MALETÍN", "ALFILER", "MONÓCULO", "CADENA", "BATA", "TURBANTE",
+      "LAVADO", "PLAYA", "FIESTA", "DEPORTE", "ESCUELA", "LLUVIA", "NIEVE", "OTOÑO",
     ],
   ],
   Transporte: [
@@ -120,6 +128,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "FURGONETA", "GRÚA", "MONORRIEL", "KART", "VAGÓN", "ESTACIÓN", "PUENTE", "MOTOR",
       "NEUMÁTICO", "ASIENTO", "GASOLINA", "APARCAMIENTO", "BILLETE", "PAQUETE", "TRÁILER", "TRINEO",
     ],
+    [
+      "ESPEJO", "PUERTA", "VENTANILLA", "ELECTRICIDAD", "CHALECO", "AUTOPISTA", "SEÑAL", "PARADA",
+      "TARJETA", "CICLISTA", "PEATÓN", "DERECHA", "IZQUIERDA", "RADAR", "EXTINTOR", "HERRAMIENTA",
+    ],
   ],
   Escuela: [
     [
@@ -133,6 +145,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "LETRA", "NÚMERO", "PLUMA", "SILLA", "ESTUDIANTE", "EXAMEN", "TRIÁNGULO", "CUADRADO",
       "CÍRCULO", "ROMBO", "MÚSICA", "ARTE", "DEPORTE", "ROBÓTICA", "PLANETA", "BANDERA",
+    ],
+    [
+      "RECREO", "BAÑO", "ÁNGULO", "GEOGRAFÍA", "FÍSICA", "QUÍMICA", "CIUDAD", "EXPERIMENTO",
+      "TELESCOPIO", "CÁMARA", "INTERNET", "ESCRIBIR", "PENSAR", "SILENCIO", "PARTICIPACIÓN", "CREDENCIAL",
     ],
   ],
   Juguetes: [
