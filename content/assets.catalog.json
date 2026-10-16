@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T13:22:50.099Z",
+  "generated_at": "2026-10-16T13:31:05.181Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -21077,12 +21077,14 @@
       "attribution_text": "Richard Chris 29 · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/nevera.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Refrigeradora en casa.jpg"
+        "Pinned Wikimedia source: File:Refrigeradora en casa.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 58ad6d13d1d9f680286bd20aeedacea5f16a1e98"
       ]
     },
     {
@@ -21103,12 +21105,14 @@
       "attribution_text": "Roderick Suñaz Sumalinog · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/cafetera.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Coffee maker 2024.jpg"
+        "Pinned Wikimedia source: File:Coffee maker 2024.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: f2b29e9238a927f5bea2fcec6b3633134965032a"
       ]
     },
     {
@@ -21129,12 +21133,14 @@
       "attribution_text": "Karamanskaya · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/microondas.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Microwave oven \"Erisson\".jpg"
+        "Pinned Wikimedia source: File:Microwave oven \"Erisson\".jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 48a4bd23a4304c6d6831ac602dcb1f98fa329738"
       ]
     },
     {
@@ -21155,12 +21161,14 @@
       "attribution_text": "freestocks.org from Olsztyn, Poland · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/lavadora.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Washing machine (23745702205).jpg"
+        "Pinned Wikimedia source: File:Washing machine (23745702205).jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 83068e7fadfd4766bc0a77bd48a5f4cf95ade610"
       ]
     },
     {
@@ -21181,12 +21189,14 @@
       "attribution_text": "Hans Herrington · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/casa/sarten.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Cooking frying pan.jpg"
+        "Pinned Wikimedia source: File:Cooking frying pan.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 08fcd959b81f344bc590423a3d9652053dde81f8"
       ]
     },
     {
@@ -21207,12 +21217,14 @@
       "attribution_text": "Miansari66 · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/pescado.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Fried Fish Fillet.JPG"
+        "Pinned Wikimedia source: File:Fried Fish Fillet.JPG",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: ed9e14e898dc84f68cdd6049a878072b5880bb4f"
       ]
     },
     {
@@ -21233,12 +21245,14 @@
       "attribution_text": "Alabama Extension · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/salchicha.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Sausage links.jpg"
+        "Pinned Wikimedia source: File:Sausage links.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 41c16d1611e00c9df653a05d5ff65cb3b7f6d142"
       ]
     },
     {
@@ -21259,12 +21273,14 @@
       "attribution_text": "Bykim2012 · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/hummus.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Hummus dish on a plate.jpg"
+        "Pinned Wikimedia source: File:Hummus dish on a plate.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 6d8fadf580fd1b839c37917c3d074424b7fe3f32"
       ]
     },
     {
@@ -21285,12 +21301,14 @@
       "attribution_text": "Ocdp · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/comida/churro.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Churros 001.jpg"
+        "Pinned Wikimedia source: File:Churros 001.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 7e4ed5200e66b908c3121d6c81783642df40a000"
       ]
     },
     {
@@ -21311,12 +21329,14 @@
       "attribution_text": "Neal Herbert · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/lago.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Yellowstone Lake from Lake Butte Overlook (027f0dda-1dd8-b71b-0b83-b097b77d44e5).jpg"
+        "Pinned Wikimedia source: File:Yellowstone Lake from Lake Butte Overlook (027f0dda-1dd8-b71b-0b83-b097b77d44e5).jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: ca8a53cfc321db27d5c14862dcf29c4161ed7358"
       ]
     },
     {
@@ -21337,12 +21357,14 @@
       "attribution_text": "Alf van Beem · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/arena.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Close-up zand foto 1.JPG"
+        "Pinned Wikimedia source: File:Close-up zand foto 1.JPG",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 88bb92acb7e638680285a67457447d1c48312a36"
       ]
     },
     {
@@ -21363,12 +21385,14 @@
       "attribution_text": "Steve Redman ( MORA ) · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/bosque.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Forest (1748a47b03574600879494054fb7cec4).JPG"
+        "Pinned Wikimedia source: File:Forest (1748a47b03574600879494054fb7cec4).JPG",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 4280cc041f0630453048a37572992e47019f277c"
       ]
     },
     {
@@ -21389,13 +21413,15 @@
       "attribution_text": "NPS Photo · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:22:50.099Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/cueva.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
         "Pinned final Wikimedia source: File:Rotunda in Mammoth Cave, NPS Photo (2649cd25-059e-442a-a255-329df533ee5f).jpg",
-        "Final cave refinement uses a direct cave-room photograph without a named human subject in the source description."
+        "Final cave refinement uses a direct cave-room photograph without a named human subject in the source description.",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 0204cb5d366a859c81d0a05cca37f4560cd1c545"
       ]
     },
     {
@@ -21416,13 +21442,15 @@
       "attribution_text": "NPS · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:19:25.654Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/cascada.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
         "Pinned replacement Wikimedia source: File:Buttermilk Falls, on the New Jersey side of the Delaware River. (4e60164f-1dd8-b71b-0bcd-a1953bd6a54a).jpg",
-        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate.",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 08dd96efcea989ff0c730af24cc6e82d7e2e9d42"
       ]
     },
     {
@@ -21443,12 +21471,14 @@
       "attribution_text": "Wilfredor · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/valle.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:San Juan Valley.jpg"
+        "Pinned Wikimedia source: File:San Juan Valley.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: ec046cc64d09ea73472dec6514b0f6f4e3b0ef38"
       ]
     },
     {
@@ -21469,12 +21499,14 @@
       "attribution_text": "NPS Photo · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/selva.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Boardwalk on Rain Forest Nature Trail (57f57280-35a8-4750-88a2-3d7651d441b3).JPG"
+        "Pinned Wikimedia source: File:Boardwalk on Rain Forest Nature Trail (57f57280-35a8-4750-88a2-3d7651d441b3).JPG",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 68c95306e5f205d1f5569e4b69dc4e74c6929b2d"
       ]
     },
     {
@@ -21495,12 +21527,14 @@
       "attribution_text": "Steve Redman ( MORA ) · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/prado.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Meadow (32e92a130408490cab02a896c4d15f75).JPG"
+        "Pinned Wikimedia source: File:Meadow (32e92a130408490cab02a896c4d15f75).JPG",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 962a1bb6fd29762d8ea3c353a04b31289313a9d0"
       ]
     },
     {
@@ -21521,12 +21555,14 @@
       "attribution_text": "National Park Service / Matthew Lambert (Acadia Youth Technology Team) derivative work: User:Maps and stuff (white balanced; reduced saturation; brightened darker areas) · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/acantilado.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Acadia National Park, Otter Cliff.jpg"
+        "Pinned Wikimedia source: File:Acadia National Park, Otter Cliff.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 0cb397332e130adb950c78306b7bb408e2d5e287"
       ]
     },
     {
@@ -21547,12 +21583,14 @@
       "attribution_text": "Jebulon · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/canyon.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Rio Alhama canyon, Alhama de Granada, Andalusia, Spain.jpg"
+        "Pinned Wikimedia source: File:Rio Alhama canyon, Alhama de Granada, Andalusia, Spain.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: f9ba594aa87a7c76c700fa904894260174c0e6fe"
       ]
     },
     {
@@ -21573,12 +21611,14 @@
       "attribution_text": "National Park Service · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/glaciar.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Brady Glacier Mt. La Perouse.jpg"
+        "Pinned Wikimedia source: File:Brady Glacier Mt. La Perouse.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 807b7b1cbd60673eccb68c0488f8212adf00058d"
       ]
     },
     {
@@ -21599,13 +21639,15 @@
       "attribution_text": "Forest Service Alaska Region, USDA · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:19:25.654Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/iceberg.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
         "Pinned replacement Wikimedia source: File:Front row Iceberg-Chugach-KK-005 (52503186215).jpg",
-        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate.",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 7715cc92379534a203288a4169a11b1e43f88182"
       ]
     },
     {
@@ -21626,12 +21668,14 @@
       "attribution_text": "D. Roddy, U.S. Geological Survey · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/crater.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Barringer Meteor Crater, Arizona.jpg"
+        "Pinned Wikimedia source: File:Barringer Meteor Crater, Arizona.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 80fba59400a64f43bd5435e7bcf20558e654db03"
       ]
     },
     {
@@ -21652,13 +21696,15 @@
       "attribution_text": "Yellowstone National Park · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T13:19:25.654Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/geiser.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
         "Pinned replacement Wikimedia source: File:Riverside Geyser eruption (38396853531).jpg",
-        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate.",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 4fe05619506ab3c26213eec00f6db3029810a814"
       ]
     },
     {
@@ -21679,12 +21725,14 @@
       "attribution_text": "Clump · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:10:30.606Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/barro.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
-        "Pinned Wikimedia source: File:Close-up of mud.jpg"
+        "Pinned Wikimedia source: File:Close-up of mud.jpg",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: b9b6485e7de4f3b61181cae151cde6733a9b16be"
       ]
     },
     {
@@ -21705,13 +21753,15 @@
       "attribution_text": "Shannon Heinle · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:19:25.654Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/naturaleza/cuarzo.thumb.webp",
       "notes": [
         "Chapter-five staging: explicit CC0/Public Domain metadata verified; visual approval remains a separate guarded step.",
         "Pinned replacement Wikimedia source: File:Quartz (GeoDIL number - 2254).jpg",
-        "Editorial refinement replaced an earlier legally valid but visually weaker candidate."
+        "Editorial refinement replaced an earlier legally valid but visually weaker candidate.",
+        "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.",
+        "Canonical Commons SHA-1 at approval: 3165005e15f112ba918ea59d126a38751bcba0b2"
       ]
     }
   ]
