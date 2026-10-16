@@ -1,0 +1,49 @@
+name: Stage ocean chapter-four photos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/stage-ocean-chapter-four-photos.yml
+
+permissions:
+  contents: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Stage 16 licensed ocean photo candidates
+        run: npx tsx scripts/stage-ocean-chapter-four-photos.ts
+
+      - name: Publish metadata and validate staged files
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+
+      - name: Verify pending photos remain excluded from runtime
+        run: |
+          npm test
+          npm run typecheck
+          npm run build
+
+      - name: Commit pending photo review batch
+        run: |
+          rm scripts/stage-ocean-chapter-four-photos.ts .github/workflows/stage-ocean-chapter-four-photos.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: stage ocean chapter-four photo candidates"
+          git pull --rebase origin main
+          git push origin main
