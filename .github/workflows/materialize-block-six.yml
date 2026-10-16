@@ -23,6 +23,8 @@ jobs:
 
       - run: npm ci
 
+      # Retry after teaching the materializer to preserve variation selectors
+      # when Twemoji requires them in ZWJ/gender sequence filenames.
       - name: Activate final chapter-two transition cards
         run: node scripts/activate-block-six.mjs
 
