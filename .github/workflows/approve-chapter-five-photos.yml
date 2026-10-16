@@ -33,7 +33,7 @@ jobs:
           const fs = require('node:fs');
           const review = JSON.parse(fs.readFileSync('content/asset-reviews/chapter-five-photos.json', 'utf8'));
           if (review.status !== 'approved' || review.assets.length !== 25) throw new Error('Expected exactly 25 approved chapter-five photos');
-          if (review.assets.some((item) => item.visual_review !== 'approved' || !item.review_note)) throw new Error('Every chapter-five photo needs an explicit approved review note');
+          if (review.assets.some((item) => item.visual_review !== 'approved' || !item.review_note || !/^[a-f0-9]{40}$/.test(item.commons_sha1 || ''))) throw new Error('Every chapter-five photo needs approval + canonical Commons SHA-1');
           const catalog = JSON.parse(fs.readFileSync('content/assets.catalog.json', 'utf8'));
           for (const item of review.assets) {
             const asset = catalog.assets.find((candidate) => candidate.id === item.id);
@@ -56,3 +56,5 @@ jobs:
           git commit -m "feat: approve chapter-five photo candidates"
           git pull --rebase origin main
           git push origin main
+
+# Retry uses canonical Commons file identity plus visual equivalence when a generated thumbnail is re-encoded.
