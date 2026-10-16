@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T14:51:25.394Z",
+  "generated_at": "2026-10-16T14:54:41.240Z",
   "scope": "Curriculum chapter 5 readiness for Animales, Casa, Comida and Naturaleza",
   "readiness_rule": "A concept is ready only when an explicitly published editorial card and a publishable approved local asset both exist.",
   "total_concepts": 64,
@@ -397,16 +397,6 @@
           "ready": true
         },
         {
-          "id": "comida.guineo",
-          "word": "GUINEO",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
-        },
-        {
           "id": "comida.mandarina",
           "word": "MANDARINA",
           "card_published": false,
@@ -419,16 +409,6 @@
         {
           "id": "comida.toronja",
           "word": "TORONJA",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
-        },
-        {
-          "id": "comida.pomelo",
-          "word": "POMELO",
           "card_published": false,
           "asset_present": false,
           "asset_type": null,
@@ -467,28 +447,8 @@
           "ready": true
         },
         {
-          "id": "comida.lechosa",
-          "word": "LECHOSA",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
-        },
-        {
           "id": "comida.maracuya",
           "word": "MARACUYÁ",
-          "card_published": false,
-          "asset_present": false,
-          "asset_type": null,
-          "asset_review_status": null,
-          "asset_publishable": false,
-          "ready": false
-        },
-        {
-          "id": "comida.chinola",
-          "word": "CHINOLA",
           "card_published": false,
           "asset_present": false,
           "asset_type": null,
@@ -509,6 +469,46 @@
         {
           "id": "comida.ciruela",
           "word": "CIRUELA",
+          "card_published": false,
+          "asset_present": false,
+          "asset_type": null,
+          "asset_review_status": null,
+          "asset_publishable": false,
+          "ready": false
+        },
+        {
+          "id": "comida.nectarina",
+          "word": "NECTARINA",
+          "card_published": false,
+          "asset_present": false,
+          "asset_type": null,
+          "asset_review_status": null,
+          "asset_publishable": false,
+          "ready": false
+        },
+        {
+          "id": "comida.albaricoque",
+          "word": "ALBARICOQUE",
+          "card_published": false,
+          "asset_present": false,
+          "asset_type": null,
+          "asset_review_status": null,
+          "asset_publishable": false,
+          "ready": false
+        },
+        {
+          "id": "comida.frambuesa",
+          "word": "FRAMBUESA",
+          "card_published": false,
+          "asset_present": false,
+          "asset_type": null,
+          "asset_review_status": null,
+          "asset_publishable": false,
+          "ready": false
+        },
+        {
+          "id": "comida.mora",
+          "word": "MORA",
           "card_published": false,
           "asset_present": false,
           "asset_type": null,

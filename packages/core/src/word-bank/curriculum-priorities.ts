@@ -60,6 +60,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "POLLO", "CARNE", "CAMARÓN", "CANGREJO", "LANGOSTA", "PULPO", "CALAMAR", "PAELLA",
       "BURRITO", "CAFÉ", "TÉ", "AGUA", "JUGO", "DONA", "FLAN", "MANÍ",
     ],
+    [
+      "YUCA", "CEREAL", "YOGUR", "LENTEJA", "MANDARINA", "TORONJA", "LIMA", "GUAYABA",
+      "PAPAYA", "MARACUYÁ", "GRANADA", "CIRUELA", "NECTARINA", "ALBARICOQUE", "FRAMBUESA", "MORA",
+    ],
   ],
   Naturaleza: [
     [
