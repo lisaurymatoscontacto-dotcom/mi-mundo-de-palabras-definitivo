@@ -1,0 +1,42 @@
+name: Audit chapter-five readiness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/audit-chapter-five-readiness.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Compute objective chapter-five readiness
+        run: npx tsx scripts/audit-chapter-five-readiness.ts
+      - name: Verify report contract
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const report = JSON.parse(fs.readFileSync('content/audits/chapter-five-readiness.json', 'utf8'));
+          if (report.total_concepts !== 64) throw new Error(`Expected 64 concepts, got ${report.total_concepts}`);
+          if (report.worlds.length !== 4 || report.worlds.some((world) => world.expected_new_words !== 16)) throw new Error('Expected four 16-word chapter-five worlds');
+          if (report.worlds.some((world) => world.concepts.length !== 16)) throw new Error('Every audited world must contain 16 concepts');
+          NODE
+      - name: Commit readiness report and remove audit helpers
+        run: |
+          rm scripts/audit-chapter-five-readiness.ts .github/workflows/audit-chapter-five-readiness.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "docs: record chapter-five readiness audit"
+          git pull --rebase origin main
+          git push origin main
