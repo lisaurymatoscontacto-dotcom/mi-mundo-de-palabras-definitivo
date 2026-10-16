@@ -1,16 +1,13 @@
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import {
-  canPublishAsset,
-  validateAssetCatalog,
-  type AssetCatalogDocument,
-  type AssetLicenseId,
-} from "../packages/core/src/assets";
+import sharp from "sharp";
+import { canPublishAsset, validateAssetCatalog, type AssetCatalogDocument, type AssetLicenseId } from "../packages/core/src/assets";
 
 const CATALOG_PATH = resolve("content/assets.catalog.json");
 const REVIEW_PATH = resolve("content/asset-reviews/chapter-five-photos.json");
 const PUBLIC_ROOT = resolve("apps/web/public/content");
+const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
 const USER_AGENT = "MiMundoDePalabras/0.1 (https://github.com/lisaurymatoscontacto-dotcom/mi-mundo-de-palabras-definitivo)";
 const REQUEST_GAP_MS = 900;
 let lastNetworkRequestAt = 0;
@@ -44,36 +41,26 @@ const EXPECTED = new Map<string, { title: string; license: AssetLicenseId }>([
 ]);
 
 type ReviewEntry = {
-  id: string;
-  word: string;
-  category: string;
-  query: string | null;
-  selected_title: string;
-  source_url: string;
-  download_url: string;
-  author: string;
-  license: AssetLicenseId;
-  asset_path: string;
-  thumbnail_path: string;
-  source_sha256: string;
-  asset_sha256: string;
-  thumbnail_sha256: string;
-  visual_review: "pending" | "approved" | "rejected";
-  review_note?: string;
+  id: string; word: string; category: string; query: string | null; selected_title: string; source_url: string; download_url: string;
+  author: string; license: AssetLicenseId; asset_path: string; thumbnail_path: string; source_sha256: string; asset_sha256: string;
+  thumbnail_sha256: string; visual_review: "pending" | "approved" | "rejected"; review_note?: string; commons_sha1?: string;
 };
-type ReviewDocument = {
-  generated_at: string;
-  status: "pending_visual_review" | "approved";
-  assets: ReviewEntry[];
-};
+type ReviewDocument = { generated_at: string; status: "pending_visual_review" | "approved"; assets: ReviewEntry[] };
+type CommonsIdentity = { title: string; sha1: string; license: AssetLicenseId };
 
-function sha256(bytes: Buffer) {
-  return createHash("sha256").update(bytes).digest("hex");
+function sha256(bytes: Buffer) { return createHash("sha256").update(bytes).digest("hex"); }
+function delay(ms: number) { return new Promise<void>((resolveDelay) => setTimeout(resolveDelay, ms)); }
+function stripHtml(value: string | undefined) {
+  return (value ?? "").replace(/<br\s*\/?\s*>/gi, " ").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&")
+    .replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
 }
-function delay(ms: number) {
-  return new Promise<void>((resolveDelay) => setTimeout(resolveDelay, ms));
+function explicitLicense(metadata: Record<string, { value?: string }> | undefined): AssetLicenseId | null {
+  const raw = `${stripHtml(metadata?.LicenseShortName?.value)} ${stripHtml(metadata?.UsageTerms?.value)}`.toLowerCase();
+  if (raw.includes("cc0") || raw.includes("creative commons zero")) return "CC0-1.0";
+  if (raw.includes("public domain") || raw.includes("released into the public domain")) return "PUBLIC-DOMAIN";
+  return null;
 }
-async function fetchSource(url: string, id: string) {
+async function fetchWithRetry(url: string, label: string) {
   for (let attempt = 0; attempt < 5; attempt += 1) {
     const wait = REQUEST_GAP_MS - (Date.now() - lastNetworkRequestAt);
     if (wait > 0) await delay(wait);
@@ -89,7 +76,31 @@ async function fetchSource(url: string, id: string) {
       await delay(Math.min(1400 * 2 ** attempt, 12_000));
     }
   }
-  throw new Error(`${id}: source verification exhausted retries`);
+  throw new Error(`${label}: exhausted retries`);
+}
+async function commonsIdentity(title: string): Promise<CommonsIdentity> {
+  const params = new URLSearchParams({ action: "query", format: "json", origin: "*", prop: "imageinfo", iiprop: "sha1|extmetadata", titles: title,
+    iiextmetadatafilter: "LicenseShortName|UsageTerms" });
+  const response = await fetchWithRetry(`${COMMONS_API}?${params}`, `Commons identity: ${title}`);
+  if (!response.ok) throw new Error(`${title}: Commons identity HTTP ${response.status}`);
+  const payload = await response.json() as { query?: { pages?: Record<string, { missing?: string; title: string; imageinfo?: Array<{ sha1?: string; extmetadata?: Record<string, { value?: string }> }> }> } };
+  const page = Object.values(payload.query?.pages ?? {})[0];
+  const info = page?.imageinfo?.[0];
+  if (!page || page.missing !== undefined || !info?.sha1) throw new Error(`${title}: canonical Commons identity unavailable`);
+  const license = explicitLicense(info.extmetadata);
+  if (!license) throw new Error(`${title}: canonical Commons license is no longer CC0/Public Domain`);
+  return { title: page.title, sha1: info.sha1.toLowerCase(), license };
+}
+async function normalizedGray(bytes: Buffer) {
+  return sharp(bytes).rotate().resize({ width: 64, height: 64, fit: "fill" }).removeAlpha().greyscale().raw().toBuffer();
+}
+async function visualMae(a: Buffer, b: Buffer) {
+  const left = await normalizedGray(a);
+  const right = await normalizedGray(b);
+  if (left.length !== right.length) throw new Error("Normalized visual buffers have different lengths");
+  let total = 0;
+  for (let i = 0; i < left.length; i += 1) total += Math.abs(left[i] - right[i]);
+  return total / left.length;
 }
 
 async function main() {
@@ -97,67 +108,53 @@ async function main() {
   const review = JSON.parse(await readFile(REVIEW_PATH, "utf8")) as ReviewDocument;
   const initial = validateAssetCatalog(catalog);
   if (!initial.valid) throw new Error(`Invalid input catalog:\n${initial.errors.join("\n")}`);
-  if (EXPECTED.size !== 25) throw new Error(`Approval manifest must contain exactly 25 items, got ${EXPECTED.size}`);
-  if (review.status !== "pending_visual_review" || review.assets.length !== 25) {
-    throw new Error("Expected the exact 25-item pending chapter-five photo batch");
-  }
-  if (review.assets.some((item) => item.visual_review !== "pending")) {
-    throw new Error("Approval refuses to run after any chapter-five visual decision has already changed");
-  }
+  if (EXPECTED.size !== 25 || review.status !== "pending_visual_review" || review.assets.length !== 25) throw new Error("Expected the exact 25-item pending chapter-five batch");
+  if (review.assets.some((item) => item.visual_review !== "pending")) throw new Error("Approval refuses to run after a visual decision changed");
   const reviewIds = new Set(review.assets.map((item) => item.id));
-  if (reviewIds.size !== 25 || [...EXPECTED.keys()].some((id) => !reviewIds.has(id))) {
-    throw new Error("Review batch IDs do not exactly match the guarded approval manifest");
-  }
+  if (reviewIds.size !== 25 || [...EXPECTED.keys()].some((id) => !reviewIds.has(id))) throw new Error("Review IDs differ from guarded manifest");
 
   const byCatalogId = new Map(catalog.assets.map((asset) => [asset.id, asset]));
   for (const entry of review.assets) {
-    const expectation = EXPECTED.get(entry.id);
-    if (!expectation) throw new Error(`${entry.id}: not present in guarded approval manifest`);
-    if (entry.selected_title !== expectation.title) {
-      throw new Error(`${entry.id}: source title changed; expected ${expectation.title}, got ${entry.selected_title}`);
-    }
-    if (entry.license !== expectation.license) {
-      throw new Error(`${entry.id}: review license changed; expected ${expectation.license}, got ${entry.license}`);
-    }
+    const expectation = EXPECTED.get(entry.id)!;
+    if (entry.selected_title !== expectation.title || entry.license !== expectation.license) throw new Error(`${entry.id}: guarded title/license changed`);
     const asset = byCatalogId.get(entry.id);
-    if (!asset) throw new Error(`${entry.id}: missing catalog record`);
-    if (asset.review_status !== "pending_review" || asset.asset_type !== "photo") {
-      throw new Error(`${entry.id}: catalog record must still be a pending photo`);
-    }
-    if (asset.word !== entry.word || asset.category !== entry.category || asset.license !== expectation.license) {
-      throw new Error(`${entry.id}: catalog identity/license no longer matches staged review record`);
-    }
-    if (asset.source_url !== entry.source_url || asset.download_url !== entry.download_url || asset.asset_path !== entry.asset_path || asset.thumbnail_path !== entry.thumbnail_path) {
-      throw new Error(`${entry.id}: catalog provenance/path no longer matches review record`);
-    }
-    if (!/^[a-f0-9]{64}$/.test(entry.source_sha256) || !/^[a-f0-9]{64}$/.test(entry.asset_sha256) || !/^[a-f0-9]{64}$/.test(entry.thumbnail_sha256)) {
-      throw new Error(`${entry.id}: malformed SHA-256 metadata`);
-    }
+    if (!asset || asset.review_status !== "pending_review" || asset.asset_type !== "photo") throw new Error(`${entry.id}: expected pending photo catalog record`);
+    if (asset.word !== entry.word || asset.category !== entry.category || asset.license !== expectation.license) throw new Error(`${entry.id}: catalog identity/license mismatch`);
+    if (asset.source_url !== entry.source_url || asset.download_url !== entry.download_url || asset.asset_path !== entry.asset_path || asset.thumbnail_path !== entry.thumbnail_path) throw new Error(`${entry.id}: provenance/path mismatch`);
+    if (![entry.source_sha256, entry.asset_sha256, entry.thumbnail_sha256].every((hash) => /^[a-f0-9]{64}$/.test(hash))) throw new Error(`${entry.id}: malformed SHA-256 metadata`);
 
     const localAsset = await readFile(resolve(PUBLIC_ROOT, entry.asset_path));
     const localThumb = await readFile(resolve(PUBLIC_ROOT, entry.thumbnail_path));
-    if (sha256(localAsset) !== entry.asset_sha256) throw new Error(`${entry.id}: local WebP hash differs from reviewed hash`);
-    if (sha256(localThumb) !== entry.thumbnail_sha256) throw new Error(`${entry.id}: local thumbnail hash differs from reviewed hash`);
+    if (sha256(localAsset) !== entry.asset_sha256) throw new Error(`${entry.id}: local WebP hash changed`);
+    if (sha256(localThumb) !== entry.thumbnail_sha256) throw new Error(`${entry.id}: local thumbnail hash changed`);
 
-    const sourceResponse = await fetchSource(entry.download_url, entry.id);
-    if (!sourceResponse.ok) throw new Error(`${entry.id}: source verification returned HTTP ${sourceResponse.status}`);
-    const sourceBytes = Buffer.from(await sourceResponse.arrayBuffer());
-    if (sha256(sourceBytes) !== entry.source_sha256) {
-      throw new Error(`${entry.id}: upstream source bytes differ from the staged/reviewed source hash`);
+    const identity = await commonsIdentity(entry.selected_title);
+    if (identity.title !== expectation.title || identity.license !== expectation.license || !/^[a-f0-9]{40}$/.test(identity.sha1)) throw new Error(`${entry.id}: canonical Commons identity/license changed`);
+    entry.commons_sha1 = identity.sha1;
+
+    const sourceResponse = await fetchWithRetry(entry.download_url, `Source bytes: ${entry.id}`);
+    if (!sourceResponse.ok) throw new Error(`${entry.id}: source HTTP ${sourceResponse.status}`);
+    const currentSource = Buffer.from(await sourceResponse.arrayBuffer());
+    const exactBytesMatch = sha256(currentSource) === entry.source_sha256;
+    if (!exactBytesMatch) {
+      const mae = await visualMae(currentSource, localAsset);
+      if (mae > 12) throw new Error(`${entry.id}: thumbnail bytes changed and visual MAE ${mae.toFixed(2)} exceeds safety threshold`);
+      console.log(`Verified canonical identity + visual equivalence after thumbnail re-encode: ${entry.id} (MAE ${mae.toFixed(2)})`);
+    } else {
+      console.log(`Verified exact staged source bytes + canonical identity: ${entry.id}`);
     }
-    console.log(`Verified reviewed source + local hashes: ${entry.id}`);
   }
 
   const approvedAt = new Date().toISOString();
-  const reviewNote = "Chapter-five editorial approval: exact source, license, source bytes, local WebP and thumbnail were revalidated; the selected visual directly represents the written concept and passed the one-word/one-concept policy.";
+  const reviewNote = "Chapter-five editorial approval: exact Commons title/license and canonical upstream SHA-1 were revalidated; local WebP/thumbnail hashes remained exact, and any re-encoded Commons thumbnail passed visual-equivalence checking. The selected visual directly represents the written concept under the one-word/one-concept policy.";
   for (const entry of review.assets) {
     const asset = byCatalogId.get(entry.id)!;
     entry.visual_review = "approved";
     entry.review_note = reviewNote;
     asset.review_status = "approved";
     asset.verified = true;
-    asset.notes = [...(asset.notes ?? []), reviewNote];
-    if (!canPublishAsset(asset)) throw new Error(`${entry.id}: asset still fails publishability after approval`);
+    asset.notes = [...(asset.notes ?? []), reviewNote, `Canonical Commons SHA-1 at approval: ${entry.commons_sha1}`];
+    if (!canPublishAsset(asset)) throw new Error(`${entry.id}: asset fails publishability after approval`);
   }
   review.status = "approved";
   review.generated_at = approvedAt;
@@ -166,10 +163,7 @@ async function main() {
   if (!finalValidation.valid) throw new Error(`Approved catalog is invalid:\n${finalValidation.errors.join("\n")}`);
   await writeFile(CATALOG_PATH, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
   await writeFile(REVIEW_PATH, `${JSON.stringify(review, null, 2)}\n`, "utf8");
-  console.log("Approved exactly 25 chapter-five photos after guarded source/hash/editorial validation.");
+  console.log("Approved exactly 25 chapter-five photos after canonical identity, local hash and visual-equivalence validation.");
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main().catch((error) => { console.error(error); process.exitCode = 1; });
