@@ -1,17 +1,22 @@
 import { describe, expect, it } from "vitest";
-import { CANDIDATE_WORDS, CANDIDATE_WORD_COUNT } from "./candidate.words";
+import { CANDIDATE_WORDS, CANDIDATE_WORD_COUNT, UNIQUE_CANDIDATE_WORD_COUNT } from "./candidate.words";
 
 describe("candidate lexicon", () => {
-  it("contains the expanded 3,600 themed candidate concepts", () => {
-    expect(CANDIDATE_WORD_COUNT).toBe(3600);
+  it("contains 4,200 themed candidate positions", () => {
+    expect(CANDIDATE_WORD_COUNT).toBe(4200);
     expect(Object.keys(CANDIDATE_WORDS)).toHaveLength(12);
   });
 
-  it("keeps exactly 300 candidate concepts in every world", () => {
+  it("keeps exactly 350 candidate concepts in every world", () => {
     for (const words of Object.values(CANDIDATE_WORDS)) {
-      expect(words).toHaveLength(300);
-      expect(new Set(words).size).toBe(300);
+      expect(words).toHaveLength(350);
+      expect(new Set(words).size).toBe(350);
     }
+  });
+
+  it("contains at least 3,500 genuinely unique display words across worlds", () => {
+    expect(UNIQUE_CANDIDATE_WORD_COUNT).toBeGreaterThanOrEqual(3500);
+    expect(UNIQUE_CANDIDATE_WORD_COUNT).toBeLessThanOrEqual(5000);
   });
 
   it("does not duplicate the same concept inside a world", () => {
