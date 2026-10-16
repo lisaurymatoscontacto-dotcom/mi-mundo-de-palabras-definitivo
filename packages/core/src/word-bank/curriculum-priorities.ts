@@ -128,6 +128,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "AJEDREZ", "BOLOS", "DIANA", "BUMERÁN", "PATINETE", "FLAUTA", "PATINES", "BICICLETA",
       "PINTURA", "PINCEL", "LUPA", "BRÚJULA", "DRAGÓN", "HADA", "PRINCESA", "BIBERÓN",
     ],
+    [
+      "ARO", "BLOQUE", "CASTILLO", "ESPADA", "ESCUDO", "VARITA", "PIRATA", "CABALLITO",
+      "TREN", "HELICÓPTERO", "TRACTOR", "AMBULANCIA", "CARPA", "TOBOGÁN", "IMÁN", "TELESCOPIO",
+    ],
   ],
   "Océano": [
     [
@@ -137,6 +141,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "PLAYA", "ISLA", "KAYAK", "YATE", "CRUCERO", "BRÚJULA", "BUZO", "NADADOR",
       "SURFISTA", "PESCADOR", "SALVAVIDAS", "TESORO", "MAPA", "RECICLAJE", "SIRENA", "HURACÁN",
+    ],
+    [
+      "CARACOL", "ROCA", "SAL", "AGUA", "FERRY", "CANOA", "LANCHA", "RADAR",
+      "BRISA", "RESIDUO", "ANZUELO", "CAÑA", "VOLCÁN", "MUSEO", "LARVA", "TORMENTA",
     ],
   ],
   Espacio: [
@@ -148,6 +156,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
       "RADIACIÓN", "LUZ", "ENERGÍA", "ROTACIÓN", "HIELO", "ROCA", "METAL", "MOTOR",
       "BATERÍA", "DESPEGUE", "ATERRIZAJE", "NAVEGACIÓN", "SEÑAL", "CONTROL", "TIEMPO", "DISTANCIA",
     ],
+    [
+      "COMETA", "CIENTÍFICO", "PESO", "PILOTO", "COMBUSTIBLE", "RADAR", "LANZAMIENTO", "EXPEDICIÓN",
+      "ASTRONOMÍA", "AÑO", "BIGBANG", "MAGNETISMO", "VOLCÁN", "VALLE", "DUNA", "EXPERIMENTO",
+    ],
   ],
   Granja: [
     [
@@ -157,6 +169,10 @@ export const CURRICULUM_PRIORITY_WORDS: CurriculumPriorityMap = {
     [
       "TRIGO", "PAPA", "TOMATE", "ZANAHORIA", "CALABAZA", "MANZANA", "NARANJA", "LIMÓN",
       "FRESA", "UVA", "SANDÍA", "MELÓN", "PIMIENTO", "BERENJENA", "PEPINO", "CEBOLLA",
+    ],
+    [
+      "CARNERO", "POLLITO", "PLUMA", "ALA", "LANA", "LECHE", "MIEL", "ABEJA",
+      "LOMBRIZ", "MARIPOSA", "MARIQUITA", "GIRASOL", "MANÍ", "AJO", "BRÓCOLI", "HACHA",
     ],
   ],
 };
