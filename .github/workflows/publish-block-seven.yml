@@ -1,0 +1,55 @@
+name: Publish curriculum block seven
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-block-seven.yml
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Activate reviewed chapter-three cards and central registry
+        run: node scripts/activate-block-seven.mjs
+
+      - name: Materialize reviewed curriculum positions 25-28
+        run: npx tsx scripts/materialize-reviewed-curriculum-block.ts --start=25 --count=4
+
+      - name: Publish and validate local asset catalog
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+
+      - name: Verify curriculum through block seven
+        run: npx tsx scripts/verify-published-curriculum.ts --chapters=28
+
+      - name: Validate application
+        run: |
+          npm test
+          npm run typecheck
+          npm run build
+
+      - name: Commit block seven and remove temporary helpers
+        run: |
+          rm scripts/activate-block-seven.mjs .github/workflows/publish-block-seven.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: publish first chapter-three curriculum block"
+          git pull --rebase origin main
+          git push origin main
