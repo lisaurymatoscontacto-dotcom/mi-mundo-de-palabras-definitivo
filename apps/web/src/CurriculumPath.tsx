@@ -49,7 +49,8 @@ export function CurriculumPath({ mode, progress, cards, message, onBack, onStart
     const world = worldForCategory(chapter.category);
     const session = buildCurriculumSession(chapter, cards, progress.words);
     const done = completed.has(chapter.id);
-    return { world, chapter, session, done };
+    const chapterTotal = CURRICULUM_CHAPTERS.filter((candidate) => candidate.category === chapter.category).length;
+    return { world, chapter, session, done, chapterTotal };
   });
 
   const completedInBatch = chapterCards.filter((entry) => entry.done).length;
@@ -73,7 +74,7 @@ export function CurriculumPath({ mode, progress, cards, message, onBack, onStart
       </section>
       {message && <p className="theme-message" role="status">{message}</p>}
       <section className="theme-grid curriculum-grid">
-        {chapterCards.map(({ world, chapter, session, done }) => {
+        {chapterCards.map(({ world, chapter, session, done, chapterTotal }) => {
           const readyCards = session.cards.length;
           return (
             <button
@@ -84,7 +85,7 @@ export function CurriculumPath({ mode, progress, cards, message, onBack, onStart
             >
               <span>{world?.icon ?? "✨"}</span>
               <strong>{chapter.label}</strong>
-              <small>{world?.name ?? chapter.worldName} · capítulo {chapter.chapterNumber} de 19</small>
+              <small>{world?.name ?? chapter.worldName} · capítulo {chapter.chapterNumber} de {chapterTotal}</small>
               <span className="chapter-readiness">
                 {done
                   ? "✓ Completado · puedes repasar"
