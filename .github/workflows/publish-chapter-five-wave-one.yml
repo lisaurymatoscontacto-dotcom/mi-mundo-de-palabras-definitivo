@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      - name: Build candidate lexicon for reviewed metadata
+        run: npm run content:build:lexicon
       - name: Publish 15 reviewed photos plus 5 exact Twemoji concepts
         run: npx tsx scripts/publish-chapter-five-wave-one.ts
       - name: Publish and validate asset metadata
@@ -58,6 +60,7 @@ jobs:
       - name: Commit chapter-five wave one
         run: |
           rm scripts/publish-chapter-five-wave-one.ts .github/workflows/publish-chapter-five-wave-one.yml
+          rm -f packages/core/src/generated/lexicon.candidate.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
