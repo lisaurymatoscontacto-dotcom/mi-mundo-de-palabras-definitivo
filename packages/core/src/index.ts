@@ -4,6 +4,7 @@ import { TRANSITION_BLOCK_TWO_CARDS } from "./transition-chapter-block-two";
 import { TRANSITION_BLOCK_THREE_CARDS } from "./transition-chapter-block-three";
 import { TRANSITION_BLOCK_FOUR_CARDS } from "./transition-chapter-block-four";
 import { TRANSITION_BLOCK_FIVE_CARDS } from "./transition-chapter-block-five";
+import { TRANSITION_BLOCK_SIX_CARDS } from "./transition-chapter-block-six";
 export type { VisualKind, VisualLicense } from "./media";
 
 export type LearningMode = "reading" | "writing" | "mixed";
@@ -204,6 +205,7 @@ export const DEMO_WORDS: WordCard[] = [
   ...TRANSITION_BLOCK_THREE_CARDS,
   ...TRANSITION_BLOCK_FOUR_CARDS,
   ...TRANSITION_BLOCK_FIVE_CARDS,
+  ...TRANSITION_BLOCK_SIX_CARDS,
 ];
 
 export const DEMO_CATEGORIES = [...new Set(DEMO_WORDS.map((word) => word.category))];

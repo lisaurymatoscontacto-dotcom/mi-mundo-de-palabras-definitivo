@@ -104,7 +104,7 @@ const CHAPTER_TWO_PRIORITY: Record<string, readonly string[]> = {
     "RESTA", "MULTIPLICACIÓN", "DIVISIÓN", "BIOLOGÍA", "MICROSCOPIO", "PROYECTOR", "AURICULAR", "TROFEO",
   ],
   Juguetes: [
-    "AJEDREZ", "BOLOS", "DIANA", "BUMERÁN", "PATINETE", "SKATE", "PATINES", "BICICLETA",
+    "AJEDREZ", "BOLOS", "DIANA", "BUMERÁN", "PATINETE", "FLAUTA", "PATINES", "BICICLETA",
     "PINTURA", "PINCEL", "LUPA", "BRÚJULA", "DRAGÓN", "HADA", "PRINCESA", "BIBERÓN",
   ],
   "Océano": [
