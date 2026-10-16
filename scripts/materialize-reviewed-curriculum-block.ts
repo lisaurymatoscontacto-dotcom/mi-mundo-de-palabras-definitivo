@@ -4,7 +4,13 @@ import { DEMO_WORDS, type WordCard } from "../packages/core/src/index";
 import { CURRICULUM_CHAPTERS } from "../packages/core/src/curriculum";
 import { normalizeAssetWord } from "../packages/core/src/asset-queue";
 import { contentSlug } from "../packages/core/src/asset-production";
-import { validateAssetCatalog, type AssetCatalogDocument, type AssetRecord } from "../packages/core/src/assets";
+import {
+  canPublishAsset,
+  validateAssetCatalog,
+  type AssetCatalogDocument,
+  type AssetLicenseId,
+  type AssetRecord,
+} from "../packages/core/src/assets";
 import { twemojiCodepointCandidates } from "../packages/core/src/twemoji";
 import { worldForCategory } from "../packages/core/src/worlds";
 
@@ -43,16 +49,66 @@ async function materializeEmoji(emoji: string) {
   throw new Error(`Twemoji asset not found for ${emoji}; tried ${attempted.join(", ")}`);
 }
 
-function requireReviewedEmojiCard(byKey: Map<string, WordCard>, category: string, word: string) {
+function requireReviewedCard(byKey: Map<string, WordCard>, category: string, word: string) {
   const card = byKey.get(cardKey(category, word));
   if (!card) {
     throw new Error(`${category} / ${word}: no explicitly curated transition card exists. Add and review the card before materializing the chapter.`);
   }
-  if (card.visualKind !== "emoji" || card.visualLicense !== "unicode-emoji") {
-    throw new Error(`${category} / ${word}: generic block materializer only handles explicitly reviewed emoji cards. Use the photo/custom review pipeline instead.`);
+
+  if (card.visualKind === "emoji") {
+    if (card.visualLicense !== "unicode-emoji") {
+      throw new Error(`${category} / ${word}: reviewed emoji card must use visualLicense=unicode-emoji before Twemoji materialization.`);
+    }
+    if (!card.visual.trim()) throw new Error(`${category} / ${word}: reviewed emoji card has no visual.`);
+    return card;
   }
-  if (!card.visual.trim()) throw new Error(`${category} / ${word}: reviewed emoji card has no visual.`);
-  return card;
+
+  if (card.visualKind === "photo") {
+    if (card.visualLicense !== "cc0-1.0" && card.visualLicense !== "public-domain") {
+      throw new Error(`${category} / ${word}: reviewed photo card must be CC0 or Public Domain.`);
+    }
+    if (!card.visualSourceUrl?.trim()) {
+      throw new Error(`${category} / ${word}: reviewed photo card requires visualSourceUrl provenance.`);
+    }
+    return card;
+  }
+
+  throw new Error(`${category} / ${word}: reusable publisher supports reviewed emoji cards and already-approved photo cards only.`);
+}
+
+function expectedPhotoLicense(card: WordCard): AssetLicenseId {
+  if (card.visualLicense === "cc0-1.0") return "CC0-1.0";
+  if (card.visualLicense === "public-domain") return "PUBLIC-DOMAIN";
+  throw new Error(`${card.category} / ${card.word}: unsupported photo license ${String(card.visualLicense)}.`);
+}
+
+function requireApprovedPhotoAsset(card: WordCard, asset: AssetRecord | undefined) {
+  const id = `${contentSlug(card.category)}.${contentSlug(card.word)}`;
+  if (!asset) {
+    throw new Error(`${id}: reviewed photo card has no catalog record. Stage, inspect and explicitly approve the photo before publishing this chapter.`);
+  }
+  if (asset.word !== card.word || asset.category !== card.category) {
+    throw new Error(`${id}: approved catalog record conflicts with reviewed photo card.`);
+  }
+  if (asset.asset_type !== "photo") {
+    throw new Error(`${id}: reviewed photo card requires asset_type=photo, received ${asset.asset_type}.`);
+  }
+  if (!canPublishAsset(asset)) {
+    throw new Error(`${id}: photo is not publishable. It must pass metadata validation and explicit review_status=approved.`);
+  }
+  if (asset.license !== expectedPhotoLicense(card)) {
+    throw new Error(`${id}: photo license ${asset.license} does not match reviewed card license ${card.visualLicense}.`);
+  }
+  if (asset.source_url !== card.visualSourceUrl) {
+    throw new Error(`${id}: photo provenance differs from the reviewed card visualSourceUrl.`);
+  }
+  if (!asset.thumbnail_path?.trim()) {
+    throw new Error(`${id}: approved curriculum photo requires a local thumbnail_path.`);
+  }
+  if (/^https?:\/\//i.test(asset.thumbnail_path)) {
+    throw new Error(`${id}: approved curriculum photo thumbnail must be local for offline use.`);
+  }
+  return asset;
 }
 
 async function main() {
@@ -68,7 +124,7 @@ async function main() {
   const chapters = CURRICULUM_CHAPTERS.slice(start - 1, start - 1 + count);
   const cardMap = new Map(DEMO_WORDS.map((card) => [cardKey(card.category, card.word), card]));
   const reviewedCards = chapters.flatMap((chapter) =>
-    chapter.newWords.map((word) => requireReviewedEmojiCard(cardMap, chapter.category, word)),
+    chapter.newWords.map((word) => requireReviewedCard(cardMap, chapter.category, word)),
   );
   const uniqueKeys = new Set(reviewedCards.map((card) => cardKey(card.category, card.word)));
   if (uniqueKeys.size !== reviewedCards.length) throw new Error("Selected block repeats a new category/word concept unexpectedly.");
@@ -80,13 +136,25 @@ async function main() {
   const byId = new Map(catalog.assets.map((asset) => [asset.id, asset]));
   const downloaded = new Map<string, Awaited<ReturnType<typeof materializeEmoji>>>();
   const now = new Date().toISOString();
+  let verifiedPhotos = 0;
 
   for (const card of reviewedCards) {
     const id = `${contentSlug(card.category)}.${contentSlug(card.word)}`;
     const existing = byId.get(id);
+
+    if (card.visualKind === "photo") {
+      const photo = requireApprovedPhotoAsset(card, existing);
+      verifiedPhotos += 1;
+      console.log(`Verified approved photo: ${id} -> ${photo.asset_path}`);
+      continue;
+    }
+
     if (existing?.review_status === "approved") {
       if (existing.word !== card.word || existing.category !== card.category) {
         throw new Error(`${id}: approved catalog record conflicts with reviewed transition card.`);
+      }
+      if (existing.asset_type !== "emoji" || !canPublishAsset(existing)) {
+        throw new Error(`${id}: reviewed emoji card conflicts with a non-publishable or non-emoji approved record.`);
       }
       console.log(`Already approved: ${id}`);
       continue;
@@ -139,7 +207,7 @@ async function main() {
   const after = validateAssetCatalog(catalog);
   if (!after.valid) throw new Error(`Reviewed block materialization produced invalid catalog:\n${after.errors.join("\n")}`);
   await writeFile(CATALOG_PATH, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
-  console.log(`Reviewed block materialized: chapters ${start}-${start + count - 1}, ${reviewedCards.length} new card placements, ${downloaded.size} newly fetched Twemoji files.`);
+  console.log(`Reviewed block materialized: chapters ${start}-${start + count - 1}, ${reviewedCards.length} new card placements, ${downloaded.size} newly fetched Twemoji files, ${verifiedPhotos} pre-approved photos verified.`);
 }
 
 main().catch((error) => {
