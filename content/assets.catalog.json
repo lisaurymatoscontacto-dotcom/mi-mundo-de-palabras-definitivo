@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T04:09:49.309Z",
+  "generated_at": "2026-10-16T04:11:48.693Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -19350,12 +19350,13 @@
       "attribution_text": "Robert Pittman · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/orca.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Orcinus orca NOAA killer whale"
+        "Wikimedia search query: Orcinus orca NOAA killer whale",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19376,12 +19377,13 @@
       "attribution_text": "Dr. Kristin Laidre, Polar Science Center, UW NOAA/OAR/OER · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/narval.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Monodon monoceros NOAA narwhal animal"
+        "Wikimedia search query: Monodon monoceros NOAA narwhal animal",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19402,12 +19404,13 @@
       "attribution_text": "User:Megapixie · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/morsa.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: walrus Odobenus rosmarus"
+        "Wikimedia search query: walrus Odobenus rosmarus",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19428,12 +19431,13 @@
       "attribution_text": "Wikimedia Commons contributor · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/manta.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Manta birostris NOAA manta ray"
+        "Wikimedia search query: Manta birostris NOAA manta ray",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19454,12 +19458,13 @@
       "attribution_text": "Janderk · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/pezpayaso.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: clownfish Amphiprion"
+        "Wikimedia search query: clownfish Amphiprion",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19480,12 +19485,13 @@
       "attribution_text": "Wikimedia Commons contributor · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/beluga.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Delphinapterus leucas NOAA beluga whale"
+        "Wikimedia search query: Delphinapterus leucas NOAA beluga whale",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19506,12 +19512,13 @@
       "attribution_text": "Rob Wallace · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/estrella.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: starfish sea star"
+        "Wikimedia search query: starfish sea star",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19532,12 +19539,13 @@
       "attribution_text": "fotokoci · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/erizodemar.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: sea urchin"
+        "Wikimedia search query: sea urchin",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19558,12 +19566,13 @@
       "attribution_text": "USFWS Mountain-Prairie · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T03:21:53.470Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/pelicano.thumb.webp",
       "notes": [
         "Ocean chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: pelican USFWS bird"
+        "Wikimedia search query: pelican USFWS bird",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19584,12 +19593,13 @@
       "attribution_text": "Ryan Hagerty · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:09:49.309Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/manati.thumb.webp",
       "notes": [
         "Ocean chapter-four replacement staging: exact photo source and zero-obligation license verified; visual approval remains separate.",
-        "Curated source: File:Close up image of manatee underwater.jpg"
+        "Curated source: File:Close up image of manatee underwater.jpg",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19610,12 +19620,13 @@
       "attribution_text": "Tim Cole ], NMFS (NOAA) · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:09:49.309Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/cachalote.thumb.webp",
       "notes": [
         "Ocean chapter-four replacement staging: exact photo source and zero-obligation license verified; visual approval remains separate.",
-        "Curated source: File:Sperm whale Tim Cole NMFS crop (cropped).jpg"
+        "Curated source: File:Sperm whale Tim Cole NMFS crop (cropped).jpg",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19636,12 +19647,13 @@
       "attribution_text": "SEFSC Pascagoula Laboratory; Collection of Brandi Noble, NOAA/NMFS/SEFSC · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:09:49.309Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/barracuda.thumb.webp",
       "notes": [
         "Ocean chapter-four replacement staging: exact photo source and zero-obligation license verified; visual approval remains separate.",
-        "Curated source: File:Sphyraena barracuda by NOAA.jpg"
+        "Curated source: File:Sphyraena barracuda by NOAA.jpg",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19662,12 +19674,13 @@
       "attribution_text": "U.S. Fish and Wildlife Service · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:09:49.309Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/albatros.thumb.webp",
       "notes": [
         "Ocean chapter-four replacement staging: exact photo source and zero-obligation license verified; visual approval remains separate.",
-        "Curated source: File:Short tailed albatross.jpg"
+        "Curated source: File:Short tailed albatross.jpg",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19688,12 +19701,13 @@
       "attribution_text": "Sowls, Art · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:09:49.309Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/gaviota.thumb.webp",
       "notes": [
         "Ocean chapter-four replacement staging: exact photo source and zero-obligation license verified; visual approval remains separate.",
-        "Curated source: File:Larus hyperboreus-USFWS.jpg"
+        "Curated source: File:Larus hyperboreus-USFWS.jpg",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19714,12 +19728,13 @@
       "attribution_text": "Vernon Byrd, USFWS · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:09:49.309Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/frailecillo.thumb.webp",
       "notes": [
         "Ocean chapter-four replacement staging: exact photo source and zero-obligation license verified; visual approval remains separate.",
-        "Curated source: File:Fratercula corniculataUSFWSSL0002774.jpg"
+        "Curated source: File:Fratercula corniculataUSFWSSL0002774.jpg",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     },
     {
@@ -19740,12 +19755,13 @@
       "attribution_text": "Dr. Dwayne Meadows, NOAA/NMFS/OPR · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:09:49.309Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/oceano/morena.thumb.webp",
       "notes": [
         "Ocean chapter-four replacement staging: exact photo source and zero-obligation license verified; visual approval remains separate.",
-        "Curated source: File:Gymnothorax eurostus.jpg"
+        "Curated source: File:Gymnothorax eurostus.jpg",
+        "Ocean chapter-four editorial review: the selected photograph directly depicts the written concept, with no unrelated dominant subject; source, local files, integrity hashes and zero-obligation license were reviewed before approval."
       ]
     }
   ]

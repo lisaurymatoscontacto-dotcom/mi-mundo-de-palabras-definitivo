@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T04:09:49.309Z",
-  "status": "pending_visual_review",
+  "generated_at": "2026-10-16T04:11:48.693Z",
+  "status": "approved",
   "assets": [
     {
       "id": "oceano.orca",
@@ -16,7 +16,7 @@
       "source_sha256": "9c5636f1990e0609a0be744727f2a610e476fc79e82256625b3e9708dc1d7022",
       "asset_sha256": "3322f40729edebbbef60c4e39a39b87e7259ab30af58f6f5959664450be17a20",
       "thumbnail_sha256": "56c4dce2da8568bd2f59af0d77463d1d928f83eb5cce7d7f07aafab2d53f110a",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.narval",
@@ -32,7 +32,7 @@
       "source_sha256": "fefd076b2863da4ed739910bb9653a64e334ba1184bd4fac313c3024f835ad25",
       "asset_sha256": "d59ffd015036a1198b9cd197f6d333d34d9ef7a84e051a2230a27df3b2f16ab5",
       "thumbnail_sha256": "2b6ffe814f857d2c50372a158eb84800d9973e38afb999e80058ea2c932ceb63",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.morsa",
@@ -48,7 +48,7 @@
       "source_sha256": "985c3406544f1ff20501537e7b4453e94f2a9772dd6d677c02d189fa0a3369d6",
       "asset_sha256": "128bcd8d1a92c95aaf1aa7ba9277daae6326b63a436dd69d7df05e43760613e3",
       "thumbnail_sha256": "fde7e95ec2421653282426ae01c64d3242715c55751dc11e5e11dc7f5f55693d",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.manta",
@@ -64,7 +64,7 @@
       "source_sha256": "d09ee8ac3516b0ecb94b526c02c995b6fea19e65ebf9536ceb0719f793a5df0c",
       "asset_sha256": "88dd04966ee3df78cc36bad975ec7ea24f4c544abc743e5476fcbc8eeff318b7",
       "thumbnail_sha256": "f75428d0b849c8b8ed4ba3a310fa65a99600af5c2ecce115f6fb7cc19690c158",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.pezpayaso",
@@ -80,7 +80,7 @@
       "source_sha256": "fb0f7000cd2a2639f8f3e9b6a74124adfb3c7bfc9ec718da73ff4b1085b86a4f",
       "asset_sha256": "972e873726b6b10baf7e9def8a5a182fb0b71152d6d935cfdddf2e39e96d1bac",
       "thumbnail_sha256": "652ac6bb37223fd877790de005968d38500cdc538c9f515a166e432f9b98611b",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.beluga",
@@ -96,7 +96,7 @@
       "source_sha256": "049ec2ce5367d488ad4d329dfdb462f69518b9e3be1ec30fcac75bc07ef984ac",
       "asset_sha256": "393023d56aa73447e6636722763e0f27c586b60b0ab78137bf22cc3132d1cfb1",
       "thumbnail_sha256": "fb3b8a5e22a13af406f20258d9684dac85fac98370978bcaa3e35c759665bf25",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.estrella",
@@ -112,7 +112,7 @@
       "source_sha256": "e8dbbd9caadcfd99ecb4b074e643b9155326f4e04ee54ed51516cce64d546c28",
       "asset_sha256": "cd1949da89ee3458809b0752f7b58f11ad3ab1d4243801d7e4d16185592bda09",
       "thumbnail_sha256": "83efc40b992225e3a6e77a92922d0cdedb82a8fa882af27fe4c7e42e1b99a91d",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.erizodemar",
@@ -128,7 +128,7 @@
       "source_sha256": "5382083cf80ef689c39838c7cd588c1ad7f3febd1069a70461ea37d9ab6858e3",
       "asset_sha256": "8abaf93626aeb4c7db2ada64e82e1c97705059c0e5233732941433b00e247338",
       "thumbnail_sha256": "ca8ffa510d58a708b8a42f3d27a44a8b8198b6a7a2021c7a8a24e51e830c6be6",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.pelicano",
@@ -144,7 +144,7 @@
       "source_sha256": "4db443025557c70067e5d0df1258fd9b05e711f15e0f9bdeff82145fe3ea670b",
       "asset_sha256": "c2fff14be6eeb643f53c1821754fde5fc9762aa851c080a94ef79b8d58ad7abf",
       "thumbnail_sha256": "633971b182f9f23b73f3a9104c6ac42a0a09f9c91c2cb431c3701988df35b26a",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.manati",
@@ -160,7 +160,7 @@
       "source_sha256": "68fda319cbf9751d5eb5598f31f9557db8667192a2a0528a1407ef2f38525fb5",
       "asset_sha256": "cf740509fb728ea0a84caf4722252ba0a11841bb4e80dda22dde440523e9982f",
       "thumbnail_sha256": "04456dd2d2ac076757f7d0ffb17aba3e815e78d1a7042289053f3a2305346f41",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.cachalote",
@@ -176,7 +176,7 @@
       "source_sha256": "aaaad2773e15e7c6d8ae13307e7e2184a8c3ed7c75494298e3799a3ebdbbcee0",
       "asset_sha256": "c7b88b5bb570deb632974a80032573cd03b7dceebccdf68cd07b6859d9452452",
       "thumbnail_sha256": "bb44614317d518ded903f9c9f33913aa804826d205495454b788a2143aad4502",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.barracuda",
@@ -192,7 +192,7 @@
       "source_sha256": "1f9cc4d758d20c7473e606b00f2511dd0f9e4b979104b99bd03eeb422a16a328",
       "asset_sha256": "584ddc027fb668ec2dbf39fdb9c37c81040c6bb0b3237d46a89086a9698e8927",
       "thumbnail_sha256": "b73e074b666d2599fccde8457b7fd278dfc9c3d73988da4a368e01e447456e66",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.albatros",
@@ -208,7 +208,7 @@
       "source_sha256": "a9acd0f7b78c30c8fa1f61fcdd5fca2e47717d216c6270df72510f9d6e871bc9",
       "asset_sha256": "6fce5be4a3099cafa97a12a182ff05dd5903ad76acf8a8c8afe57f33e0137f16",
       "thumbnail_sha256": "3ddeb33e2731614f16c4e26d88986072ea6fbf1657543fb2e44699dd805dace1",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.gaviota",
@@ -224,7 +224,7 @@
       "source_sha256": "3fc880a55dc30426595551770354546fb4e3f4078f5eb62905f5ad5f019f575d",
       "asset_sha256": "ff50eac4d2818d025184f0d9b616f6d412bbb17ba7bcc74d1fd5fd8ac0dee1ad",
       "thumbnail_sha256": "a9a8abfb014d548c9e0c87447e4a264739b0be126633d39e6ea7c715dcba9975",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.frailecillo",
@@ -240,7 +240,7 @@
       "source_sha256": "24a39de04340be8b88408df9112cfc8fc17347cbe35315cd7424401c7f740c58",
       "asset_sha256": "1e51b7d2ea879b6428fed87c14ec596fc7bad0b6f651f3e12cd1009463a8a4bb",
       "thumbnail_sha256": "11c0919743d78c63d9b5e1f1b02b95011d33b1b45433e7cc3db994b06211d385",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "oceano.morena",
@@ -256,7 +256,7 @@
       "source_sha256": "2207e3a9860baced611bdf8935ff5f7a9ebd452e749ade91105458d2d2c80408",
       "asset_sha256": "23b14bcda9021a592e3ee85d66e6ecaeb6948e6da5e73d6ffecb3440ccc7fc58",
       "thumbnail_sha256": "d47ff37819d7b7c3c6bfa0816a0db77b459dec92f42612e8258bddead55dfdd4",
-      "visual_review": "pending"
+      "visual_review": "approved"
     }
   ]
 }
