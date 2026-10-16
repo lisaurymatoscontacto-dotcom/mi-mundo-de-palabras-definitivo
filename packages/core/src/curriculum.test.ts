@@ -14,16 +14,16 @@ describe("themed curriculum", () => {
     expect(WORDS_PER_CHAPTER).toBe(20);
     expect(NEW_WORDS_PER_CHAPTER).toBe(16);
     expect(REVIEW_WORDS_PER_CHAPTER).toBe(4);
-    expect(balancedNewWordCounts(300)).toEqual([20, ...Array(10).fill(16), ...Array(8).fill(15)]);
+    expect(balancedNewWordCounts(350)).toEqual([20, ...Array(15).fill(16), ...Array(6).fill(15)]);
   });
 
-  it("brings every world back in nineteen numbered chapters", () => {
+  it("brings every world back in twenty-two numbered chapters", () => {
     for (const category of Object.keys(CANDIDATE_WORDS)) {
       const chapters = chaptersForCategory(category);
-      expect(chapters).toHaveLength(19);
+      expect(chapters).toHaveLength(22);
       expect(chapters[0].label).toBe(`${category} 1`);
       expect(chapters[1].label).toBe(`${category} 2`);
-      expect(chapters[18].label).toBe(`${category} 19`);
+      expect(chapters[21].label).toBe(`${category} 22`);
     }
   });
 
@@ -52,6 +52,7 @@ describe("themed curriculum", () => {
   });
 
   it("interleaves worlds before returning to chapter two", () => {
+    expect(CURRICULUM_CHAPTERS).toHaveLength(264);
     expect(CURRICULUM_CHAPTERS.slice(0, 12).every((chapter) => chapter.chapterNumber === 1)).toBe(true);
     expect(CURRICULUM_CHAPTERS[12].chapterNumber).toBe(2);
     expect(CURRICULUM_CHAPTERS[12].category).toBe("Animales");
