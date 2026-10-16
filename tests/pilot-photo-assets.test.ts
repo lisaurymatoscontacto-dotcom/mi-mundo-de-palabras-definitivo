@@ -53,13 +53,12 @@ describe("reviewed pilot photos", () => {
   it("keeps all reviewed transition cards when both metadata requests fail offline", async () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new TypeError("Offline")));
     const cards = await loadRuntimeCards("latam");
+    const expectedCards = applyAssetCatalog(DEMO_WORDS, catalog);
     expect(cards).toHaveLength(DEMO_WORDS.length);
+    expect(cards).toHaveLength(expectedCards.length);
     const photoCount = cards.filter((card) => card.visualKind === "photo").length;
     const emojiCount = cards.filter((card) => card.visualKind === "emoji").length;
-    const expectedPhotoCount = DEMO_WORDS.filter((card) => {
-      const asset = catalog.assets.find((entry) => entry.id === card.id);
-      return asset?.review_status === "approved" && asset.asset_type === "photo";
-    }).length;
+    const expectedPhotoCount = expectedCards.filter((card) => card.visualKind === "photo").length;
     expect(photoCount).toBe(expectedPhotoCount);
     expect(emojiCount).toBe(DEMO_WORDS.length - photoCount);
 
