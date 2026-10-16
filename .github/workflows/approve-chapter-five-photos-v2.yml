@@ -1,0 +1,58 @@
+name: Approve chapter-five photos v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/approve-chapter-five-photos-v2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Guarded editorial approval of exactly 25 photos
+        run: npx tsx scripts/approve-chapter-five-photos.ts
+      - name: Publish and validate approved metadata
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+      - name: Verify approved batch contract
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const review = JSON.parse(fs.readFileSync('content/asset-reviews/chapter-five-photos.json', 'utf8'));
+          if (review.status !== 'approved' || review.assets.length !== 25) throw new Error('Expected exactly 25 approved chapter-five photos');
+          if (review.assets.some((item) => item.visual_review !== 'approved' || !item.review_note)) throw new Error('Every chapter-five photo needs an explicit approved review note');
+          const catalog = JSON.parse(fs.readFileSync('content/assets.catalog.json', 'utf8'));
+          for (const item of review.assets) {
+            const asset = catalog.assets.find((candidate) => candidate.id === item.id);
+            if (!asset || asset.review_status !== 'approved' || asset.asset_type !== 'photo') throw new Error(`${item.id} did not become an approved photo`);
+          }
+          const counts = catalog.assets.reduce((acc, asset) => { acc[asset.review_status] = (acc[asset.review_status] || 0) + 1; return acc; }, {});
+          if (counts.approved !== 841) throw new Error(`Expected 841 approved assets after photo approval, got ${counts.approved}`);
+          if (counts.rejected !== 1) throw new Error(`Expected exactly 1 rejected asset, got ${counts.rejected || 0}`);
+          console.log('Chapter-five photo approval counts OK:', counts);
+          NODE
+          npm test
+          npm run typecheck
+          npm run build
+      - name: Commit approved photo batch and remove helpers
+        run: |
+          rm scripts/approve-chapter-five-photos.ts .github/workflows/approve-chapter-five-photos-v2.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: approve chapter-five photo candidates"
+          git pull --rebase origin main
+          git push origin main
