@@ -1,0 +1,80 @@
+name: Publish curriculum block twelve
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-curriculum-block-twelve.yml
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - name: Activate guarded final chapter-four block
+        run: node scripts/activate-block-twelve.mjs
+
+      - name: Materialize reviewed curriculum positions 45-48
+        run: npx tsx scripts/materialize-reviewed-curriculum-block.ts --start=45 --count=4
+
+      - name: Publish and validate local asset catalog
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+
+      - name: Verify complete chapter-four curriculum
+        run: |
+          npm run content:curriculum:verify
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const catalog = JSON.parse(fs.readFileSync('content/assets.catalog.json', 'utf8'));
+          const counts = catalog.assets.reduce((acc, asset) => {
+            acc[asset.review_status] = (acc[asset.review_status] || 0) + 1;
+            return acc;
+          }, {});
+          if (counts.approved !== 816) throw new Error(`Expected 816 approved assets, got ${counts.approved}`);
+          if (counts.rejected !== 1) throw new Error(`Expected exactly 1 rejected asset, got ${counts.rejected || 0}`);
+          if (catalog.assets.length !== 817) throw new Error(`Expected 817 catalog records total, got ${catalog.assets.length}`);
+          const supernova = catalog.assets.find((asset) => asset.id === 'espacio.supernova');
+          if (!supernova || supernova.review_status !== 'rejected') throw new Error('SUPERNOVA must remain explicitly rejected');
+          const required = [
+            'oceano.orca','oceano.narval','oceano.beluga','oceano.manati','oceano.cachalote','oceano.morsa','oceano.manta','oceano.pezpayaso',
+            'oceano.barracuda','oceano.morena','oceano.estrella','oceano.erizodemar','oceano.pelicano','oceano.albatros','oceano.gaviota','oceano.frailecillo',
+            'espacio.mercurio','espacio.venus','espacio.marte','espacio.jupiter','espacio.saturno','espacio.urano','espacio.neptuno','espacio.pluton',
+            'espacio.ceres','espacio.andromeda','espacio.nebulosa','espacio.rover','espacio.estacion','espacio.transbordador','espacio.aurora','espacio.llena'
+          ];
+          for (const id of required) {
+            const asset = catalog.assets.find((candidate) => candidate.id === id);
+            if (!asset || asset.review_status !== 'approved') throw new Error(`${id} is not approved after block publication`);
+          }
+          console.log('Block twelve count contract OK:', counts);
+          NODE
+
+      - name: Validate application
+        run: |
+          npm test
+          npm run typecheck
+          npm run build
+
+      - name: Commit block twelve and remove temporary helpers
+        run: |
+          rm scripts/activate-block-twelve.mjs .github/workflows/publish-curriculum-block-twelve.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: complete chapter-four curriculum"
+          git pull --rebase origin main
+          git push origin main
