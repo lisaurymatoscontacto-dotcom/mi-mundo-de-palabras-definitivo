@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T13:37:16.214Z",
+  "generated_at": "2026-10-16T14:38:24.119Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -21826,12 +21826,12 @@
       "asset_type": "photo",
       "asset_path": "photos/casa/armario.webp",
       "source": "Wikimedia Commons",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ANapoleon's_Wardrobe.jpg",
-      "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Napoleon%27s_Wardrobe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "author": "Hsjejehj",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AWardrobe_MET_DP235305.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Wardrobe_MET_DP235305.jpg/1920px-Wardrobe_MET_DP235305.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "author": "Herter Brothers",
       "license": "CC0-1.0",
       "attribution_required": false,
-      "attribution_text": "Hsjejehj · Wikimedia Commons · CC0 1.0",
+      "attribution_text": "Herter Brothers · Wikimedia Commons · CC0 1.0",
       "verified": true,
       "downloaded_at": "2026-10-16T13:37:16.214Z",
       "review_status": "pending_review",
@@ -21839,7 +21839,8 @@
       "thumbnail_path": "photos/casa/armario.thumb.webp",
       "notes": [
         "Chapter-five supplemental staging: exact pinned CC0/Public Domain photo; visual approval remains separate.",
-        "Pinned Wikimedia source: File:Napoleon's Wardrobe.jpg"
+        "Pinned Wikimedia source: File:Napoleon's Wardrobe.jpg",
+        "Supplemental refinement: replaced ornate historical wardrobe candidate with a clearer full-object CC0 MET wardrobe photograph; visual approval remains pending."
       ]
     },
     {
