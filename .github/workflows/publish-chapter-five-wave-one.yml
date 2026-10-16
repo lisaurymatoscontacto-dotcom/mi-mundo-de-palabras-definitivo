@@ -1,0 +1,66 @@
+name: Publish chapter-five wave one
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-chapter-five-wave-one.yml
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Publish 15 reviewed photos plus 5 exact Twemoji concepts
+        run: npx tsx scripts/publish-chapter-five-wave-one.ts
+      - name: Publish and validate asset metadata
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+      - name: Validate cards and application
+        run: |
+          npm test
+          npm run typecheck
+          npm run content:curriculum:verify
+          npm run build
+      - name: Recompute objective readiness in a fresh process
+        run: npx tsx scripts/publish-chapter-five-wave-one.ts --verify-only
+      - name: Verify objective readiness contract
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const report = JSON.parse(fs.readFileSync('content/audits/chapter-five-readiness.json', 'utf8'));
+          if (report.total_concepts !== 64) throw new Error(`Expected 64 concepts, got ${report.total_concepts}`);
+          if (report.ready_concepts < 20 || report.ready_percent < 31.2) throw new Error(`Wave one did not reach the expected objective readiness: ${report.ready_concepts}/64 (${report.ready_percent}%)`);
+          const targetIds = new Set([
+            'casa.toalla','casa.nevera','casa.armario','casa.horno',
+            'comida.yuca','comida.lenteja','comida.papaya',
+            'naturaleza.lago','naturaleza.arena','naturaleza.bosque','naturaleza.cueva','naturaleza.cascada','naturaleza.valle','naturaleza.selva','naturaleza.prado',
+            'animales.burro','animales.tejon','animales.alce','animales.ciervo','casa.cuadro'
+          ]);
+          const concepts = report.worlds.flatMap((world) => world.concepts);
+          for (const id of targetIds) {
+            const item = concepts.find((candidate) => candidate.id === id);
+            if (!item?.ready) throw new Error(`${id} is not fully ready`);
+          }
+          console.log(`Objective readiness: ${report.ready_concepts}/64 (${report.ready_percent}%).`);
+          NODE
+      - name: Commit chapter-five wave one
+        run: |
+          rm scripts/publish-chapter-five-wave-one.ts .github/workflows/publish-chapter-five-wave-one.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: publish first real chapter-five concepts"
+          git pull --rebase origin main
+          git push origin main
