@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T04:17:29.397Z",
-  "status": "pending_visual_review",
+  "generated_at": "2026-10-16T04:18:32.316Z",
+  "status": "approved_with_one_rejection",
   "assets": [
     {
       "id": "espacio.mercurio",
@@ -16,7 +16,7 @@
       "source_sha256": "6cfa9244f703e177b605a4a959f7957269416af95a38e29d54662a4dfdafd1aa",
       "asset_sha256": "d640240577a2d47124b7bab3dfcd3f37fd084d8b9b43c86ded0050e1e26221b3",
       "thumbnail_sha256": "e491d101a20b1a15ed10756dea733eb9cbe77cfcd2072688591efee74f85da8e",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.venus",
@@ -32,7 +32,7 @@
       "source_sha256": "fd1a4631dd83eb7f09045e6c0c8ce6af3c35e101e84c1c1fbe89ce9810f6cd60",
       "asset_sha256": "3930efe8303ea8b7257115e0c70487b0b893e6d7041d32a2b7e59e09ee188a62",
       "thumbnail_sha256": "375ece1bbbd68662d8f5a2164da8e6971622d89aff2aa1e54c700149a50e7b8a",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.marte",
@@ -48,7 +48,7 @@
       "source_sha256": "c2e847edb2bd138e6d14f030af14b7395eba7aca857bf17a4b4b8123f43286ec",
       "asset_sha256": "076cc5eb8181a81d15c7b6f79e5b2bd8e164892bc8abc614e05e2f39bfed6f5e",
       "thumbnail_sha256": "b9fad5441a72a5421ef0248bd155336834a05a140918d9d996850c82f80c6b5c",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.jupiter",
@@ -64,7 +64,7 @@
       "source_sha256": "c0538b43b2a84b0b0caee667b17aa8d311300efd56252d972b6ce20bde6dd758",
       "asset_sha256": "6005d4b3cb3ffed5137dc5f5f702a55597c29c9b105c9c181cfc3b13649fd70d",
       "thumbnail_sha256": "042798690c19080d5e6251351202a53948992566acf858115abc975f40c506ff",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.saturno",
@@ -80,7 +80,7 @@
       "source_sha256": "6bb3484c6a448ed70171b529d9b18a184ad8e1ca1debb740d1051463055f66e1",
       "asset_sha256": "ef1bebdfcdcece796fa0c7f1d3bf96eb968fb13f88db5a794fb549c4eae20615",
       "thumbnail_sha256": "75bad663de57c2c997037d348e5d48cd4be379c551ace47625a7fc9fb9f51f26",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.urano",
@@ -96,7 +96,7 @@
       "source_sha256": "bbdd08c3843858e80255fc14a56c4247b17cffa18c82477259f0872b4b1ee010",
       "asset_sha256": "1093fcc1e941e73528e19ce51a7231fb0bfd3323b045830e32731ff2700d9ecf",
       "thumbnail_sha256": "9f5f150e8bbfd1316186bc8674a5bbda512c09cc19bea4845b78d260049a4577",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.neptuno",
@@ -112,7 +112,7 @@
       "source_sha256": "fff5f081788134c3a35c55c48ee301c161b2fe62d48699be9d36455b630746a5",
       "asset_sha256": "1025ae29b1c286ca1bdbb422e8df26401436c96f2812698a51fd184ec01c8feb",
       "thumbnail_sha256": "eb7b08152cfa1125be3c37b7c79a897b2d33d68a8f1ca90dfe18dd275443f0ec",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.pluton",
@@ -128,7 +128,7 @@
       "source_sha256": "69401ea6a551c616c2d7d2991904e45c2ac64f9f95a6addca22cecc80b86b0c6",
       "asset_sha256": "a67a2a5c19776859ef7cd683a549c1ca53e73dc7ad3d0b691b26034253de9218",
       "thumbnail_sha256": "b7842bfe4cc173b99e5da1a351e7a8827f3f66a1a8b5a47bbe4c0e006a50a47c",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.ceres",
@@ -144,7 +144,7 @@
       "source_sha256": "1a17967b76f6aceb86e7c1ef67d6030d1cd1e728f71c1d9571ec9d272db38f25",
       "asset_sha256": "3c5c883c204a068c76beda4672c3c318afbb6bc7e4487c8b0d62837cc547838b",
       "thumbnail_sha256": "9058fb32581892c98fe462a2fcafd93ad3660517eebc02fe54ea3c86d958347c",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.andromeda",
@@ -160,7 +160,7 @@
       "source_sha256": "267bab114c987b04b278086799f07c89c359363a680fb91e98a78f905d3a0b34",
       "asset_sha256": "5f52ab701f910bf3d5d906b160085f6d759a0d4bdd9ed481fc022cee404a2fd7",
       "thumbnail_sha256": "da1cf8067d012f65fad6a8f266aff1de4dd82cd572f05ed23aeda0adc6993127",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.nebulosa",
@@ -176,7 +176,7 @@
       "source_sha256": "f38119fa7a743dd5536bcb7f0fab362023bb6fa9ff1ec6fe6f8d0efe1571244a",
       "asset_sha256": "32c4ddd4e33bcda993621ab987f9ee0ed9eb6a5b22b18b434d09293acf6681d8",
       "thumbnail_sha256": "2419b352509b98ef19e1335e3e1f435c827ec0991e7288a092b6c51bd9666c86",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.rover",
@@ -192,7 +192,7 @@
       "source_sha256": "460781dfc0356db6163f8d4c6e2eeb3f79e0c83a26174c0f7c0292805301dfeb",
       "asset_sha256": "43018a74d9f00e5f71aa15c4e5ebf4f36ed7e40f64eda64f6b28b0c7d9a0f870",
       "thumbnail_sha256": "a3f2db6dd4cdbda4fce6dc1ffa302707cf1ed30e8c8eda70c4895a2e4e19cc3e",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.estacion",
@@ -208,7 +208,7 @@
       "source_sha256": "e4b01443a4f37b1c6bb33a3739e2dea9a275b0b9dafcbc70c2f16a55a750f209",
       "asset_sha256": "b8c1dda72a5633256b7c6d8c516de4dbeea92fb9e5211b7ecd134882f5cf6f9a",
       "thumbnail_sha256": "6c1d68c7c818885292612619e4395fd52078524afc9adb70de8253c7b414641f",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.transbordador",
@@ -224,7 +224,7 @@
       "source_sha256": "3722804b01f52aa1003e16d2e67e1aa1b9b5a6b384e6a6e5feff5ca6406bc98a",
       "asset_sha256": "831a4744ca6e336164cfb5a665a7f2490644aee1b31ba89e55ba189c8a8f4c01",
       "thumbnail_sha256": "c875c659ee2652f47802219a8f3b078f97912c3a15fc696e8c297dace2de6c5a",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.aurora",
@@ -240,7 +240,7 @@
       "source_sha256": "85163500efebc251e23dea6f80d011c1b53469f125339910f9d6e1bb6240acb2",
       "asset_sha256": "fc0d3fecb0e07669410eeb93300a7be743988ab809a043c7c122c4143e113f22",
       "thumbnail_sha256": "b843f35227eb42f38516849c57e1263797642f0e7b90b65a75b0d144e877f3b9",
-      "visual_review": "pending"
+      "visual_review": "approved"
     },
     {
       "id": "espacio.supernova",
@@ -256,7 +256,7 @@
       "source_sha256": "03663d1c811669a5bcf7902cf2dfc5f03fcc579c52f7421927966c71371ad395",
       "asset_sha256": "9f5d912db1dd3f9ad8697899b59d7a9ad7afff108f0504ec7f51e079c1dd5973",
       "thumbnail_sha256": "18626bd88461b3d0139f02e9d9d08c187e331340b8737b5f060b191538764231",
-      "visual_review": "pending"
+      "visual_review": "rejected"
     }
   ]
 }

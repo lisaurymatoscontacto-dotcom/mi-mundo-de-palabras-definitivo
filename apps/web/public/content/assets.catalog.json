@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T04:17:29.397Z",
+  "generated_at": "2026-10-16T04:18:32.316Z",
   "assets": [
     {
       "id": "animales.gato",
@@ -19782,13 +19782,14 @@
       "attribution_text": "NASA/Johns Hopkins University Applied Physics Laboratory/Arizona State University/Carnegie Institution of Washington · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:17:29.397Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/mercurio.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
         "Wikimedia search query: Mercury planet MESSENGER NASA",
-        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Mercury in true color.jpg."
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Mercury in true color.jpg.",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19809,12 +19810,13 @@
       "attribution_text": "NASA/JPL · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/venus.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Venus planet NASA"
+        "Wikimedia search query: Venus planet NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19835,13 +19837,14 @@
       "attribution_text": "NASA / USGS (see PIA04304 catalog page ) · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:17:29.397Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/marte.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
         "Wikimedia search query: Mars planet NASA",
-        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Mars Valles Marineris.jpeg."
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Mars Valles Marineris.jpeg.",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19862,12 +19865,13 @@
       "attribution_text": "NASA/JPL/Space Science Institute · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/jupiter.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Jupiter planet NASA"
+        "Wikimedia search query: Jupiter planet NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19888,13 +19892,14 @@
       "attribution_text": "NASA / JPL / Space Science Institute · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:17:29.397Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/saturno.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
         "Wikimedia search query: Saturn planet Cassini NASA",
-        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Saturn during Equinox.jpg."
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Saturn during Equinox.jpg.",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19915,12 +19920,13 @@
       "attribution_text": "NASA · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/urano.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Uranus planet Voyager NASA"
+        "Wikimedia search query: Uranus planet Voyager NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19941,12 +19947,13 @@
       "attribution_text": "NASA · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/neptuno.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Neptune planet Voyager NASA"
+        "Wikimedia search query: Neptune planet Voyager NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19967,13 +19974,14 @@
       "attribution_text": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Alex Parker · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:17:29.397Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/pluton.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
         "Wikimedia search query: Pluto New Horizons NASA",
-        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Pluto in True Color - High-Res.jpg."
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:Pluto in True Color - High-Res.jpg.",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -19994,12 +20002,13 @@
       "attribution_text": "C. Dumas et al., NASA / JPL · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/ceres.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Ceres Dawn NASA"
+        "Wikimedia search query: Ceres Dawn NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -20020,12 +20029,13 @@
       "attribution_text": "NASA/JPL/California Institute of Technology · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/andromeda.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Andromeda galaxy NASA"
+        "Wikimedia search query: Andromeda galaxy NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -20046,12 +20056,13 @@
       "attribution_text": "NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Team · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/nebulosa.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Orion Nebula Hubble NASA"
+        "Wikimedia search query: Orion Nebula Hubble NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -20072,12 +20083,13 @@
       "attribution_text": "NASA · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/rover.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Curiosity rover Mars NASA"
+        "Wikimedia search query: Curiosity rover Mars NASA",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -20098,13 +20110,14 @@
       "attribution_text": "NASA/Crew of STS-132 · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:17:29.397Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/estacion.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
         "Wikimedia search query: International Space Station NASA photograph",
-        "Space chapter-four visual refinement: replaced weak candidate with exact source File:International Space Station after undocking of STS-132.jpg."
+        "Space chapter-four visual refinement: replaced weak candidate with exact source File:International Space Station after undocking of STS-132.jpg.",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -20125,12 +20138,13 @@
       "attribution_text": "User:FEXX , from NASA photo. · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/transbordador.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: Space Shuttle Discovery NASA photograph"
+        "Wikimedia search query: Space Shuttle Discovery NASA photograph",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -20151,12 +20165,13 @@
       "attribution_text": "NASA · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "approved",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/aurora.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: aurora borealis NASA photograph"
+        "Wikimedia search query: aurora borealis NASA photograph",
+        "Space chapter-four editorial review: selected image directly represents the named body/object/phenomenon; source, local files, hashes and zero-obligation license verified before approval."
       ]
     },
     {
@@ -20177,12 +20192,13 @@
       "attribution_text": "NASA , ESA , J. Hester and A. Loll (Arizona State University) · Wikimedia Commons · Public Domain",
       "verified": true,
       "downloaded_at": "2026-10-16T04:15:02.701Z",
-      "review_status": "pending_review",
+      "review_status": "rejected",
       "emoji_unicode": null,
       "thumbnail_path": "photos/espacio/supernova.thumb.webp",
       "notes": [
         "Space chapter-four staging: explicit CC0/Public Domain metadata verified; visual concept review still required.",
-        "Wikimedia search query: supernova remnant NASA photograph"
+        "Wikimedia search query: supernova remnant NASA photograph",
+        "Space chapter-four editorial rejection: Crab Nebula is a supernova remnant, not a direct depiction of the SUPERNOVA event; excluded to preserve one-word/one-concept visual precision."
       ]
     }
   ]
