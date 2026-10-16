@@ -1,0 +1,66 @@
+name: Refine chapter-five Nature photos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/refine-chapter-five-nature-photos.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Replace five weaker Nature candidates
+        run: npx tsx scripts/refine-chapter-five-nature-photos.ts
+      - name: Publish metadata and validate refined files
+        run: |
+          npm run content:assets:publish
+          npm run content:assets:validate
+          npm run content:assets:files
+      - name: Verify all 25 photos remain pending
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const review = JSON.parse(fs.readFileSync('content/asset-reviews/chapter-five-photos.json', 'utf8'));
+          if (review.assets.length !== 25) throw new Error(`Expected 25 review assets, got ${review.assets.length}`);
+          if (review.status !== 'pending_visual_review') throw new Error(`Unexpected review status: ${review.status}`);
+          if (review.assets.some((asset) => asset.visual_review !== 'pending')) throw new Error('Every chapter-five visual decision must still be pending');
+          const expected = new Map([
+            ['naturaleza.cueva', 'File:Deep Cave (51202093762).jpg'],
+            ['naturaleza.cascada', 'File:Buttermilk Falls, on the New Jersey side of the Delaware River. (4e60164f-1dd8-b71b-0bcd-a1953bd6a54a).jpg'],
+            ['naturaleza.iceberg', 'File:Front row Iceberg-Chugach-KK-005 (52503186215).jpg'],
+            ['naturaleza.geiser', 'File:Riverside Geyser eruption (38396853531).jpg'],
+            ['naturaleza.cuarzo', 'File:Quartz (GeoDIL number - 2254).jpg'],
+          ]);
+          for (const [id, title] of expected) {
+            const item = review.assets.find((candidate) => candidate.id === id);
+            if (!item || item.selected_title !== title) throw new Error(`${id}: expected pinned source ${title}`);
+          }
+          const catalog = JSON.parse(fs.readFileSync('content/assets.catalog.json', 'utf8'));
+          for (const item of review.assets) {
+            const asset = catalog.assets.find((candidate) => candidate.id === item.id);
+            if (!asset || asset.review_status !== 'pending_review') throw new Error(`${item.id} must remain pending_review`);
+          }
+          NODE
+          npm test
+          npm run typecheck
+          npm run build
+      - name: Commit refined pending review set
+        run: |
+          rm scripts/refine-chapter-five-nature-photos.ts .github/workflows/refine-chapter-five-nature-photos.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: refine chapter-five Nature photo candidates"
+          git pull --rebase origin main
+          git push origin main
