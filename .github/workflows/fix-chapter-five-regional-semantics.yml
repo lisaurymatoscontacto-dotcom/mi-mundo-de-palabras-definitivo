@@ -1,0 +1,60 @@
+name: Fix chapter-five regional semantics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fix-chapter-five-regional-semantics.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Apply regional concept identities and distinct Comida 5 priority
+        run: npx tsx scripts/fix-chapter-five-regional-semantics.ts
+      - name: Validate semantics, curriculum and application
+        run: |
+          npm test
+          npm run typecheck
+          npm run content:curriculum:verify
+          npm run content:build:lexicon
+          npm run build
+      - name: Verify in fresh process and refresh objective readiness
+        run: npx tsx scripts/fix-chapter-five-regional-semantics.ts --verify
+      - name: Verify generated lexicon shares regional concept identities
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const doc = JSON.parse(fs.readFileSync('packages/core/src/generated/lexicon.candidate.json', 'utf8'));
+          const byWord = new Map(doc.entries.map((entry) => [entry.defaultWord, entry]));
+          const pairs = [['BANANA','GUINEO'],['PAPAYA','LECHOSA'],['MARACUYÁ','CHINOLA'],['TORONJA','POMELO']];
+          for (const [a,b] of pairs) {
+            const left = byWord.get(a), right = byWord.get(b);
+            if (!left || !right || left.conceptId !== right.conceptId) throw new Error(`${a}/${b} do not share one conceptId`);
+          }
+          const report = JSON.parse(fs.readFileSync('content/audits/chapter-five-readiness.json', 'utf8'));
+          const food = report.worlds.find((world) => world.category === 'Comida');
+          const expected = ['YUCA','CEREAL','YOGUR','LENTEJA','MANDARINA','TORONJA','LIMA','GUAYABA','PAPAYA','MARACUYÁ','GRANADA','CIRUELA','NECTARINA','ALBARICOQUE','FRAMBUESA','MORA'];
+          if (JSON.stringify(food.concepts.map((item) => item.word)) !== JSON.stringify(expected)) throw new Error('Readiness report did not adopt distinct Comida 5 list');
+          if (report.ready_concepts !== 20 || report.total_concepts !== 64) throw new Error(`Unexpected readiness after semantic fix: ${report.ready_concepts}/${report.total_concepts}`);
+          NODE
+      - name: Commit semantic correction
+        run: |
+          rm scripts/fix-chapter-five-regional-semantics.ts .github/workflows/fix-chapter-five-regional-semantics.yml
+          rm -f packages/core/src/generated/lexicon.candidate.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix: keep regional food synonyms as shared concepts"
+          git pull --rebase origin main
+          git push origin main
