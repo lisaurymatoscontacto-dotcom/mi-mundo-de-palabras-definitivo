@@ -10,6 +10,7 @@ import { JUGUETES_WORDS } from "./juguetes";
 import { OCEANO_WORDS } from "./oceano";
 import { ESPACIO_WORDS } from "./espacio";
 import { GRANJA_WORDS } from "./granja";
+import { MASTER_EXPANSION_WORDS } from "./expansion";
 
 const TYPOGRAPHIC_FIXES: Record<string, string> = {
   "SETО": "SETO",
@@ -69,27 +70,49 @@ function prioritizeChapterOne(category: string, words: readonly string[]) {
   return [...priority, ...cleaned.filter((word) => !selected.has(word))];
 }
 
+function buildCategory(category: string, baseWords: readonly string[]) {
+  const base = prioritizeChapterOne(category, baseWords);
+  const expansion = cleanCandidateWords(MASTER_EXPANSION_WORDS[category] ?? []);
+  if (expansion.length !== 50) {
+    throw new Error(`${category}: expected exactly 50 expansion concepts, received ${expansion.length}`);
+  }
+
+  const seen = new Set(base);
+  for (const word of expansion) {
+    if (seen.has(word)) throw new Error(`${category}: expansion duplicates an existing concept: ${word}`);
+    seen.add(word);
+  }
+
+  return [...base, ...expansion];
+}
+
 /**
  * Master thematic vocabulary candidate bank.
  *
- * These are curriculum candidates, not automatically publishable cards. Every
- * concept still has to pass regional/editorial review and receive approved
- * pedagogy + visual metadata before it is exposed to children.
+ * The bank intentionally contains 4,200 thematic positions (350 in each of
+ * twelve worlds). Candidate does not mean publishable: every concept still has
+ * to pass editorial/regional review and receive approved pedagogy + visual
+ * metadata before it is exposed to children.
  */
 export const MASTER_CANDIDATE_WORDS: Record<string, readonly string[]> = {
-  Animales: cleanCandidateWords(ANIMALES_WORDS),
-  Casa: prioritizeChapterOne("Casa", CASA_WORDS),
-  Comida: prioritizeChapterOne("Comida", COMIDA_WORDS),
-  Naturaleza: prioritizeChapterOne("Naturaleza", NATURALEZA_WORDS),
-  Cuerpo: prioritizeChapterOne("Cuerpo", CUERPO_WORDS),
-  Ropa: prioritizeChapterOne("Ropa", ROPA_WORDS),
-  Transporte: prioritizeChapterOne("Transporte", TRANSPORTE_WORDS),
-  Escuela: prioritizeChapterOne("Escuela", ESCUELA_WORDS),
-  Juguetes: cleanCandidateWords(JUGUETES_WORDS),
-  Océano: cleanCandidateWords(OCEANO_WORDS),
-  Espacio: cleanCandidateWords(ESPACIO_WORDS),
-  Granja: cleanCandidateWords(GRANJA_WORDS),
+  Animales: buildCategory("Animales", ANIMALES_WORDS),
+  Casa: buildCategory("Casa", CASA_WORDS),
+  Comida: buildCategory("Comida", COMIDA_WORDS),
+  Naturaleza: buildCategory("Naturaleza", NATURALEZA_WORDS),
+  Cuerpo: buildCategory("Cuerpo", CUERPO_WORDS),
+  Ropa: buildCategory("Ropa", ROPA_WORDS),
+  Transporte: buildCategory("Transporte", TRANSPORTE_WORDS),
+  Escuela: buildCategory("Escuela", ESCUELA_WORDS),
+  Juguetes: buildCategory("Juguetes", JUGUETES_WORDS),
+  Océano: buildCategory("Océano", OCEANO_WORDS),
+  Espacio: buildCategory("Espacio", ESPACIO_WORDS),
+  Granja: buildCategory("Granja", GRANJA_WORDS),
 };
 
 export const MASTER_CANDIDATE_WORD_COUNT = Object.values(MASTER_CANDIDATE_WORDS)
   .reduce((sum, words) => sum + words.length, 0);
+
+/** Exact display-word uniqueness across worlds; prevents inflating the bank with repeats. */
+export const MASTER_UNIQUE_CANDIDATE_WORD_COUNT = new Set(
+  Object.values(MASTER_CANDIDATE_WORDS).flat(),
+).size;
