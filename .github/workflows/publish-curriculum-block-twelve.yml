@@ -79,4 +79,4 @@ jobs:
           git pull --rebase origin main
           git push origin main
 
-# Retry after replacing the stale fixed pilot-photo count with a catalog-derived assertion.
+# Retry 2: offline fallback assertion now compares against applyAssetCatalog(), including legacy pilot IDs.
