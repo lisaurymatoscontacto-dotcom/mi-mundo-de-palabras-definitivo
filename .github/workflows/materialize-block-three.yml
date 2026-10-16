@@ -23,6 +23,8 @@ jobs:
 
       - run: npm ci
 
+      # Retry after making the cross-catalog verifier compatible with the
+      # repository's CommonJS tsx execution mode.
       - name: Materialize 80 reviewed block-three Twemoji resources
         run: npx tsx scripts/materialize-block-three-assets.ts
 
